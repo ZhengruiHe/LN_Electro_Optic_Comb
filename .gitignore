@@ -1,0 +1,47 @@
+# Operating system and editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Generated simulation output
+results/*
+!results/.gitkeep
+cache/
+tmp/
+temp/
+*.log
+
+# Ansys Electronics Desktop / HFSS generated data
+*.aedtresults/
+*.results/
+*.asol
+*.pvl
+*.lock
+
+# COMSOL recovery and temporary files
+*.mph.lock
+*.mph.status
+*.mph.recovery
+
+# Lumerical temporary/autosave files
+*.fsp.autosave
+*.lms.autosave
+
+# Large numeric exports should be regenerated or moved to Git LFS
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.mat
+

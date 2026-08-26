@@ -1,0 +1,11 @@
+# Treat simulator project files as binary. Move large files to Git LFS later
+# if the repository is connected to a remote host.
+*.aedt binary
+*.aedtz binary
+*.fsp binary
+*.lms binary
+*.mph binary
+*.gds binary
+
+* text=auto
+
