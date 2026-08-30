@@ -3,14 +3,14 @@
 Design workspace for a compact thin-film lithium-niobate (TFLN)
 electro-optic comb and poling-free second-harmonic platform.
 
-The first tapeout is organized around three structures:
+The first design study is organized around three fully custom structures:
 
-1. a PDK-aligned 1550-nm travelling-wave phase modulator for 25-GHz
-   electro-optic-comb characterization;
+1. a 1550-nm four-pass optical-recycling travelling-wave phase modulator for
+   low-`Vpi` 25-GHz electro-optic-comb generation;
 2. a compact x-cut LN spontaneous-quasi-phase-matched (SQPM) micro-racetrack
    for poling-free 1550-to-775-nm SHG;
-3. a monolithic `CW SHG -> dual-wavelength travelling-wave PM` sequence that
-   creates 1550- and 775-nm EO combs with the same RF line spacing.
+3. a monolithic `CW SHG -> dual-rail travelling-wave PM` sequence in which
+   separately optimized 1550- and 775-nm waveguides share one RF electrode.
 
 The EO modulation remains non-resonant; only the compact SHG block is
 resonant. SHG occurs before modulation, so the SHG racetrack FSR does not need
@@ -43,6 +43,7 @@ double-resonant mode pair and thermal control.
 - `results/`: generated figures and exported data; ignored by default
 
 The foundry PDK archive is confidential local input and is intentionally
-excluded from Git. The current S2/S3 layouts are simulation concepts, not
-fabrication-ready cells, because the supplied PDK qualifies 1550-nm devices
-but does not qualify SHG or 775-nm components.
+excluded from Git. It is used only for the process stack, layer rules and die
+boundary; none of the three structures relies on a supplied device BlackBox.
+All dimensions are simulation starting points rather than fabrication-ready
+mask dimensions.

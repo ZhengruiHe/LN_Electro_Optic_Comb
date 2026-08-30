@@ -1,4 +1,4 @@
-"""Reproduce the compact PDK-aligned EO-comb/SHG area budget.
+"""Reproduce the compact fully custom EO-comb/SHG area budget.
 
 This script only checks first-order scale estimates. It is not an optical
 eigenmode, nonlinear-cavity, RF, or foundry-DRC model.
@@ -35,7 +35,7 @@ def radius_for_fsr_um(fsr_ghz: float, group_index: float) -> float:
 
 def main() -> None:
     data = json.loads(TARGETS.read_text(encoding="utf-8"))
-    comb = data["comb"]
+    comb = data["custom_eo_comb"]
     shg = data["poling_free_shg"]
 
     for label, count in (
@@ -80,9 +80,9 @@ def main() -> None:
     print(f"effective_die_area_mm2={die_area:.2f}")
     print(f"functional_reservation_fraction={reserved_area / die_area:.1%}")
     print(
-        "\nWarning: the supplied PDK qualifies 1550-nm components, not SHG or "
-        "775-nm operation. All nonlinear and dual-band values require simulation "
-        "and written foundry confirmation."
+        "\nWarning: the PDK is used only for stack/rules/die constraints. All "
+        "three devices are custom, and all nonlinear and dual-band values "
+        "require simulation and written foundry confirmation."
     )
 
 

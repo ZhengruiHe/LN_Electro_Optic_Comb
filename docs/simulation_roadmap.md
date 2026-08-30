@@ -4,13 +4,12 @@
 
 The compact baseline contains three independently measurable structures:
 
-1. a standard-PDK 1550-nm travelling-wave phase modulator for EO-comb
-   characterization;
+1. a custom four-pass optical-recycling 1550-nm travelling-wave phase
+   modulator for low-`Vpi` EO-comb generation;
 2. a poling-free x-cut LN spontaneous-quasi-phase-matched (SQPM)
    micro-racetrack for 1550-to-775-nm SHG;
-3. an integrated sequence in which CW SHG occurs first and a custom
-   dual-wavelength travelling-wave phase modulator creates the two combs
-   afterward.
+3. an integrated sequence in which CW SHG occurs first and two independently
+   optimized optical rails share one custom travelling-wave electrode.
 
 This order deliberately removes an RF-to-SHG-ring-FSR constraint.  The ring
 still requires fundamental/SH double resonance, but the 25-GHz EO sidebands are
@@ -60,26 +59,39 @@ worse.
 Gate: select one manufacturable fundamental/SH mode pair with adequate
 nonlinear overlap and a 775-nm mode that can be routed and coupled.
 
-## Stage 2: S1 travelling-wave EO characterization model
+## Stage 2: S1 custom four-pass travelling-wave modulator
 
-Treat the supplied 9.1-mm PM as a fixed BlackBox for layout.  Build an external
-RF fixture model from its published ports/bounding box and the actual probe,
-launch, termination and package geometry.
+Start with a 10-mm GSG line and sweep its cross-section in HFSS 2D Extractor or
+Q3D.  The published 43-um signal width and 5.5-um electrode-waveguide gap are
+only initial sweep seeds; the actual metal thickness, oxide and PDK rules set
+the answer.  Then simulate the pads, taper, complete line and 50-ohm
+termination in 3D HFSS.  Extract:
 
-Use HFSS 2D/Q3D for the line cross-section when sufficient geometry is
-available, then 3D HFSS for pads, transitions and termination.  Extract:
+- `Z0(f)`, microwave index `n_RF(f)`, conductor/dielectric loss and current
+  density;
+- `S11`, `S21`, launch discontinuity and voltage along the 10-mm line;
+- metal-induced optical loss at the selected waveguide position;
+- RF-power and temperature limits for the pads, line and termination.
 
-- `Z0(f)`, microwave effective index and conductor/dielectric loss;
-- `S11`, `S21`, launch discontinuity and expected voltage along the line;
-- estimated `Vpi(f)` only after combining the RF field with the optical mode;
-- metal-induced optical loss.
+Combine the RF field with the anisotropic optical mode in COMSOL
+Electrostatics/Wave Optics or an equivalent overlap calculation to obtain
+`d(n_eff)/dV`, `VpiL` and `Vpi(f)`.  The travelling-wave response is evaluated
+with
 
-The supplied PM's width, gap and length are locked and cannot form an electrode
-DOE.  Add separate custom CPW coupons if low-`Vpi` optimization is required.
+`H(f) proportional to [1-exp(-(alpha_RF+j Delta_beta)L)] /(alpha_RF+j Delta_beta)`,
 
-Gate at 25 GHz: `|Z0-50 ohm| <= 5 ohm`, `S11 < -10 dB`, and a predicted drive
-that is safe for the probes and amplifier.  The PM `Vpi(f)` remains a measured
-quantity until sufficient internal geometry is available.
+where `Delta_beta = 2 pi f (n_RF-n_g)/c`.
+
+Next, design custom TE0/TE1 adiabatic multiplexers, crossings and loopbacks in
+EME/FDTD so the same 1550-nm optical signal traverses the active line four
+times.  The inter-pass delays must make the four phase increments coherent at
+25 GHz; they are not arbitrary compact meanders.  Verify insertion loss,
+crosstalk and fabrication corners before multiplying a single-pass `Vpi` by
+four in the system model.
+
+Gate at 25 GHz: `45 ohm <= Z0 <= 55 ohm`, `S11 < -10 dB`, acceptable RF loss,
+coherent four-pass addition and predicted effective `Vpi <= 2.5 V`.  The last
+number is a design target, not a guaranteed PDK value.
 
 ## Stage 3: SQPM racetrack geometry
 
@@ -106,8 +118,9 @@ For every integer solution, calculate:
 - intrinsic-Q bounds from straight, bend, transition and sidewall loss;
 - process-corner drift of the SQPM wavelength.
 
-Gate: keep the three smallest integer-phase solutions whose phase error remains
-inside the selected tolerance window across fabrication corners.
+Gate: keep two compact integer-phase SQPM solutions whose phase error remains
+inside the selected tolerance window across fabrication corners, plus one
+modal-phase-matching fallback using a different SH mode family.
 
 ## Stage 4: double resonance and thermal control
 
@@ -143,16 +156,24 @@ Gate: choose the smallest topology that gives measurable SH output without
 destroying pump buildup.  A common bus is preferred only if both external-Q
 targets can be met.
 
-## Stage 6: dual-wavelength travelling-wave PM
+## Stage 6: S3 dual-rail common-electrode modulator
 
-The standard 1550-nm PM is not a validated 775-nm device.  Design a custom
-waveguide/electrode section for S3 and compute separately
+Route a 1550-nm waveguide along one side of the GSG signal electrode and a
+separately optimized 775-nm waveguide along the other.  The opposite transverse
+RF-field signs change the relative comb phase but not the tooth spacing.  For
+each rail compute separately
 
 - 1550- and 775-nm optical-metal loss;
 - EO tensor projection and RF-field overlap;
 - `VpiL_1550(f)` and `VpiL_775(f)`;
 - RF phase velocity relative to both optical group indices;
-- phase mismatch and modulation roll-off along the 9-mm-class line.
+- phase mismatch and modulation roll-off along the 10-mm line.
+
+Use the same Q3D/HFSS RF model for both rails, but do not force one optical
+cross-section to support both wavelengths.  Evaluate whether one microwave
+index gives usable overlap bandwidth relative to both `n_g_1550` and
+`n_g_775`.  Use local EME/FDTD only for the ring extraction, WDM/tapers and
+rail transitions.
 
 The two modulation indices are
 
@@ -162,7 +183,9 @@ only after the appropriate frequency-dependent travelling-wave voltage is
 defined.  Do not assume `beta_775 = 2 beta_1550`.
 
 Gate: both wavelengths obtain a useful modulation index at 25 GHz with
-acceptable loss and RF power.
+acceptable metal loss and RF power.  If the 775-nm rail is too lossy or badly
+velocity-mismatched, split the electrodes rather than claiming a common-line
+solution.
 
 ## Stage 7: system-level spectrum model
 
@@ -198,8 +221,8 @@ EDA environments; the current general Python environment does not provide
 Final assembly and signoff must therefore run in the supported PDK environment
 and through the foundry's official DRC service.
 
-Gate: hierarchy, BlackBox keep-outs, connectivity, die boundary, probe/fibre
-clearance and official DRC all pass.
+Gate: custom-cell hierarchy, connectivity, die boundary, probe/fibre clearance
+and official DRC all pass.
 
 ## Measurement order
 

@@ -1,10 +1,10 @@
 {
-  "status": "pdk_aligned_compact_concept_not_for_fabrication",
+  "status": "fully_custom_compact_concept_not_for_fabrication",
   "revision": "2026-08-30",
   "architecture_decision": {
     "shg_method": "poling_free_spontaneous_quasi_phase_matched_racetrack",
     "integrated_order": "cw_shg_before_dual_wavelength_eo_modulation",
-    "reason": "keep the SHG resonator independent of the EO-comb repetition rate and minimize area"
+    "reason": "keep the SHG resonator independent of the EO-comb repetition rate, allow independent 1550/775 waveguide optimization, and minimize area"
   },
   "pdk": {
     "platform": "x_cut_tfln_on_sin",
@@ -20,20 +20,22 @@
     "metal_min_line_um": 2.0,
     "metal_min_space_um": 3.0,
     "rf_min_gap_um": 3.0,
-    "standard_pm_optical_length_mm": 9.1,
-    "standard_pm_bbox_length_mm": 9.58,
-    "standard_pm_bbox_width_mm": 0.37,
-    "standard_pm_775nm_qualified": false,
+    "use_supplied_device_blackboxes": false,
     "periodic_poling_supported": false,
     "shg_or_775nm_qualified": false
   },
-  "comb": {
+  "custom_eo_comb": {
     "center_wavelength_nm": 1550.0,
     "rf_frequency_ghz": 25.0,
     "first_pass_target_line_count": 15,
     "advanced_target_line_count": 40,
-    "mzi_pdk_vpi_l_upper_bound_v_cm": 3.0,
-    "standard_pm_vpi_is_unqualified": true
+    "travelling_wave_electrode_length_mm": 10.0,
+    "optical_passes": 4,
+    "target_impedance_ohm": 50.0,
+    "target_effective_vpi_v_at_25ghz": 2.5,
+    "starting_signal_width_um": 43.0,
+    "starting_electrode_waveguide_gap_um": 5.5,
+    "starting_geometry_source": "Zhang_Communications_Physics_2023_only_a_sweep_seed"
   },
   "poling_free_shg": {
     "preferred_mechanism": "spontaneous_quasi_phase_matching_in_x_cut_ln_racetrack",
@@ -52,24 +54,24 @@
   "structures": [
     {
       "id": "S1",
-      "name": "pdk_travelling_wave_1550_eo_comb",
-      "reserved_length_mm": 10.8,
-      "reserved_width_mm": 0.65,
-      "risk": "standard PM has no published Vpi metric in the supplied PDK"
+      "name": "custom_four_pass_travelling_wave_1550_eo_comb",
+      "reserved_length_mm": 12.0,
+      "reserved_width_mm": 0.9,
+      "risk": "custom RF line, TE0/TE1 multiplexers and loop delays must all close simultaneously"
     },
     {
       "id": "S2",
       "name": "poling_free_sqpm_shg_racetrack_doe",
       "reserved_length_mm": 2.2,
-      "reserved_width_mm": 0.65,
+      "reserved_width_mm": 0.7,
       "risk": "775 nm, SHG and double resonance are outside the qualified PDK scope"
     },
     {
       "id": "S3",
-      "name": "sqpm_shg_then_dual_wavelength_travelling_wave_eo_comb",
-      "reserved_length_mm": 11.8,
-      "reserved_width_mm": 0.75,
-      "risk": "requires a custom 1550/775 nm bus, coupler and phase modulator"
+      "name": "sqpm_shg_then_dual_rail_common_electrode_eo_comb",
+      "reserved_length_mm": 12.5,
+      "reserved_width_mm": 1.0,
+      "risk": "requires custom 1550/775 nm extraction, two optical rails and one RF velocity compromise"
     }
   ],
   "die": {

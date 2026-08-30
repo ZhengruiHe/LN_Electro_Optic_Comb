@@ -23,41 +23,42 @@
     </marker>
   </defs>
 
-  <text x="55" y="35" class="title">Compact PDK-aligned floorplan — effective area 21.8 mm × 3.8 mm</text>
+  <text x="55" y="35" class="title">Compact fully custom floorplan — effective area 21.8 mm × 3.8 mm</text>
   <text x="55" y="57" class="small">Functional boxes are scaled to the die; internal optical and RF details are schematic.</text>
 
   <rect x="55" y="78" width="1090" height="190" rx="4" class="die"/>
 
   <!-- Top lane: S1 -->
-  <rect x="75" y="94" width="540" height="33" rx="4" class="s1"/>
-  <text x="88" y="116" class="label">S1  PDK 1550-nm travelling-wave PM</text>
-  <path d="M100 120 H580" class="rf"/>
-  <path d="M82 103 H600" class="opt1550" marker-end="url(#arrow1550)"/>
-  <text x="430" y="116" class="tiny">10.8 × 0.65 mm</text>
-  <rect x="635" y="94" width="490" height="33" rx="4" class="test"/>
-  <text x="650" y="116" class="small">RF TRL · custom CPW DOE · passive PM reference</text>
+  <rect x="75" y="94" width="600" height="38" rx="4" class="s1"/>
+  <text x="88" y="116" class="label">S1  custom four-pass 1550-nm travelling-wave PM</text>
+  <path d="M115 124 H635" class="rf"/>
+  <path d="M82 102 H650" class="opt1550" marker-end="url(#arrow1550)"/>
+  <path d="M100 110 H625 M625 110 V118 H100 M100 118 V126 H625" class="opt1550"/>
+  <text x="515" y="128" class="tiny">12.0 × 0.9 mm</text>
+  <rect x="695" y="94" width="430" height="38" rx="4" class="test"/>
+  <text x="710" y="117" class="small">RF TRL · single-pass control · optical cutbacks</text>
 
   <!-- Middle lane: S3 -->
-  <rect x="75" y="145" width="590" height="38" rx="4" class="s3"/>
-  <text x="88" y="169" class="label">S3  SQPM-SHG → dual-band travelling-wave PM</text>
+  <rect x="75" y="148" width="625" height="44" rx="4" class="s3"/>
+  <text x="88" y="171" class="label">S3  SQPM-SHG → dual-rail common-electrode PM</text>
   <ellipse cx="155" cy="164" rx="42" ry="12" class="ring"/>
   <path d="M80 154 H620" class="opt1550" marker-end="url(#arrow1550)"/>
-  <path d="M185 176 H620" class="opt775" marker-end="url(#arrow775)"/>
-  <path d="M225 174 H590" class="rf"/>
-  <text x="490" y="178" class="tiny">11.8 × 0.75 mm</text>
-  <rect x="685" y="145" width="440" height="38" rx="4" class="test"/>
-  <text x="700" y="168" class="small">dual-band bends/couplers · heater · metal controls</text>
+  <path d="M185 184 H665" class="opt775" marker-end="url(#arrow775)"/>
+  <path d="M225 176 H640" class="rf"/>
+  <text x="555" y="190" class="tiny">12.5 × 1.0 mm</text>
+  <rect x="720" y="148" width="405" height="44" rx="4" class="test"/>
+  <text x="735" y="173" class="small">dual-colour routes · heater · metal controls</text>
 
   <!-- Bottom lane: S2 -->
-  <rect x="75" y="201" width="110" height="33" rx="4" class="s2"/>
-  <ellipse cx="100" cy="218" rx="17" ry="8" class="ring"/>
-  <ellipse cx="132" cy="218" rx="20" ry="8" class="ring"/>
-  <ellipse cx="166" cy="218" rx="22" ry="8" class="ring"/>
-  <text x="195" y="222" class="label">S2  three integer-phase SQPM racetracks — 2.2 × 0.65 mm</text>
-  <rect x="520" y="201" width="605" height="33" rx="4" class="test"/>
-  <text x="535" y="222" class="small">1550/775 cutbacks · unheated racetrack · alignment · spare tolerance cells</text>
+  <rect x="75" y="210" width="110" height="35" rx="4" class="s2"/>
+  <ellipse cx="100" cy="227" rx="17" ry="8" class="ring"/>
+  <ellipse cx="132" cy="227" rx="20" ry="8" class="ring"/>
+  <ellipse cx="166" cy="227" rx="22" ry="8" class="ring"/>
+  <text x="195" y="232" class="label">S2  two SQPM + one MPM racetrack — 2.2 × 0.7 mm</text>
+  <rect x="535" y="210" width="590" height="35" rx="4" class="test"/>
+  <text x="550" y="232" class="small">1550/775 cutbacks · unheated ring · alignment · spare cells</text>
 
   <text x="55" y="300" class="small">Red: 1550 nm · purple: 775 nm · dark: GSG RF.  Optical ports remain on left/right facets; final probe clearance uses the actual probe drawing.</text>
-  <text x="55" y="329" class="small">Area use: S1 7.02 mm² + S2 1.43 mm² + S3 8.85 mm² = 17.30 mm² (20.9% of the 82.84 mm² effective die).</text>
-  <text x="55" y="357" class="small">S2/S3 are custom 775-nm research cells outside the qualified PDK scope; this drawing is not a tapeout mask.</text>
+  <text x="55" y="329" class="small">Area use: S1 10.80 mm² + S2 1.54 mm² + S3 12.50 mm² = 24.84 mm² (30.0% of the 82.84 mm² effective die).</text>
+  <text x="55" y="357" class="small">All three structures are custom; the PDK supplies only stack/rules/die constraints. This drawing is not a tapeout mask.</text>
 </svg>
