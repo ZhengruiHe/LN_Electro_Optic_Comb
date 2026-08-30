@@ -19,6 +19,9 @@ double-resonant mode pair and thermal control.
 
 ## Key documents
 
+- [`docs/project_status_summary.md`](docs/project_status_summary.md): consolidated
+  Chinese status, physics, structure/area budget, simulation workflow, risks,
+  current software state, and next-step gates
 - [`docs/three_structure_layout_plan.md`](docs/three_structure_layout_plan.md):
   literature-backed architecture, dimensions, area budget, DOE, simulation,
   and measurement plan
