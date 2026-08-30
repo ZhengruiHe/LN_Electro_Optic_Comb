@@ -26,6 +26,11 @@ double-resonant mode pair and thermal control.
   compact 21.8 mm x 3.8 mm PDK-area floorplan
 - [`docs/simulation_roadmap.md`](docs/simulation_roadmap.md): staged execution
   gates from stack definition to tapeout
+- [`docs/hfss_electrode_simulation_plan.md`](docs/hfss_electrode_simulation_plan.md):
+  executable HFSS Driven Terminal model hierarchy, ports, boundaries, sweeps,
+  convergence and RF-to-EO extraction
+- [`docs/hfss_cpw_cross_section.svg`](docs/hfss_cpw_cross_section.svg): HFSS
+  GSG stack, boundary and dual-rail cross-section schematic
 - [`docs/pdk_compatibility_review.md`](docs/pdk_compatibility_review.md):
   supported components, custom 775-nm gaps, and foundry questions
 - [`models/system/design_targets.json`](models/system/design_targets.json):
@@ -47,3 +52,7 @@ excluded from Git. It is used only for the process stack, layer rules and die
 boundary; none of the three structures relies on a supplied device BlackBox.
 All dimensions are simulation starting points rather than fabrication-ready
 mask dimensions.
+
+PyAEDT is installed in the project-local `.venv`; reproduce it with
+`python -m pip install -r requirements-hfss.txt`. Ansys Electronics Desktop /
+HFSS itself is still required to create or solve the generated project.

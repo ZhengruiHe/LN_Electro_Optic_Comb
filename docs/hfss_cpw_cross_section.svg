@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <style>
+      .title { font: 700 25px Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 15px Arial, sans-serif; fill: #46526a; }
+      .label { font: 700 16px Arial, sans-serif; fill: #172033; }
+      .small { font: 14px Arial, sans-serif; fill: #26334d; }
+      .tiny { font: 12px Arial, sans-serif; fill: #26334d; }
+      .metal { fill: #e8b649; stroke: #8d6412; stroke-width: 2; }
+      .ln { fill: #ddc7f4; stroke: #77549f; stroke-width: 2; }
+      .oxide { fill: #dcecff; stroke: #4b83b8; stroke-width: 1.5; }
+      .sin { fill: #b7e2dd; stroke: #3b8c83; stroke-width: 1.5; }
+      .si { fill: #c5c9d1; stroke: #626a78; stroke-width: 2; }
+      .air { fill: #fbfdff; stroke: #68758e; stroke-width: 2; stroke-dasharray: 8 6; }
+      .rail1550 { fill: #dc326b; stroke: #84143c; stroke-width: 2; }
+      .rail775 { fill: #6f5bd1; stroke: #3e2a9d; stroke-width: 2; }
+      .efield { stroke: #d24b32; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dim { stroke: #3e4b63; stroke-width: 1.5; fill: none; marker-start: url(#dimarrow); marker-end: url(#dimarrow); }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#d24b32"/>
+    </marker>
+    <marker id="dimarrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse">
+      <path d="M7,0 L0,3.5 L7,7 z" fill="#3e4b63"/>
+    </marker>
+  </defs>
+
+  <text x="55" y="42" class="title">HFSS Driven-Terminal GSG cross-section for S1 and S3</text>
+  <text x="55" y="69" class="subtitle">Schematic only — all vertical dimensions, material losses and M1 properties must be replaced by foundry-confirmed values.</text>
+
+  <rect x="55" y="95" width="1090" height="465" rx="7" class="air"/>
+  <text x="78" y="122" class="small">Air region: X sides and port-back faces use Perfect H; thickness faces use Radiation. Verify padding convergence.</text>
+
+  <!-- stack -->
+  <rect x="120" y="465" width="960" height="75" class="si"/>
+  <text x="135" y="507" class="label">Handle substrate — material/thickness TBD</text>
+  <rect x="120" y="430" width="960" height="35" class="oxide"/>
+  <text x="135" y="452" class="small">Bottom oxide — TBD</text>
+  <rect x="120" y="406" width="960" height="24" class="sin"/>
+  <text x="135" y="423" class="tiny">300 nm SiN nominal; compare continuous and active-region removal</text>
+  <rect x="120" y="374" width="960" height="32" class="oxide"/>
+  <text x="135" y="395" class="tiny">~400 nm LN-SiN interlayer oxide</text>
+  <rect x="120" y="338" width="960" height="36" class="ln"/>
+  <text x="135" y="362" class="small">400 nm x-cut LN nominal — anisotropic RF tensor</text>
+  <rect x="120" y="300" width="960" height="38" class="oxide"/>
+  <text x="135" y="324" class="small">Top cladding — thickness/loss TBD</text>
+
+  <!-- GSG -->
+  <rect x="220" y="265" width="240" height="35" rx="2" class="metal"/>
+  <rect x="530" y="265" width="140" height="35" rx="2" class="metal"/>
+  <rect x="740" y="265" width="240" height="35" rx="2" class="metal"/>
+  <text x="318" y="287" class="label">G</text>
+  <text x="593" y="287" class="label">S</text>
+  <text x="838" y="287" class="label">G</text>
+
+  <!-- rails in both gaps -->
+  <rect x="487" y="345" width="20" height="16" rx="4" class="rail1550"/>
+  <rect x="693" y="345" width="20" height="16" rx="4" class="rail775"/>
+  <text x="424" y="382" class="tiny">S1: 1550 rail/pass</text>
+  <text x="385" y="398" class="tiny">S3: 1550 rail</text>
+  <text x="720" y="382" class="tiny">S1: 1550 rail/pass</text>
+  <text x="720" y="398" class="tiny">S3: 775 rail</text>
+
+  <!-- electric field arrows -->
+  <path d="M550 282 C530 302, 515 319, 500 342" class="efield"/>
+  <path d="M650 282 C670 302, 686 319, 701 342" class="efield"/>
+  <text x="510" y="225" class="small">Opposite transverse RF-field signs in the two gaps</text>
+
+  <!-- dimensions -->
+  <line x1="530" y1="245" x2="670" y2="245" class="dim"/>
+  <text x="565" y="235" class="tiny">Ws: 43 µm seed</text>
+  <line x1="460" y1="245" x2="530" y2="245" class="dim"/>
+  <text x="464" y="217" class="tiny">G: 5.5 µm seed</text>
+  <line x1="670" y1="245" x2="740" y2="245" class="dim"/>
+  <text x="674" y="217" class="tiny">G: 5.5 µm seed</text>
+
+  <!-- axes -->
+  <line x1="955" y1="180" x2="1030" y2="180" class="efield"/>
+  <line x1="955" y1="180" x2="955" y2="125" class="efield"/>
+  <text x="1038" y="185" class="small">global X = crystal z</text>
+  <text x="965" y="134" class="small">global Z = crystal x</text>
+  <text x="908" y="205" class="tiny">Propagation global Y = crystal y, out of page</text>
+
+  <text x="55" y="600" class="small">HFSS outputs: native terminal Zπ, S11/S21, α(f), β(f), nRF(f), and complex RF field per terminal voltage.</text>
+  <text x="55" y="630" class="small">MODE/COMSOL outputs: 1550/775 nm optical modes and group indices. Python combines both fields to obtain VπL and EO response.</text>
+  <text x="55" y="657" class="tiny">The drawn metal and optical-rail sizes are intentionally not to scale.</text>
+</svg>

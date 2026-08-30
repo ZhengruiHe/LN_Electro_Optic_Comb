@@ -61,11 +61,14 @@ nonlinear overlap and a 775-nm mode that can be routed and coupled.
 
 ## Stage 2: S1 custom four-pass travelling-wave modulator
 
-Start with a 10-mm GSG line and sweep its cross-section in HFSS 2D Extractor or
-Q3D.  The published 43-um signal width and 5.5-um electrode-waveguide gap are
-only initial sweep seeds; the actual metal thickness, oxide and PDK rules set
-the answer.  Then simulate the pads, taper, complete line and 50-ohm
-termination in 3D HFSS.  Extract:
+Start with paired 0.5-mm and 1.0-mm GSG lines in HFSS 3D Driven Terminal and
+sweep their cross-section. Q3D is only an optional isotropic pre-screen because
+Ansys does not support anisotropic materials in Q3D. The published 43-um signal
+width and 5.5-um signal-ground gap are only initial sweep seeds; the actual
+metal thickness, oxide and PDK rules set the answer. Then simulate the selected
+10-mm line, pads, tapers and external 50-ohm termination condition in 3D HFSS.
+The detailed project definition is in `docs/hfss_electrode_simulation_plan.md`.
+Extract:
 
 - `Z0(f)`, microwave index `n_RF(f)`, conductor/dielectric loss and current
   density;
@@ -169,8 +172,8 @@ each rail compute separately
 - RF phase velocity relative to both optical group indices;
 - phase mismatch and modulation roll-off along the 10-mm line.
 
-Use the same Q3D/HFSS RF model for both rails, but do not force one optical
-cross-section to support both wavelengths.  Evaluate whether one microwave
+Use the same anisotropic HFSS Driven Terminal RF model for both rails, but do
+not force one optical cross-section to support both wavelengths. Evaluate whether one microwave
 index gives usable overlap bandwidth relative to both `n_g_1550` and
 `n_g_775`.  Use local EME/FDTD only for the ring extraction, WDM/tapers and
 rail transitions.

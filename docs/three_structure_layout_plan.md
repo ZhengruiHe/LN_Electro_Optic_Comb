@@ -176,7 +176,7 @@ Do not simulate the entire chip in one full-3D model.
 | Level | Recommended tool | Model and required outputs |
 |---|---|---|
 | optical cross-section | Ansys Lumerical MODE FDE or COMSOL Wave Optics | anisotropic modes at 1550/775 nm, `n_eff`, `n_g`, confinement, bend loss, dispersion, EO/nonlinear overlaps and process corners |
-| RF cross-section | Ansys Q3D or HFSS 2D Extractor | `Z0(f)`, `n_RF(f)`, conductor/dielectric loss and field distribution versus GSG geometry |
+| RF cross-section | short-line HFSS 3D Driven Terminal; Q3D only for isotropic pre-screen | `Z0(f)`, `n_RF(f)`, conductor/dielectric loss and field distribution versus GSG geometry |
 | RF 3D details | HFSS | probe pad, taper, 10-mm line, termination, `S11/S21`, current density and launch discontinuity |
 | EO overlap | COMSOL Electrostatics plus optical modes, or field export/integration | `d(n_eff)/dV`, `VpiL`, metal loss and travelling-wave `Vpi(f)` for each rail |
 | optical transitions | EME/FDTD | TE0/TE1 multiplexer, crossing, loopback, ring/bus coupler, WDM/taper insertion loss and crosstalk |
@@ -185,10 +185,11 @@ Do not simulate the entire chip in one full-3D model.
 | system spectrum | Python | Bessel combs, measured RF voltage, SHG detuning, losses and separate `beta_1550/beta_775` |
 | layout/signoff | PDK-native EDA plus official DRC | custom hierarchy, layer booleans, connectivity, die/probe/facet clearances and official DRC |
 
-HFSS is therefore the correct tool for the microwave electrode, pads and
-termination, but it is not the tool for anisotropic optical modes or nonlinear
-SHG. A practical minimum toolchain is MODE + Q3D/HFSS + Python; COMSOL is most
-useful for EO overlap and thermal tuning.
+HFSS is therefore the correct tool for the anisotropic microwave electrode,
+pads and termination, but it is not the tool for optical modes or nonlinear
+SHG. A practical minimum toolchain is MODE + HFSS + Python; COMSOL is most
+useful for EO overlap and thermal tuning. Q3D can accelerate isotropic
+pre-screening but does not replace the final anisotropic HFSS solve.
 
 For the travelling-wave response use
 

@@ -34,7 +34,7 @@
     "target_impedance_ohm": 50.0,
     "target_effective_vpi_v_at_25ghz": 2.5,
     "starting_signal_width_um": 43.0,
-    "starting_electrode_waveguide_gap_um": 5.5,
+    "starting_signal_ground_gap_um": 5.5,
     "starting_geometry_source": "Zhang_Communications_Physics_2023_only_a_sweep_seed"
   },
   "poling_free_shg": {

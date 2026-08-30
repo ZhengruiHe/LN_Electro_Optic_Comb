@@ -1,0 +1,93 @@
+{
+  "status": "engineering_placeholder_model_not_for_final_solve",
+  "aedt": {
+    "version": "2024.1",
+    "solution_type": "Terminal",
+    "project_name": "LN_EO_Comb_RF",
+    "frequency_start_ghz": 1.0,
+    "frequency_stop_ghz": 50.0,
+    "field_frequency_ghz": 25.0,
+    "adaptive_frequencies_ghz": [5.0, 25.0, 50.0],
+    "maximum_delta_s": 0.01,
+    "maximum_passes": 12,
+    "minimum_converged_passes": 2
+  },
+  "coordinates": {
+    "global_x": "lateral_across_cpw_and_crystal_z_axis",
+    "global_y": "rf_and_optical_propagation_and_crystal_y_axis",
+    "global_z": "vertical_and_crystal_x_axis_for_x_cut_ln"
+  },
+  "stack_um": {
+    "model_width": 600.0,
+    "silicon_handle": 500.0,
+    "bottom_oxide": 2.0,
+    "sin": 0.3,
+    "ln_sin_interlayer_oxide": 0.4,
+    "ln": 0.4,
+    "top_cladding": 0.5,
+    "metal": 1.0
+  },
+  "materials": {
+    "silicon_relative_permittivity": 11.7,
+    "silicon_loss_tangent": 0.001,
+    "silica_relative_permittivity": 3.9,
+    "silica_loss_tangent": 0.0002,
+    "sin_relative_permittivity": 7.0,
+    "sin_loss_tangent": 0.001,
+    "ln_relative_permittivity_global_xyz": [28.0, 43.0, 43.0],
+    "ln_loss_tangent_global_xyz": [0.004, 0.004, 0.004],
+    "metal_conductivity_s_per_m": 41000000.0,
+    "metal_relative_permeability": 1.0,
+    "metal_rms_roughness_um": 0.0
+  },
+  "cpw_um": {
+    "signal_width": 43.0,
+    "signal_ground_gap": 5.5,
+    "ground_width": 100.0,
+    "short_line_lengths": [500.0, 1000.0],
+    "full_line_length": 10000.0,
+    "port_air_height": 250.0,
+    "air_side_padding": 300.0,
+    "air_top_padding": 300.0
+  },
+  "optical_rails_um": {
+    "s1_left_offset_from_signal_center": -24.25,
+    "s1_right_offset_from_signal_center": 24.25,
+    "s3_1550_offset_from_signal_center": -24.25,
+    "s3_775_offset_from_signal_center": 24.25,
+    "field_export_half_width": 3.0,
+    "field_export_half_height": 2.0
+  },
+  "screening_grid_um": {
+    "signal_width": [35.0, 43.0, 50.0, 60.0],
+    "signal_ground_gap": [4.0, 5.5, 7.0, 9.0],
+    "ground_width": [80.0, 100.0, 120.0]
+  },
+  "targets": {
+    "impedance_min_ohm": 45.0,
+    "impedance_max_ohm": 55.0,
+    "s11_max_db_20_to_30_ghz": -10.0,
+    "rf_loss_max_db_per_cm_at_25_ghz": 4.0,
+    "s1_abs_nrf_minus_ng1550_max": 0.1,
+    "s3_velocity_mismatch_penalty_max_db_at_25_ghz": 1.0
+  },
+  "required_foundry_inputs": {
+    "confirmed": false,
+    "items": [
+      "silicon_handle_or_actual_substrate_material_and_thickness",
+      "bottom_oxide_thickness",
+      "exact_ln1_ln2_etch_and_residual_slab",
+      "top_cladding_thickness_and_rf_loss",
+      "M1_material_thickness_conductivity_and_roughness",
+      "microwave_permittivity_and_loss_tensor_or_approved_reference",
+      "whether_sin_is_removed_below_the_active_ln_waveguide",
+      "actual_GSG_probe_pitch_and_pad_geometry",
+      "measurement_backside_boundary_or_chuck_condition"
+    ]
+  },
+  "placeholder_provenance": {
+    "43um_signal_5p5um_gap": "Zhang_et_al_Communications_Physics_2023_sweep_seed_only",
+    "ln_rf_tensor_28_43_43_and_loss_0p004": "literature_starting_values_require_foundry_or_measurement_confirmation",
+    "all_other_unconfirmed_stack_values": "engineering_placeholders_for_script_generation_only"
+  }
+}
