@@ -1,411 +1,375 @@
-# Three-Structure Layout Plan
+# Compact Three-Structure Layout Plan
 
-## 1. Decision summary
+## 1. Design decision
 
-The recommended first tapeout contains three non-resonant structures on a
-common x-cut MgO:TFLN platform:
+The baseline has been changed from a long PPLN waveguide cascade to a compact,
+poling-free SHG architecture compatible with the geometric envelope of the
+supplied x-cut TFLN-on-SiN PDK.
 
-| ID | Structure | Main purpose | Reserved box | Reserved area |
-|---|---|---|---:|---:|
-| S1 | Four-pass travelling-wave EO phase modulator | Low-`Vpi`, 25-GHz fundamental EO comb | 13.0 mm x 1.4 mm | 18.2 mm^2 |
-| S2 | Uniform/chirped PPLN-SHG DOE array | Independently verify QPM, efficiency, bandwidth, and tolerance | 7.0 mm x 1.6 mm | 11.2 mm^2 |
-| S3 | Travelling-wave EO comb + broadband PPLN cascade | Simultaneous 1550-nm and 775-nm comb output | 18.0 mm x 1.6 mm | 28.8 mm^2 |
+| ID | Structure | Reserved box | Area | Purpose |
+|---|---|---:|---:|---|
+| S1 | PDK 1550-nm travelling-wave PM EO comb | 10.8 mm x 0.65 mm | 7.02 mm2 | establish `Vpi(f)`, RF loss and EO-comb span using the lowest-risk PDK block |
+| S2 | poling-free SQPM SHG racetrack DOE | 2.2 mm x 0.65 mm | 1.43 mm2 | find an integer-phase, 1550/775-nm double-resonant solution without domain inversion |
+| S3 | SQPM-SHG first, then dual-band travelling-wave PM | 11.8 mm x 0.75 mm | 8.85 mm2 | generate 1550- and 775-nm CW carriers first, then create two EO combs with one RF tone |
 
-The three functional reservations total 58.2 mm^2. A preliminary
-20 mm x 6 mm die is 120 mm^2, leaving 61.8 mm^2 for facet margins, dicing
-streets, RF calibration, passive controls, alignment marks, heaters, and metal
-density fill. These are **floorplan reservations**, not measured paper
-footprints or final foundry-approved mask dimensions.
+The functional reservations total **17.30 mm2**, only **20.9%** of the PDK's
+21.8 mm x 3.8 mm effective design area.  The remaining area is intentionally
+kept for optical fanout, probe clearance, heaters, cutbacks, RF calibration,
+alignment marks, and tolerance variants.  These are planning boxes, not
+foundry-approved mask dimensions.
 
-The baseline die drawing is in `docs/three_structure_floorplan.svg`, and the
-machine-readable targets are in `models/system/design_targets.json`.
+The key system ordering is:
 
-## 2. Why these three structures
+`1550-nm CW -> poling-free SQPM racetrack -> 1550/775-nm CW -> travelling-wave phase modulation -> two EO combs`
 
-The order separates the two major technical risks:
+This ordering is smaller and physically cleaner than sending an already broad
+EO comb into a high-Q SHG ring.  Only the CW pump and one SH cavity mode must be
+aligned before modulation.  The ring FSR is not required to equal the 25-GHz
+RF frequency.
 
-- S1 answers whether the travelling-wave electrode and optical recycling
-  actually achieve low RF `Vpi` and a broad EO comb.
-- S2 answers whether domain inversion, dual-wavelength modes, and QPM work on
-  the selected wafer stack.
-- S3 tests only the final cascade after S1 and S2 can be diagnosed separately.
+## 2. What the supplied PDK changes
 
-This is lower risk than starting with a doubly resonant optical ring. In S3,
-there is no optical FSR to match. A single RF drive at `f_RF` produces the
-fundamental comb and the PPLN maps it to a second-harmonic comb with the same
-line spacing.
+The earlier all-LN 500-nm-film assumptions are obsolete.  The supplied process
+uses a nominal 400-nm x-cut TFLN film over a nominal 300-nm SiN layer, separated
+by about 400 nm of oxide, and provides a 21.8 mm x 3.8 mm effective design
+area.  The PDK is aimed at 1550 nm.
 
-If the fundamental field is
+The standard extraordinary-polarized Y-propagating phase-modulator BlackBox
+has a 9.1-mm optical length and a protected bounding box of approximately
+9.58 mm x 0.37 mm.  It is fixed geometry: length, signal width and electrode
+gap are not exposed as parameters.  The manual quotes greater than 67 GHz and
+less than 3 V.cm `VpiL` for the supplied MZI, but gives no corresponding
+`Vpi(f)` metric for the PM.  The MZI number is therefore not used as a claimed
+PM result.
 
-`E_w(t) = E0 exp[i*w0*t + i*beta sin(Omega*t)]`,
+No periodic-poling, SHG, 775-nm, visible coupler, nonlinear ring, or dual-band
+component is supplied.  S2 and S3 are custom exploratory cells and require
+written foundry permission.  The detailed compatibility gate is recorded in
+`docs/pdk_compatibility_review.md`.
 
-then ideal SHG gives
+## 3. Why spontaneous/cyclic phase matching is plausible
 
-`E_2w(t) proportional to E_w(t)^2`
+For an x-cut LN ring, the propagation direction rotates relative to the
+crystal optical axis.  An in-plane TE field therefore experiences an
+azimuth-dependent effective index and effective nonlinear coefficient.  One
+form used in the literature is
 
-`= E0^2 exp[i*2*w0*t + i*2*beta sin(Omega*t)]`.
+`d_eff(theta) = -d22 cos^3(theta) + 3 d31 cos^2(theta) sin(theta) + d33 sin^3(theta)`.
 
-Therefore the SH comb is centered at `2*w0`, has line spacing `Omega`, and has
-an ideal phase-modulation index of `2*beta`. Equivalently, all input tooth pairs
-`(n,m)` contribute through SHG/SFG at
-`2*w0 + (n+m)*Omega`; the allowed output grid is still spaced by `Omega`, not
-`2*Omega`.
+The sign and magnitude variation acts like a natural nonlinear grating.  A
+racetrack adds straight sections whose length can be chosen so that the phase
+accumulated in the arcs and straights repeats constructively.  In the notation
+used by the racetrack literature, candidate geometries are selected from
 
-## 3. Common fabrication platform
+`Delta_phi_straight = Delta_k L0 = m pi`
 
-### 3.1 Provisional stack
+and
 
-| Parameter | Preliminary value | Reason/status |
+`Delta_phi_arc = integral_0^pi Delta_k(theta) R dtheta = 2 N pi`.
+
+This is spontaneous quasi-phase matching (SQPM), closely related to cyclic
+phase matching.  It removes the fabricated domain grating, not the optical
+resonance requirements.
+
+For useful cavity-enhanced SHG, the selected modes still need
+
+`omega_SH ~= 2 omega_FF`
+
+within their loaded linewidths, adequate nonlinear overlap, the appropriate
+azimuthal selection rule, and usable coupling at both wavelengths.  Geometry
+and a heater provide coarse and fine tuning, respectively.
+
+## 4. Why the ring comes before the modulator
+
+If an EO comb enters a high-Q SHG ring, only the teeth that coincide with ring
+modes couple efficiently.  A 2024 CQPM microdisk experiment did demonstrate
+broadband SHG, but it explicitly reported that wideband-light coupling was
+inefficient and that the source repetition rate was not fully compatible with
+the cavity resonances over a wide range.  Its high CW efficiency and its
+wide wavelength tuning range must not be interpreted as simultaneous,
+uniform conversion of every tooth of a 25-GHz EO comb.
+
+Putting SHG first avoids that trap.  The ring produces two continuous-wave
+carriers.  A downstream travelling-wave PM driven at angular frequency
+`Omega` gives
+
+`E_w(t) = A_w exp[i omega t + i beta_w sin(Omega t)]`
+
+`E_2w(t) = A_2w exp[i 2 omega t + i beta_2w sin(Omega t)]`.
+
+Both spectra have line spacing `Omega/(2 pi)`.  Their modulation indices need
+not be equal; approximately, the shorter wavelength tends to accumulate more
+phase for the same index perturbation, but the actual ratio must be computed
+from the two optical modes and RF overlap.
+
+## 5. S1: compact 1550-nm travelling-wave EO comb
+
+### 5.1 First-tapeout baseline
+
+Use the standard PDK `PM_e_Y_1550_LN` BlackBox, the provided 1550-nm LN edge
+couplers, and a 50-ohm termination.  Reserve 10.8 mm x 0.65 mm, including the
+9.58 mm x 0.37 mm protected PM box, two approximately 0.52-mm edge-coupler
+allowances, and routing tolerance.
+
+This is smaller and lower risk than immediately recreating a custom four-pass
+device.  It is also diagnostic: the first measurements establish the actual
+PM `Vpi(f)`, RF loss, optical loss and phase-modulation index available from
+this foundry stack.
+
+### 5.2 Expected, not guaranteed, comb scale
+
+A published 1-cm single-pass TFLN phase modulator produced 15 lines at
+24.95 GHz and 28 dBm.  The same paper's custom four-pass optical-recycling
+device produced 47 lines, reduced RF power by about 15 times for an equivalent
+span, and achieved an effective RF `Vpi` of 1.90 V at 24.95 GHz.  Those results
+set a useful scale, but the PDK BlackBox is not that four-pass device.
+
+Use the following first-pass goals:
+
+| Quantity | Initial target | Status |
 |---|---:|---|
-| Substrate | x-cut MgO:LNOI | x-cut supports strong in-plane `r33`; MgO is preferred for visible-power robustness |
-| LN film | 500 nm | Common value demonstrated in the EO-comb and PPLN literature |
-| Ridge etch | 300 nm | Leaves a 200-nm slab and matches a published 1550/775-nm PPLN geometry |
-| BOX | 2.0 um SiO2 | Literature baseline |
-| Top cladding | 0.7-1.0 um SiO2 | Optical isolation from metal; final value is an RF/optical co-design variable |
-| Waveguide axis | Along LN y axis | Makes the dominant TE optical field and lateral RF field use the large EO tensor element |
-| EO waveguide width | Start at 1.0-1.3 um | Must be selected by the dual-wavelength optical-mode sweep |
-| PPLN waveguide width | 1.20 um nominal | Published 500-nm-film PPLN starting point; sweep required |
-| First-order QPM period | `Lambda0 = 3.70 um` nominal | Published starting point only; recalculate from the actual stack |
-| Domain duty cycle | 50% target | Maximum first-order Fourier component; include fabrication error |
-| Electrode metal | Au, 1.0-1.6 um target | Thicker than the 520-nm literature demonstration to reduce conductor loss if the process permits |
+| RF frequency | 25 GHz | chosen system point; sweep 10-40 GHz |
+| impedance | 50 ohm +/- 5 ohm | simulation/measurement gate |
+| return loss | `S11 < -10 dB` around 25 GHz | simulation/measurement gate |
+| EO lines | at least 15 observable lines at the available amplifier power | engineering target, not PDK guarantee |
+| `Vpi(f)` | measure, do not infer from MZI | mandatory result |
 
-The final common stack cannot be frozen from literature alone. Film thickness,
-etch depth, sidewall angle, cladding, MgO content, and temperature all shift
-the effective indices and QPM period.
+### 5.3 Low-`Vpi` upgrade
 
-### 3.2 Mandatory fabrication sequence
+If S1 does not provide enough modulation index, the next cell is a custom
+multi-pass travelling-wave PM.  It requires TE0/TE1 mode multiplexers and
+precise RF-delay matching that are not supplied by this PDK.  A custom CPW is
+also required because the PDK exposes no parameterized GSG travelling-wave
+electrode PCell.  This upgrade follows measured S1 data rather than being
+placed on the critical path of the first compact mask.
 
-1. Pattern temporary Cr/Au poling electrodes and invert the domains.
-2. Inspect domain fidelity using SH microscopy or a qualified equivalent.
-3. Remove the poling metal.
-4. Align and etch the optical waveguides inside the poled stripes.
-5. Deposit the top cladding.
-6. Form the permanent travelling-wave electrodes, probe pads, and optional
-   heaters.
+## 6. S2: poling-free SQPM racetrack DOE
 
-The PPLN interaction region must not retain the temporary poling fingers. The
-permanent EO electrode belongs in the unpoled modulation region. Keeping the
-functions spatially separated avoids RF-metal loss in the PPLN section and
-avoids EO sign cancellation across inverted domains.
+### 6.1 Selected structure
 
-## 4. S1: low-Vpi travelling-wave EO comb
+Use an x-cut LN micro-racetrack rather than a released microdisk.  The
+foundry process supports etched LN guides but does not advertise the pedestal
+release and chemo-mechanical-polishing process used by the highest-Q microdisk
+papers.  A ring is therefore the closest manufacturable implementation of the
+CPM physics, although its Q and efficiency may be substantially lower.
 
-### 4.1 Chosen architecture
+The closest published process-compatible geometry used a 129.03-um outer
+radius, 1-um top width and 0.8-um coupling gap, all above this PDK's geometric
+minimums.  It used 600-nm LN with a 380-nm etch, so none of its phase-compensation
+lengths may be copied to the present 400-nm stack.  The actual DOE radii and
+straight lengths must be integer-phase solutions of the two equations above,
+with `R >= 80 um`.  The 80, 129 and 160-um values used in the budget script are
+only scale points.  Their approximate FSRs also do not constrain the downstream
+25-GHz modulator.
 
-Use a non-resonant 10-mm, 50-ohm GSG travelling-wave electrode with four-pass
-optical recycling. TE0/TE1 mode multiplexers, one crossing, and loop-back
-waveguides make the optical field coherently traverse the same RF interaction
-region four times. The RF remains a normal two-port travelling wave and is
-terminated in 50 ohm.
+### 6.2 Minimal three-cell DOE
 
-This architecture is selected because a published TFLN device demonstrated:
+After the optical-mode sweep, place three integer-phase racetrack solutions
+inside 2.2 mm x 0.65 mm:
 
-- a 1-cm travelling-wave electrode;
-- 5.5-um electrode gap and 43-um signal width;
-- RF index about 2.30 and optical group index about 2.27;
-- effective RF `Vpi = 1.90 V` at 24.95 GHz;
-- 47 comb lines at 25 GHz using 28 dBm RF drive;
-- approximately 4 dB total on-chip loss for its 12-cm recycled optical path.
+- the smallest valid solution above the 80-um bend rule;
+- the solution nearest the literature-scale 129-um radius;
+- one larger-radius solution that improves mode density or tolerance;
+- a compact heater on every racetrack;
+- a simulated pulley-bus gap, never below the PDK's 0.30-um LN spacing rule;
+- one unheated passive reference and one straight dual-band guide in adjacent
+  control space.
 
-### 4.2 Preliminary layout values
+Do not freeze `w0` or the coupling geometry from a paper.  Solve the actual
+400-nm-film, two-etch, oxide-clad, SiN-underlayer cross-section at both
+1550 and 775 nm first.  The 775-nm mode will likely be higher order and is
+especially sensitive to etch depth, sidewall angle and residual SiN.
 
-| Item | Baseline | Sweep/control |
-|---|---:|---|
-| Physical electrode length | 10.0 mm | 5, 7.5, and 10 mm CPW coupons |
-| Optical passes | 4 | single-pass and double-pass controls |
-| RF center frequency | 25 GHz | characterize 5-40 GHz |
-| GSG signal width | 43 um starting point | RF optimizer changes this |
-| Waveguide-to-electrode gap | 5.5 um starting point | 4.5, 5.5, 6.5 um coupons if metal loss allows |
-| Target impedance | 50 ohm | +/-5 ohm acceptance at 25 GHz |
-| Target effective `Vpi` | <=2.5 V at 25 GHz | stretch goal <=2.0 V |
-| Target EO bandwidth | useful through >=35 GHz | characterize full 5-40 GHz band |
-| Core footprint | about 12 mm x 0.8 mm | literature-scale reference |
-| Reserved mask box | 13.0 mm x 1.4 mm | includes RF pads, optical bends, and keep-outs |
+### 6.3 Success criterion
 
-The 5.5-um gap is not automatically optimal. Reducing it lowers `Vpi` but can
-increase metal absorption and change impedance. Increasing electrode length
-also lowers `Vpi` but increases RF attenuation and the velocity-mismatch
-penalty. HFSS and the measured passive controls decide the final point.
+S2 succeeds when at least one cell shows all of the following:
 
-### 4.3 Expected comb behavior
+1. a reproducible 1550-nm resonance and measurable SH near 775 nm;
+2. quadratic low-power SH scaling;
+3. a heater-accessible double-resonance point;
+4. separately calibrated pump coupling and SH collection; and
+5. a measured thermal/photorefractive stability window.
 
-For a pure phase modulator, the line powers follow Bessel functions rather than
-forming a flat top. S1 is intended to prove low-power broad comb generation,
-not flatness. If a flat-top spectrum becomes a requirement, add a travelling-
-wave MZM before two phase modulators in a later mask; a 2025 TFLN experiment
-using one intensity modulator and two phase modulators reported over 70 lines
-within a 10-dB bandwidth and 5-25-GHz repetition-rate tuning.
+Maximum paper efficiency is not the first-mask criterion.
 
-## 5. S2: PPLN quasi-phase-matched SHG array
+## 7. S3: SHG first, dual-band EO modulation second
 
-### 5.1 Chosen architecture
+### 7.1 Optical path
 
-Use straight, non-resonant ridge waveguides with removable poling electrodes.
-The nominal interaction is type-0-like, using the strongest practical tensor
-combination allowed by the selected x-cut geometry. Start from a 1.20-um top
-width, 300-nm ridge, 200-nm slab, 700-nm cladding, and 3.70-um period, then
-recalculate with the full anisotropic LN model.
+`1550 input -> dual-band ring coupler -> CQPM/MPM ring -> residual 1550 + generated 775 -> dual-band travelling-wave PM -> common output -> external dichroic separation`
 
-The literature gives two important scale references:
+A common output and external dichroic filter minimize the first-chip area.  A
+two-bus ring may be substituted if a single bus cannot simultaneously extract
+the selected FF and SH modes.
 
-- a 4-mm-long, 75-um-wide poled region accommodated three ridge waveguides,
-  used an approximately 4.1-um period, reached 2600% W^-1 cm^-2 normalized
-  efficiency, and produced 117 mW at 775 nm from 220 mW on-chip pump;
-- another 500-nm-film geometry used a 1.20-um-wide waveguide, 300-nm ridge,
-  200-nm slab, 700-nm cladding, and a 3.70-um period.
+### 7.2 Reserved area
 
-The different periods are not contradictory; they arise from different film,
-waveguide, cladding, and modal dispersion.
+Reserve 11.8 mm x 0.75 mm:
 
-### 5.2 DOE inside the 7.0 mm x 1.6 mm block
+- up to 0.8 mm in length and 0.65 mm in width for the racetrack, heater and dual-band transition;
+- about 9.6 mm for the PDK-scale travelling-wave electrode envelope;
+- the remaining length for input/output tapering and isolation.
 
-Use 11 lanes at a nominal 120-um pitch:
+The standard PM BlackBox is qualified only at 1550 nm and cannot simply be
+declared dual-band.  S3 therefore needs a custom waveguide under a custom M1
+electrode with 1550- and 775-nm EO overlap, optical-metal loss, microwave
+index, and RF attenuation all simulated.  The PDK layer rules permit a custom
+drawing in principle; foundry approval is still required.
 
-- 7 period lanes:
-  `Lambda = Lambda0 + {-0.15,-0.10,-0.05,0,+0.05,+0.10,+0.15} um`,
-  with nominal width and 4-mm length;
-- 2 width lanes: `w = w0 - 0.10 um` and `w0 + 0.10 um`, with nominal period
-  and 4-mm length;
-- 2 length lanes: 2 mm and 6 mm, with nominal width and period;
-- place an unpoled 4-mm reference in the adjacent unused floorplan area.
+### 7.3 Why this produces two combs
 
-This is a center-plus-one-factor sweep, not a full factorial. Before mask
-release, set `Lambda0` from the measured wafer stack and eigenmode simulation;
-do not blindly retain 3.70 um.
+The same 25-GHz RF tone modulates both optical carriers after SHG.  The two
+comb centers are near 193 THz and 387 THz, while both tooth spacings are
+25 GHz.  There is no requirement that either comb spacing equal the SHG ring
+FSR because the sidebands are created outside the ring.
 
-### 5.3 Length and bandwidth choice
+## 8. Compact die floorplan
 
-For uniform QPM, an approximate intensity FWHM is
+Use three horizontal lanes inside the 21.8 mm x 3.8 mm effective region:
 
-`Delta f_FWHM ~= 0.442/(GVM*L)`.
+- top lane: S1 and RF calibration structures;
+- middle lane: S3 with clear GSG probe access;
+- bottom-left: S2 ring DOE;
+- bottom-right: 1550/775 straight guides, bend/coupler DOE, heater references,
+  CPW thru/reflect/line, and waveguide cutbacks.
 
-Using the 150 fs/mm group-velocity mismatch extracted in the high-efficiency
-PPLN experiment gives:
+Place optical interfaces on the left/right facets and RF probe pads so that a
+probe body does not collide with lensed fibers.  The final pad pitch must be
+set from the actual probe, not from the optical floorplan.
 
-| PPLN length | Estimated FWHM at 1550 nm | Low-depletion ideal conversion at 100 mW, using 2600% W^-1 cm^-2 |
-|---:|---:|---:|
-| 2 mm | 1.47 THz, about 11.8 nm | 10.4% |
-| 4 mm | 0.74 THz, about 5.9 nm | 41.6% |
-| 6 mm | 0.49 THz, about 3.9 nm | 93.6%, outside the safe low-depletion regime |
+## 9. Simulation route
 
-These are planning calculations, not guaranteed performance. Loss, duty-cycle
-error, photorefraction, coupling, pump depletion, nonuniformity, and actual GVM
-must be included in the final model. The standalone baseline is 4 mm because
-its purpose is maximum CW SHG efficiency; the 2-mm and 6-mm lanes identify the
-efficiency-bandwidth and uniformity tradeoff experimentally.
-
-## 6. S3: monolithic EO-comb-to-PPLN-SHG cascade
-
-No source identified in this survey demonstrates this exact monolithic
-combination of a four-pass travelling-wave TFLN EO comb and a 1550-to-775-nm
-PPLN section on the same die. The two component technologies are independently
-demonstrated, and system-level EO-comb-to-PPLN harmonic transfer has been
-demonstrated, but S3 itself is an engineering synthesis. Its main unresolved
-risks are the common-stack compromise, the EO-to-PPLN mode transition, and
-fabrication compatibility between domain poling and permanent RF metal.
-
-### 6.1 Optical and RF path
-
-`1550-nm CW input -> four-pass TW phase modulator -> adiabatic width/mode`
-
-`transition -> 2-mm PPLN -> co-propagating 1550/775-nm output`
-
-Use end-fire collection for the first mask. An on-chip 1550/775-nm
-demultiplexer is optional and should only be inserted after a dual-wavelength
-EME/FDTD design proves low loss and sufficient isolation. A simple external
-dichroic filter is less risky for the first measurement.
-
-### 6.2 Why the integrated PPLN is 2 mm
-
-A 47-line, 25-GHz comb occupies approximately
-
-`(47 - 1)*25 GHz = 1.15 THz`,
-
-which corresponds to about 9.2 nm near 1550 nm. A 4-mm uniform PPLN section is
-estimated to provide only about 5.9 nm FWHM for a 150-fs/mm GVM, so it would
-preferentially convert the center of the comb. A 2-mm section gives about
-11.8 nm FWHM and covers the planned comb with roughly 28% bandwidth margin.
-
-Therefore:
-
-- **S3 baseline:** 2-mm uniform PPLN, optimized for comb coverage;
-- **S2 efficiency reference:** 4-mm uniform PPLN;
-- **S2/S3 advanced coupon:** 4-mm weakly chirped PPLN, whose `Lambda(z)` is
-  generated from the simulated propagation constants rather than chosen by
-  an arbitrary linear chirp.
-
-### 6.3 Preliminary layout values
-
-| Item | Baseline |
-|---|---:|
-| EO block | 10-mm electrode, four optical passes |
-| EO-to-PPLN transition | 0.3-0.5 mm adiabatic starting length |
-| Integrated PPLN | 2.0 mm uniform first-order QPM |
-| Optical input/output fanout | about 1.5-2.0 mm total allowance |
-| Reserved box | 18.0 mm x 1.6 mm = 28.8 mm^2 |
-| Fundamental comb target | >=40 observable teeth near 1550 nm at 25 GHz |
-| SH comb target | same 25-GHz spacing, QPM-limited span near 775 nm |
-| On-chip pump for first test | 20-100 mW sweep, then increase under thermal/photorefractive monitoring |
-
-The integrated 2-mm PPLN has an ideal low-depletion conversion estimate of
-about 10.4% at 100 mW using the best published normalized efficiency. A first
-device achieving lower conversion can still validate the two-comb mechanism;
-the measured S2 efficiency should be used to predict S3 before comparison.
-
-## 7. Preliminary die floorplan
-
-Use a 20 mm x 6 mm die with all end-fire optical ports on the left and right
-facets. Put RF probe pads along the top edge to keep the probes clear of lensed
-fibers.
-
-- top row: S1, 13.0 mm x 1.4 mm;
-- middle row: S3, 18.0 mm x 1.6 mm;
-- bottom-left row: S2, 7.0 mm x 1.6 mm;
-- bottom-right free region: CPW thru/open/short, unpoled reference, mode-
-  multiplexer/crossing controls, and waveguide cutbacks.
-
-Keep at least 0.5 mm longitudinal facet margin before the first taper and use
-the foundry dicing-street rule in the transverse direction. The 20 mm x 6 mm
-die is a planning envelope; a foundry reticle or maximum die size can force a
-different arrangement.
-
-## 8. Required simulations and tools
-
-| Problem | Recommended tool | Model/output |
+| Stage | Tool | Required outputs |
 |---|---|---|
-| 1550/775 modes and dispersion | Lumerical MODE or COMSOL Wave Optics | `n_eff`, `n_g`, modes, GVM, overlap, sensitivity |
-| QPM period and SHG | MODE/COMSOL + Python coupled-wave model or pyChi | `Lambda`, efficiency, bandwidth, chirp, pump depletion |
-| CPW cross-section | HFSS 2D/Q3D or COMSOL | `Z0`, microwave index, loss, RF field overlap |
-| Full electrode/pads | 3D HFSS | `S11`, `S21`, discontinuities, RF heating proxy |
-| Mode multiplexer/crossing/taper | EME/FDTD | insertion loss, crosstalk, fabrication tolerance |
-| Full EO-SHG comb | Python/MATLAB | multi-line EO + SHG/SFG spectrum and power conservation |
-| GDS generation/check | KLayout or gdsfactory | hierarchy, connectivity, DRC-ready layout |
+| PDK geometry reconstruction | KLayout + foundry values | LN1/LN2 cross-sections, layer booleans, hierarchy |
+| two-colour modes | COMSOL Wave Optics or Lumerical MODE | anisotropic modes, `n_eff`, `n_g`, loss proxy, overlap, width/thickness corners |
+| ring double resonance | MODE/FEM + Python coupled-mode model | mode families, azimuthal selection, `2 omega` mismatch, FSRs, heater range |
+| dual-band coupler | 3D FDTD or EME | external Q at both wavelengths, parasitic-mode content, tolerance |
+| travelling-wave electrode | HFSS 2D/Q3D then 3D HFSS | `Z0`, RF index/loss, `S11/S21`, pad transition, EO overlap, optical-metal loss |
+| two-colour PM | optical modes + electrostatic/RF field integration | `VpiL` and modulation index at both wavelengths |
+| system spectrum | Python coupled-mode/Bessel model | CW SHG, two EO combs, power conservation, thermal detuning |
+| layout signoff | PDK-native EDA + official DRC | hierarchy, BlackBox keep-outs, connectivity and foundry DRC |
 
-HFSS is appropriate for the electrical structure, but it cannot replace the
-optical eigenmode, QPM, and nonlinear comb simulations.
+HFSS is appropriate for the electrical line, pads and microwave-optical
+velocity matching.  It cannot solve the anisotropic optical modes or nonlinear
+SHG cavity by itself.
 
-## 9. Verification and measurement matrix
+## 10. Mandatory measurement controls
 
 ### S1
 
-- RF `S11/S21` for the complete line and calibration coupons;
-- extracted RF loss and microwave index;
-- `Vpi(f)` from 5-40 GHz for single-, double-, and four-pass devices;
-- EO comb spectra versus RF frequency and power;
-- insertion loss separated into straight waveguide, mode multiplexers,
-  crossing, and loops.
+- RF thru/reflect/line coupons and de-embedded `S11/S21`;
+- optical cutbacks and a passive route matching the PM path;
+- `Vpi(f)` from 10-40 GHz;
+- EO spectrum versus RF power and optical wavelength.
 
 ### S2
 
-- SH power versus pump wavelength and power;
-- QPM center/FWHM versus period, width, length, and temperature;
-- normalized and absolute on-chip efficiency after coupling calibration;
-- domain duty cycle and longitudinal uniformity;
-- photorefractive drift or thermal bistability at 775-nm output.
+- ring transmission, loaded/intrinsic Q and heater tuning coefficient;
+- visible-scatter camera check followed by calibrated 775-nm extraction;
+- SH power versus detuning, pump power and heater power;
+- long-term drift, thermal bistability and photorefraction check.
 
 ### S3
 
-- simultaneous 1550-nm and 775-nm spectra;
-- exact RF spacing at both wavelengths;
-- SH line-to-line response relative to the S2 QPM transfer function;
-- power scaling, conversion, long-term drift, and thermal sensitivity;
-- coherence/phase-noise test only after the optical mechanism is verified.
+- spectra before and after the travelling-wave PM at both wavelengths;
+- exact 25-GHz tooth spacing at 1550 and 775 nm;
+- RF power-to-modulation-index curves for both colours;
+- a comparison against independently measured S1 and S2 transfer functions.
 
-### Minimum laboratory equipment
+## 11. Mask-release gates
 
-- 1520-1580-nm tunable CW laser, polarization controller, and calibrated
-  1550-nm power meter;
-- EDFA and variable attenuator for PPLN power sweeps, with an interlock or
-  conservative software limit during initial tests;
-- microwave synthesizer, amplifier, bias tee if required, 40-GHz-class VNA,
-  two compatible GSG probes, and a broadband 50-ohm termination;
-- telecom OSA and a visible OSA or scanning spectrometer whose resolution is
-  better than 25 GHz (about 0.05 nm at 775 nm) if individual SH teeth are to be
-  resolved;
-- 775-nm power meter/detector, dichroic filters, visible camera, and calibrated
-  775-nm coupling reference;
-- temperature-controlled stage and a top-view microscope suitable for
-  alignment and monitoring visible scatter.
+1. **Foundry gate:** written approval for custom 775-nm LN routing and visible
+   collection; exact etch/cladding/metal stack received.
+2. **Mode gate:** one FF/SH mode pair has adequate nonlinear overlap and a
+   double-resonance mismatch reachable by heater tuning across process corners.
+3. **Coupling gate:** one/two-bus design gives usable external Q at both
+   wavelengths without violating 0.30-um LN spacing.
+4. **RF gate:** S1 or the custom S3 line meets the 50-ohm, reflection, loss and
+   velocity-match targets at 25 GHz.
+5. **Dual-band PM gate:** computed `VpiL` and metal loss are acceptable at both
+   1550 and 775 nm.
+6. **Testability gate:** every critical block has an independent passive or
+   electrical control.
+7. **DRC gate:** official foundry DRC passes.  The PDK package does not contain
+   a complete automatic DRC deck, so local geometry checks are not signoff.
 
-Absolute on-chip SHG efficiency is not credible until input/output coupling at
-both wavelengths has been calibrated separately.
+## 12. Evidence and limits
 
-## 10. Mask-release gates
-
-1. **Foundry gate:** stack, poling, metal, probe, and dicing rules confirmed.
-2. **Optical gate:** a dual-wavelength mode pair with fabricable QPM period and
-   acceptable overlap is selected.
-3. **RF gate:** complete 3D electrode meets impedance, reflection, loss,
-   velocity-match, and `Vpi` targets.
-4. **Bandwidth gate:** S3 PPLN covers the simulated S1 comb span with at least
-   20% FWHM margin.
-5. **Tolerance gate:** period/width/thickness/temperature corners remain inside
-   the DOE and available heater tuning.
-6. **Testability gate:** every critical building block has an independent
-   control and an accessible optical or RF port.
-7. **DRC gate:** official foundry DRC passes; project-level geometry checks are
-   not a substitute.
-
-## 11. Main risks and mitigations
-
-| Risk | Consequence | Mitigation in this plan |
-|---|---|---|
-| PPLN bandwidth narrower than the EO comb | Only central SH teeth survive | 2-mm S3 baseline; simulated chirped coupon; explicit bandwidth gate |
-| Domain nonuniformity | Distorted QPM curve and reduced efficiency | 2/4/6-mm lanes, period sweep, SH microscopy |
-| Four-pass phase error or mode crosstalk | Low effective modulation index | single/double/four-pass controls and isolated mux/crossing coupons |
-| RF attenuation or mismatch | `Vpi` rises at 25 GHz | thick metal if allowed, HFSS pads/line/termination co-design, TRL coupons |
-| Metal absorption | High insertion loss | gap sweep and optical-metal loss simulation |
-| Photorefraction at 775 nm | drift or instability | MgO:LNOI preference, start at low power, temperature monitor/control |
-| Facet coupling at two wavelengths | uncertain absolute efficiency | calibrated 1550/775 coupling references; external dichroic first |
-| Literature dimensions copied to a different stack | QPM/RF miss | use all values only as starting points and enforce simulation gates |
-
-## 12. Evidence table
-
-The following are source-backed facts used to set the starting scale; all
-reserved boxes and performance gates above are engineering proposals.
+### Source-backed results
 
 1. Ke Zhang et al., *A power-efficient integrated lithium niobate
    electro-optic comb generator*, Communications Physics 6, 17 (2023),
-   https://www.nature.com/articles/s42005-023-01137-9 . Four-pass optical
-   recycling, 1-cm travelling-wave electrode, 1.90-V effective RF `Vpi` at
-   24.95 GHz, and 47 lines at 25 GHz and 28 dBm.
-2. Zixuan Huang et al., *High-Efficiency and Ultra-Compact Thin-Film Lithium
-   Niobate Phase Modulator Based on a Dual-Noncentered Waveguides Recycling
-   Structure*, JLT 44, 4120-4128 (2026),
-   https://opg.optica.org/jlt/abstract.cfm?uri=jlt-44-10-4120 . Demonstrates a
-   compact travelling-wave recycling alternative and tabulates the
-   approximately 0.8 mm x 12 mm footprint scale of the 1.9-Vcm multi-pass
-   predecessor.
-3. Cheng Wang et al., *Ultrahigh-efficiency second-harmonic generation in
-   nanophotonic PPLN waveguides*, Optica 5, 1438-1441 (2018),
-   https://arxiv.org/abs/1810.09235 . Reports 4-mm PPLN, 2600% W^-1 cm^-2,
-   approximately 4.1-um period, 150-fs/mm GVM, and 53% absolute conversion.
-4. Hubert S. Stokowski et al., *Integrated frequency-modulated optical parametric
-   oscillator*, Nature 627, 95-100 (2024),
-   https://www.nature.com/articles/s41586-024-07071-2 . Extended data gives the
-   1.20-um width, 300-nm ridge, 200-nm slab, 700-nm cladding, and 3.70-um PPLN
-   starting geometry.
-5. Markus Ludwig et al., *Ultraviolet astronomical spectrograph calibration with
-   laser frequency combs from nanophotonic lithium niobate waveguides*, Nature
-   Communications 15, 7614 (2024),
-   https://www.nature.com/articles/s41467-024-51560-x . Demonstrates that an
-   18-GHz EO comb can be transferred through tailored PPLN harmonic generation
-   and explicitly uses chirped poling for broadband QPM.
-6. Hao Wen et al., *Broadband and flat-top integrated electro-optic frequency
-   combs on a thin-film lithium niobate platform*, Optics Letters 50,
-   3692-3695 (2025),
-   https://opg.optica.org/ol/abstract.cfm?URI=ol-50-11-3692 . One intensity
-   modulator plus two phase modulators produced more than 70 lines within a
-   10-dB bandwidth, supporting the later flat-top upgrade path.
+   https://www.nature.com/articles/s42005-023-01137-9 .  A 1-cm, four-pass
+   travelling-wave device produced 47 lines at 25 GHz and 28 dBm with an
+   effective RF `Vpi` of 1.90 V at 24.95 GHz; its single-pass control produced
+   15 lines under the same drive.
+2. Tingge Yuan et al., *Chip-scale spontaneous quasi-phase matched second
+   harmonic generation in a micro-racetrack resonator*, Science China Physics,
+   Mechanics & Astronomy 66, 284211 (2023),
+   https://doi.org/10.1007/s11433-023-2145-6 .  The x-cut 600-nm-LN device used
+   a 129.03-um outer radius and 81.8/245.4-um straight sections for 37th/111th
+   order SQPM.  Its core boxes were about 0.34 x 0.258 mm and
+   0.503 x 0.258 mm, while measured normalized on-chip efficiencies were only
+   `1.01e-4/W` and `0.43e-4/W`.  It is the closest geometric reference and also
+   shows the efficiency cost of high-order SQPM.
+3. Jintian Lin et al., *Broadband Quasi-Phase-Matched Harmonic Generation in
+   an On-Chip Monocrystalline Lithium Niobate Microdisk Resonator*, Physical
+   Review Letters 122, 173903 (2019),
+   https://doi.org/10.1103/PhysRevLett.122.173903 .  An x-cut approximately
+   30-um-diameter microdisk used natural cyclic QPM and reported normalized SHG
+   efficiency up to 9.9%/mW without domain engineering.
+4. Jiefu Zhu et al., *Broadband second-harmonic generation in thin-film
+   lithium niobate microdisk via cyclic quasi-phase matching*, Chinese Optics
+   Letters 22, 031903 (2024),
+   https://doi.org/10.3788/COL202422.031903 .  A roughly 100-um-diameter,
+   550-nm-thick x-cut microdisk reported loaded Q values of `3.32e7` near the
+   pump and `2.83e6` near the SH, 15.2%/mW CW normalized efficiency, and SHG
+   over a pump scan wider than 100 nm.  It also documents the much lower
+   conversion of broadband sources and the comb-spacing/cavity-resonance
+   mismatch limitation.
+5. Rui Luo et al., *Optical Parametric Generation in a Lithium Niobate
+   Microring with Modal Phase Matching*, Physical Review Applied 11, 034026
+   (2019), https://doi.org/10.1103/PhysRevApplied.11.034026 .  A 50-um-radius
+   Z-cut ring used TM00/TM20 modal phase matching and reported 1500%/W SHG;
+   it is an alternative mechanism, not a geometry to copy into this x-cut
+   400-nm PDK.
+6. Xingze Song et al., *Broadband birefringence phase-matched second-harmonic
+   generation in a slightly curved lithium niobate-on-insulator waveguide*,
+   Applied Optics 65, 1511-1515 (2026),
+   https://doi.org/10.1364/AO.586578 .  A poling-free x-cut curved-waveguide
+   method exceeded 100-nm bandwidth but reported only 1.38%/(W.cm2)
+   normalized efficiency; it is a broadband pulsed-light fallback rather than
+   the preferred CW resonant converter.
+
+### Engineering inferences
+
+- The final racetrack radii are integer-phase solutions from the actual PDK
+  stack; the 80/129/160-um values are only scale points.
+- The 17.30-mm2 total reservation is an area budget derived from the supplied
+  BlackBox bounds and routing margins, not a measured paper footprint.
+- S3's common-bus dual-band modulation is physically plausible, but no cited
+  paper or supplied PDK component demonstrates this exact monolithic sequence.
+
+### Unknowns
+
+- Exact LN etch depths, sidewall angle, top-cladding thickness and M1 RF
+  properties are missing.
+- The foundry has not qualified Q, loss, photorefraction, couplers, or power
+  handling at 775 nm.
+- The final double-resonant mode pair, ring width, bus gap, heater range and
+  dual-band `VpiL` cannot be specified before simulation.
 
 ## 13. Current conclusion
 
-The three-structure tapeout is physically plausible and experimentally
-diagnosable. The most defensible first integrated device is not a doubly
-resonant ring; it is a four-pass, low-`Vpi` travelling-wave phase modulator
-followed by a short broadband PPLN section. The approximate 20 mm x 6 mm die
-envelope is sufficient for all three functional blocks plus essential controls.
+The user's proposed non-PPLN direction is physically sound and materially
+reduces the layout area.  The most defensible compact architecture is not to
+modulate inside the SHG ring and not to send a broad EO comb into it.  It is to
+generate 1550/775-nm CW light in a small poling-free resonator and then use a
+separate travelling-wave phase modulator.  This removes the RF-to-ring-FSR
+constraint while preserving identical comb spacing at the two optical
+carriers.
 
-The dimensions are now detailed enough to start optical and RF simulation, but
-not yet to fabricate. The next irreversible step is to obtain the actual
-foundry stack/design rules and run the Stage 1 dual-wavelength mode sweep.
+The design is ready for cross-section reconstruction and optical/RF
+simulation, but S2 and S3 remain outside the qualified PDK scope and are not
+ready for fabrication.

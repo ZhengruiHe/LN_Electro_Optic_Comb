@@ -1,62 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
   <defs>
     <style>
       .title { font: 700 24px Arial, sans-serif; fill: #172033; }
-      .label { font: 700 17px Arial, sans-serif; fill: #172033; }
-      .small { font: 14px Arial, sans-serif; fill: #26334d; }
-      .tiny { font: 12px Arial, sans-serif; fill: #26334d; }
+      .label { font: 700 15px Arial, sans-serif; fill: #172033; }
+      .small { font: 13px Arial, sans-serif; fill: #26334d; }
+      .tiny { font: 11px Arial, sans-serif; fill: #26334d; }
       .die { fill: #fafbfe; stroke: #172033; stroke-width: 3; }
       .s1 { fill: #dcecff; stroke: #2878c8; stroke-width: 2; }
       .s2 { fill: #e5f6df; stroke: #4d9a3c; stroke-width: 2; }
       .s3 { fill: #fce5d6; stroke: #d7772c; stroke-width: 2; }
       .test { fill: #eeeef4; stroke: #787c90; stroke-width: 2; stroke-dasharray: 7 5; }
-      .opt { stroke: #c7265e; stroke-width: 4; fill: none; }
-      .rf { stroke: #3d4a66; stroke-width: 9; fill: none; }
-      .ppln { fill: url(#stripes); stroke: #8d5f13; stroke-width: 2; }
+      .opt1550 { stroke: #c7265e; stroke-width: 3; fill: none; }
+      .opt775 { stroke: #6552c7; stroke-width: 3; fill: none; }
+      .rf { stroke: #3d4a66; stroke-width: 7; fill: none; }
+      .ring { fill: none; stroke: #4d9a3c; stroke-width: 5; }
     </style>
-    <pattern id="stripes" width="10" height="10" patternUnits="userSpaceOnUse">
-      <rect width="5" height="10" fill="#ffd77d"/>
-      <rect x="5" width="5" height="10" fill="#fff2bd"/>
-    </pattern>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+    <marker id="arrow1550" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M0,0 L8,4 L0,8 z" fill="#c7265e"/>
+    </marker>
+    <marker id="arrow775" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#6552c7"/>
     </marker>
   </defs>
 
-  <text x="60" y="34" class="title">Preliminary 20 mm × 6 mm TFLN die — not to scale in feature detail</text>
-  <rect x="60" y="55" width="1080" height="324" rx="4" class="die"/>
+  <text x="55" y="35" class="title">Compact PDK-aligned floorplan — effective area 21.8 mm × 3.8 mm</text>
+  <text x="55" y="57" class="small">Functional boxes are scaled to the die; internal optical and RF details are schematic.</text>
 
-  <rect x="87" y="75" width="702" height="76" rx="5" class="s1"/>
-  <text x="105" y="101" class="label">S1 — four-pass travelling-wave EO comb</text>
-  <path d="M130 126 H742" class="rf"/>
-  <path d="M95 142 H760" class="opt" marker-end="url(#arrow)"/>
-  <text x="505" y="101" class="small">13.0 × 1.4 mm reserved</text>
-  <rect x="99" y="113" width="50" height="26" rx="3" fill="#ffffff" stroke="#3d4a66"/>
-  <text x="108" y="131" class="tiny">GSG</text>
-  <rect x="718" y="113" width="50" height="26" rx="3" fill="#ffffff" stroke="#3d4a66"/>
-  <text x="727" y="131" class="tiny">GSG</text>
+  <rect x="55" y="78" width="1090" height="190" rx="4" class="die"/>
 
-  <rect x="87" y="166" width="972" height="86" rx="5" class="s3"/>
-  <text x="105" y="193" class="label">S3 — EO comb → broadband PPLN-SHG cascade</text>
-  <path d="M105 226 H955" class="opt" marker-end="url(#arrow)"/>
-  <path d="M140 210 H700" class="rf"/>
-  <rect x="770" y="207" width="130" height="38" rx="3" class="ppln"/>
-  <text x="785" y="232" class="small">2 mm PPLN</text>
-  <text x="872" y="193" class="small">18.0 × 1.6 mm reserved</text>
+  <!-- Top lane: S1 -->
+  <rect x="75" y="94" width="540" height="33" rx="4" class="s1"/>
+  <text x="88" y="116" class="label">S1  PDK 1550-nm travelling-wave PM</text>
+  <path d="M100 120 H580" class="rf"/>
+  <path d="M82 103 H600" class="opt1550" marker-end="url(#arrow1550)"/>
+  <text x="430" y="116" class="tiny">10.8 × 0.65 mm</text>
+  <rect x="635" y="94" width="490" height="33" rx="4" class="test"/>
+  <text x="650" y="116" class="small">RF TRL · custom CPW DOE · passive PM reference</text>
 
-  <rect x="87" y="267" width="378" height="86" rx="5" class="s2"/>
-  <text x="105" y="294" class="label">S2 — PPLN-SHG DOE</text>
-  <g class="ppln">
-    <rect x="125" y="310" width="270" height="5"/>
-    <rect x="125" y="319" width="270" height="5"/>
-    <rect x="125" y="328" width="270" height="5"/>
-    <rect x="125" y="337" width="270" height="5"/>
-  </g>
-  <text x="315" y="294" class="small">7.0 × 1.6 mm</text>
+  <!-- Middle lane: S3 -->
+  <rect x="75" y="145" width="590" height="38" rx="4" class="s3"/>
+  <text x="88" y="169" class="label">S3  SQPM-SHG → dual-band travelling-wave PM</text>
+  <ellipse cx="155" cy="164" rx="42" ry="12" class="ring"/>
+  <path d="M80 154 H620" class="opt1550" marker-end="url(#arrow1550)"/>
+  <path d="M185 176 H620" class="opt775" marker-end="url(#arrow775)"/>
+  <path d="M225 174 H590" class="rf"/>
+  <text x="490" y="178" class="tiny">11.8 × 0.75 mm</text>
+  <rect x="685" y="145" width="440" height="38" rx="4" class="test"/>
+  <text x="700" y="168" class="small">dual-band bends/couplers · heater · metal controls</text>
 
-  <rect x="486" y="267" width="573" height="86" rx="5" class="test"/>
-  <text x="504" y="295" class="label">Controls and calibration</text>
-  <text x="504" y="322" class="small">CPW thru/open/short · unpoled WG · mux/crossing · cutbacks</text>
+  <!-- Bottom lane: S2 -->
+  <rect x="75" y="201" width="110" height="33" rx="4" class="s2"/>
+  <ellipse cx="100" cy="218" rx="17" ry="8" class="ring"/>
+  <ellipse cx="132" cy="218" rx="20" ry="8" class="ring"/>
+  <ellipse cx="166" cy="218" rx="22" ry="8" class="ring"/>
+  <text x="195" y="222" class="label">S2  three integer-phase SQPM racetracks — 2.2 × 0.65 mm</text>
+  <rect x="520" y="201" width="605" height="33" rx="4" class="test"/>
+  <text x="535" y="222" class="small">1550/775 cutbacks · unheated racetrack · alignment · spare tolerance cells</text>
 
-  <text x="60" y="410" class="small">Optical ports: left/right facets · RF pads: top-side probe access · 0.5 mm facet margins retained</text>
+  <text x="55" y="300" class="small">Red: 1550 nm · purple: 775 nm · dark: GSG RF.  Optical ports remain on left/right facets; final probe clearance uses the actual probe drawing.</text>
+  <text x="55" y="329" class="small">Area use: S1 7.02 mm² + S2 1.43 mm² + S3 8.85 mm² = 17.30 mm² (20.9% of the 82.84 mm² effective die).</text>
+  <text x="55" y="357" class="small">S2/S3 are custom 775-nm research cells outside the qualified PDK scope; this drawing is not a tapeout mask.</text>
 </svg>

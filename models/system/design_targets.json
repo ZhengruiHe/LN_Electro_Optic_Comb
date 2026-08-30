@@ -1,60 +1,87 @@
 {
-  "status": "preliminary_literature_backed_not_for_fabrication",
+  "status": "pdk_aligned_compact_concept_not_for_fabrication",
   "revision": "2026-08-30",
-  "common_stack": {
-    "substrate": "x-cut MgO:LNOI",
-    "ln_film_nm": 500,
-    "ridge_etch_nm": 300,
-    "slab_nm": 200,
-    "box_nm": 2000,
-    "top_cladding_nm": 700,
-    "ppln_nominal_top_width_um": 1.2,
-    "ppln_nominal_period_um": 3.7
+  "architecture_decision": {
+    "shg_method": "poling_free_spontaneous_quasi_phase_matched_racetrack",
+    "integrated_order": "cw_shg_before_dual_wavelength_eo_modulation",
+    "reason": "keep the SHG resonator independent of the EO-comb repetition rate and minimize area"
+  },
+  "pdk": {
+    "platform": "x_cut_tfln_on_sin",
+    "qualified_center_wavelength_nm": 1550.0,
+    "ln_film_nm": 400,
+    "sin_film_nm": 300,
+    "ln_sin_interlayer_oxide_nm": 400,
+    "effective_die_length_mm": 21.8,
+    "effective_die_width_mm": 3.8,
+    "ln_min_line_um": 0.3,
+    "ln_min_space_um": 0.3,
+    "ln_min_bend_radius_um": 80.0,
+    "metal_min_line_um": 2.0,
+    "metal_min_space_um": 3.0,
+    "rf_min_gap_um": 3.0,
+    "standard_pm_optical_length_mm": 9.1,
+    "standard_pm_bbox_length_mm": 9.58,
+    "standard_pm_bbox_width_mm": 0.37,
+    "standard_pm_775nm_qualified": false,
+    "periodic_poling_supported": false,
+    "shg_or_775nm_qualified": false
   },
   "comb": {
     "center_wavelength_nm": 1550.0,
     "rf_frequency_ghz": 25.0,
-    "target_line_count": 47,
-    "target_effective_vpi_v": 2.5,
-    "stretch_effective_vpi_v": 2.0
+    "first_pass_target_line_count": 15,
+    "advanced_target_line_count": 40,
+    "mzi_pdk_vpi_l_upper_bound_v_cm": 3.0,
+    "standard_pm_vpi_is_unqualified": true
   },
-  "ppln": {
-    "reference_normalized_efficiency_percent_per_w_cm2": 2600.0,
-    "reference_gvm_fs_per_mm": 150.0,
-    "standalone_length_mm": 4.0,
-    "integrated_length_mm": 2.0,
-    "doe_lengths_mm": [2.0, 4.0, 6.0],
-    "period_offsets_um": [-0.15, -0.10, -0.05, 0.0, 0.05, 0.10, 0.15],
-    "width_offsets_um": [-0.10, 0.0, 0.10]
+  "poling_free_shg": {
+    "preferred_mechanism": "spontaneous_quasi_phase_matching_in_x_cut_ln_racetrack",
+    "backup_mechanism": "cyclic_or_modal_phase_matching",
+    "pump_wavelength_nm": 1550.0,
+    "second_harmonic_wavelength_nm": 775.0,
+    "pdk_minimum_radius_um": 80.0,
+    "literature_reference_outer_radius_um": 129.03,
+    "radius_scale_points_um": [80.0, 129.03, 160.0],
+    "mask_radius_selection": "choose_integer_phase_solutions_from_the_actual_400nm_stack",
+    "preliminary_group_index": 2.2,
+    "required_mode_condition": "abs(omega_sh_mode-2*omega_ff_mode) within loaded linewidth after tuning",
+    "requires_dual_band_coupler": true,
+    "requires_heater": true
   },
   "structures": [
     {
       "id": "S1",
-      "name": "four_pass_travelling_wave_eo_comb",
-      "core_length_mm": 12.0,
-      "core_width_mm": 0.8,
-      "reserved_length_mm": 13.0,
-      "reserved_width_mm": 1.4
+      "name": "pdk_travelling_wave_1550_eo_comb",
+      "reserved_length_mm": 10.8,
+      "reserved_width_mm": 0.65,
+      "risk": "standard PM has no published Vpi metric in the supplied PDK"
     },
     {
       "id": "S2",
-      "name": "ppln_shg_doe_array",
-      "core_length_mm": 6.0,
-      "core_width_mm": 1.32,
-      "reserved_length_mm": 7.0,
-      "reserved_width_mm": 1.6
+      "name": "poling_free_sqpm_shg_racetrack_doe",
+      "reserved_length_mm": 2.2,
+      "reserved_width_mm": 0.65,
+      "risk": "775 nm, SHG and double resonance are outside the qualified PDK scope"
     },
     {
       "id": "S3",
-      "name": "eo_comb_to_ppln_shg_cascade",
-      "core_length_mm": 16.0,
-      "core_width_mm": 0.9,
-      "reserved_length_mm": 18.0,
-      "reserved_width_mm": 1.6
+      "name": "sqpm_shg_then_dual_wavelength_travelling_wave_eo_comb",
+      "reserved_length_mm": 11.8,
+      "reserved_width_mm": 0.75,
+      "risk": "requires a custom 1550/775 nm bus, coupler and phase modulator"
     }
   ],
   "die": {
-    "length_mm": 20.0,
-    "width_mm": 6.0
-  }
+    "length_mm": 21.8,
+    "width_mm": 3.8
+  },
+  "release_blockers": [
+    "foundry confirmation of custom 775 nm routing and visible-light handling",
+    "LN1 and LN2 etch depths, sidewall angle and final top-cladding thickness",
+    "M1 material, thickness and RF conductivity",
+    "simulated and measured dual resonance for the selected SHG mode pair",
+    "dual-band coupling and EO overlap validation",
+    "official foundry DRC"
+  ]
 }

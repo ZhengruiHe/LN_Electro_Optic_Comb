@@ -45,3 +45,5 @@ temp/
 *.npz
 *.mat
 
+# Foundry PDK and NDA-protected source packages (local use only)
+南智光电流片说明-*.zip
