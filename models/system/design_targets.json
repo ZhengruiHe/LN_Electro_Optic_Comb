@@ -1,0 +1,60 @@
+{
+  "status": "preliminary_literature_backed_not_for_fabrication",
+  "revision": "2026-08-30",
+  "common_stack": {
+    "substrate": "x-cut MgO:LNOI",
+    "ln_film_nm": 500,
+    "ridge_etch_nm": 300,
+    "slab_nm": 200,
+    "box_nm": 2000,
+    "top_cladding_nm": 700,
+    "ppln_nominal_top_width_um": 1.2,
+    "ppln_nominal_period_um": 3.7
+  },
+  "comb": {
+    "center_wavelength_nm": 1550.0,
+    "rf_frequency_ghz": 25.0,
+    "target_line_count": 47,
+    "target_effective_vpi_v": 2.5,
+    "stretch_effective_vpi_v": 2.0
+  },
+  "ppln": {
+    "reference_normalized_efficiency_percent_per_w_cm2": 2600.0,
+    "reference_gvm_fs_per_mm": 150.0,
+    "standalone_length_mm": 4.0,
+    "integrated_length_mm": 2.0,
+    "doe_lengths_mm": [2.0, 4.0, 6.0],
+    "period_offsets_um": [-0.15, -0.10, -0.05, 0.0, 0.05, 0.10, 0.15],
+    "width_offsets_um": [-0.10, 0.0, 0.10]
+  },
+  "structures": [
+    {
+      "id": "S1",
+      "name": "four_pass_travelling_wave_eo_comb",
+      "core_length_mm": 12.0,
+      "core_width_mm": 0.8,
+      "reserved_length_mm": 13.0,
+      "reserved_width_mm": 1.4
+    },
+    {
+      "id": "S2",
+      "name": "ppln_shg_doe_array",
+      "core_length_mm": 6.0,
+      "core_width_mm": 1.32,
+      "reserved_length_mm": 7.0,
+      "reserved_width_mm": 1.6
+    },
+    {
+      "id": "S3",
+      "name": "eo_comb_to_ppln_shg_cascade",
+      "core_length_mm": 16.0,
+      "core_width_mm": 0.9,
+      "reserved_length_mm": 18.0,
+      "reserved_width_mm": 1.6
+    }
+  ],
+  "die": {
+    "length_mm": 20.0,
+    "width_mm": 6.0
+  }
+}

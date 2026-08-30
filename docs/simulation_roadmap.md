@@ -2,176 +2,146 @@
 
 ## Baseline concept
 
-Use one optical racetrack resonator with two spatially separated functions:
+The first version is a non-resonant, all-LN platform with three independently
+measurable structures:
 
-1. an unpoled electro-optic modulation section with RF electrodes;
-2. a periodically poled section for quasi-phase-matched SHG.
+1. a travelling-wave optical-recycling phase modulator for a 1550-nm EO comb;
+2. a straight PPLN waveguide array for 1550-to-775-nm SHG;
+3. a monolithic cascade of the first two functions.
 
-The first design target is deliberately limited: generate a resonant EO comb
-around the fundamental wavelength and convert it into a second-harmonic comb.
-Only the central fundamental and second-harmonic modes are initially required
-to be doubly resonant. Equal FSRs across the two bands are not assumed.
+The integrated device first produces the fundamental EO comb and then performs
+SHG/SFG in PPLN. It therefore does **not** require
+`FSR(omega) = FSR(2 omega)` or any optical-ring resonance. The second-harmonic
+comb inherits the RF line spacing from the fundamental comb.
 
-## Stage 0: freeze the fabrication stack
+The numerical values in `docs/three_structure_layout_plan.md` are preliminary
+targets, not released mask dimensions. Foundry rules and simulation gates below
+take precedence.
 
-Record the foundry and design-rule inputs before optimizing geometry:
+## Stage 0: freeze the common fabrication stack
 
-- LN cut and film thickness;
-- etch depth, sidewall angle, and minimum feature size;
-- BOX and top-cladding materials and thicknesses;
-- permitted metal stack, minimum metal-to-waveguide gap, and heater rules;
-- target fundamental wavelength and available RF band.
+Record and confirm:
 
-Deliverable: `docs/design_inputs.md` with values, sources, and uncertainties.
+- x-cut MgO:LNOI availability and crystal-axis marker;
+- LN thickness, etch depth, sidewall angle, BOX, and top cladding;
+- minimum waveguide, gap, domain, and alignment tolerances;
+- poling sequence and maximum high-voltage field;
+- permitted metal thickness and minimum metal-to-waveguide gap;
+- RF probe pitch and whether a deposited 50-ohm termination is available.
 
-Gate: no final waveguide or electrode dimensions are selected until the stack
-and fabrication constraints are known.
+Deliverable: a signed-off stack table and foundry-rule checklist.
 
-## Stage 1: optical cross-section and mode-family scan
+Gate: do not release a final QPM period or CPW geometry before this step.
 
-Use Lumerical MODE or COMSOL Wave Optics at the fundamental and second harmonic.
-Sweep waveguide width and etch depth, including all plausible mode families.
+## Stage 1: dual-wavelength optical modes
+
+Use Lumerical MODE or COMSOL Wave Optics. Sweep waveguide top width, etch
+depth, film thickness, and sidewall angle at 1550 nm and 775 nm.
 
 Extract:
 
-- effective index and group index;
-- mode profiles and polarization;
-- propagation and bend loss estimates;
-- group-velocity dispersion;
-- nonlinear mode-overlap integral;
-- electro-optic field component relevant to the selected LN tensor element.
+- `n_eff`, `n_g`, field profiles, polarization, and higher-order modes;
+- propagation and bend-loss estimates;
+- group-velocity mismatch and dispersion;
+- full-tensor EO and nonlinear overlap integrals;
+- width/thickness sensitivities of the QPM wavelength.
 
-Deliverables:
+Gate: select a common cross-section that supports low-loss 1550-nm routing and
+a fabricable, high-overlap SHG mode pair.
 
-- mode maps at both wavelengths;
-- `n_eff`, `n_g`, and dispersion versus geometry;
-- ranked fundamental/second-harmonic mode pairs.
+## Stage 2: travelling-wave electrode
 
-Gate: select a mode pair that has acceptable confinement, overlap, loss, and
-fabrication tolerance. Do not require equal group indices unless later analysis
-shows that line-by-line dual-band resonance is essential.
+Use HFSS 2D/quasi-static or COMSOL Electrostatics first, then a 3D HFSS model
+of the complete 10-mm electrode, pads, and termination transition.
 
-## Stage 2: PPLN quasi-phase matching
+Optimize:
 
-For each selected mode pair, calculate
+- 50-ohm characteristic impedance;
+- microwave effective index matched to optical group index;
+- conductor and dielectric RF loss;
+- `S11`, `S21`, and EO overlap from 5 to 40 GHz;
+- metal-induced optical loss and RF heating;
+- phase accumulation through the four-pass optical recycling path.
+
+Gate targets at 25 GHz: `|Z0 - 50 ohm| <= 5 ohm`, `S11 < -10 dB`, effective
+`Vpi <= 2.5 V`, and usable EO response through at least 35 GHz. The last two
+targets must be validated with the complete recycling path, not just a CPW
+cross-section.
+
+## Stage 3: PPLN QPM and bandwidth
+
+Calculate
 
 `Delta k = beta_2w - 2 beta_w`
 
-and the first-order QPM period
+and
 
 `Lambda = 2*pi/abs(Delta k)`.
 
-Include duty-cycle, domain-wall placement, temperature, width, and etch-depth
-sensitivity. Compute the nonlinear overlap using the full LN tensor rather than
-a scalar effective index approximation.
+Then sweep poling period, duty cycle, waveguide width, film thickness,
+temperature, and device length. Use a coupled-wave or split-step solver to
+include pump depletion and multiple comb lines.
 
-Deliverables:
+Two different optimizations are required:
 
-- nominal poling period and permitted fabrication window;
-- normalized SHG coupling coefficient;
-- predicted phase-matching bandwidth and temperature sensitivity.
+- the stand-alone SHG array uses a nominal 4-mm uniform PPLN section for high
+  conversion efficiency;
+- the integrated comb converter uses a nominal 2-mm uniform PPLN section for
+  bandwidth, with a 4-mm weakly chirped PPLN variant kept in the DOE.
 
-Gate: the required poling period and duty cycle must comply with the foundry
-rules and remain tolerant to expected fabrication variation.
+Gate: the simulated QPM FWHM of the integrated path must cover the chosen EO
+comb span with at least 20% spectral margin.
 
-## Stage 3: racetrack resonance and double-resonance search
+## Stage 4: system-level comb model
 
-Choose a target fundamental FSR from the available RF source. Estimate the
-racetrack length from the fundamental group index, then refine it using the
-frequency-dependent propagation constant.
+For a phase-modulated pump,
 
-Search for longitudinal mode pairs satisfying the central double-resonance
-condition near `omega_2w = 2*omega_w`. Keep separate records of:
+`E_w(t) = E0*exp[i*w0*t + i*beta*sin(Omega*t)]`.
 
-- fundamental FSR;
-- second-harmonic FSR;
-- central double-resonance mismatch;
-- integrated dispersion in each band;
-- loaded and intrinsic optical Q targets.
+In the ideal instantaneous, phase-matched limit,
 
-Deliverables:
+`P_2w(t) proportional to E_w(t)^2`
 
-- racetrack radius and straight-section lengths;
-- resonance-frequency tables for both mode families;
-- thermal and electro-optic trimming ranges required after fabrication.
+and the second harmonic has modulation index `2*beta`, while its line spacing
+remains `Omega/(2*pi)`. The numerical model must add finite QPM bandwidth,
+loss, dispersion, RF phase error, and pump depletion.
 
-Gate: at least one central mode pair must be alignable within the loaded cavity
-linewidth using realistic tuning. Equal FSRs are not a first-version gate.
+Gate: reproduce the single-tone SHG limit, the Bessel-function EO-comb limit,
+and power conservation before running the full multi-line cascade.
 
-## Stage 4: bus-to-resonator couplers
+## Stage 5: couplers, tapers, and layout verification
 
-Simulate local coupling regions with FDTD or EME instead of a full three-
-dimensional millimetre-scale resonator. Prefer separate wavelength-selective
-couplers for the fundamental input and second-harmonic extraction.
+Use EME/FDTD for:
 
-Extract coupling coefficients versus wavelength, gap, coupling length, and
-fabrication error. Set coupling targets separately for the two bands.
+- 1550-nm edge couplers and tapers;
+- the 1550-nm EO-waveguide to dual-wavelength PPLN transition;
+- optional 1550/775-nm output demultiplexer;
+- TE0/TE1 mode multiplexers, crossing, and loop-back structures.
 
-Gate: both bands must have usable external coupling without forcing excessive
-loss or an impractical shared coupler geometry.
+Generate the three floorplan blocks plus controls: single-pass PM, unpoled
+waveguides, CPW thru/open/short, and waveguide cutbacks. Run connectivity,
+minimum-spacing, density, and official foundry DRC.
 
-## Stage 5: RF electrode simulation
+Gate: all critical structures must have independent controls and accessible
+optical/RF ports.
 
-Use HFSS or COMSOL RF for the unpoled modulation section. Start with a 2D or
-quasi-static cross-section, then validate pads, bends, feeds, and discontinuities
-with a 3D model.
+## Stage 6: experimental validation order
 
-Extract:
+1. Measure passive loss, mode-multiplexer loss, and crossing loss.
+2. Measure CPW `S11/S21`, microwave index, and loss.
+3. Measure single-pass and four-pass `Vpi(f)` and EO comb spectra.
+4. Map SHG versus wavelength, temperature, period, width, length, and power.
+5. Measure the integrated fundamental and second-harmonic combs.
+6. Compare line spacing, line-to-line power, conversion, and phase coherence.
 
-- characteristic impedance and propagation constant;
-- RF loss and electric-field distribution;
-- S11 and S21 over the target band;
-- microwave resonance and Q if a resonant electrode is used;
-- optical-RF overlap at both optical wavelengths.
+Stop/go criterion for the integrated structure: independently measured EO and
+PPLN blocks must agree with their respective models before attributing any
+integrated-device failure to the cascade physics.
 
-Gate: the electrode must provide adequate EO coupling without unacceptable
-metal absorption, heating, or impedance mismatch.
+## Later resonant branch
 
-## Stage 6: electro-optic and nonlinear coupled-mode model
-
-Implement a reproducible Python or MATLAB model containing:
-
-- the fundamental optical mode family;
-- the second-harmonic mode family;
-- pump detuning and external coupling;
-- optical loss and integrated dispersion;
-- RF-driven EO coupling;
-- SHG and sum-frequency coupling between comb lines;
-- thermal or photorefractive detuning where needed.
-
-Begin with the carrier and first sidebands, verify energy conservation and
-limiting cases, then expand the number of modes.
-
-Gate: reproduce single-band resonant EO comb behaviour and doubly resonant SHG
-separately before enabling all coupling terms simultaneously.
-
-## Stage 7: tolerance and control-loop design
-
-Run Monte Carlo or corner sweeps for waveguide width, film thickness, etch depth,
-poling period, coupling gap, and temperature. Determine the required tuning and
-locking architecture:
-
-- laser-to-fundamental-resonance lock;
-- central SH double-resonance alignment;
-- RF-to-fundamental-FSR adjustment;
-- heater and fast EO actuator ranges;
-- lock acquisition and recovery sequence.
-
-Gate: the tuning range must cover expected fabrication offsets with margin, and
-the actuator bandwidths must be separated enough to avoid control-loop conflict.
-
-## Stage 8: layout and verification
-
-Only after the previous gates pass:
-
-- generate the optical, PPLN, RF, heater, and pad layout;
-- run project-level geometric and connectivity checks;
-- run foundry DRC when the official rule deck is available;
-- archive simulator versions, material models, and all parameter sources.
-
-## Immediate next task
-
-Create `docs/design_inputs.md` from the actual wafer stack and laboratory RF
-capabilities. Then run the Stage 1 optical mode scan; HFSS electrode optimization
-starts only after the fundamental mode and target RF frequency are selected.
+Only after the non-resonant blocks work should a doubly resonant optical-ring
+version be reconsidered. Its central `omega/2omega` double resonance, two-band
+dispersion, coupling, thermal tuning, and RF-to-fundamental-FSR condition form
+a separate risk set and are not part of the first tapeout baseline.
 
