@@ -50,6 +50,15 @@
     "selected_t_neck_longitudinal_width_um": 10.0,
     "selected_period_um": 50.0,
     "selected_geometry_source": "fresh_10ghz_hfss_phasecheck_with_90pct_t_cap_duty_cycle",
+    "mode_mux_tolerance_check": {
+      "corner": "main_and_aux_width_plus_50nm_with_gap_minus_100nm_at_1550nm",
+      "port1_solver_modes": [1, 3, 4],
+      "port2_solver_modes": [1, 2, 4],
+      "main_te0_through_power": 0.9998861725,
+      "main_te1_to_aux_te0_power": 0.9566718358,
+      "independent_aux_te0_to_main_te1_power": 0.9967244365,
+      "note": "single_combined_lithography_corner_only; reverse_bias_and_etch_depth_thickness_corners_pending"
+    },
     "hfss_10ghz_phasecheck": {
       "rf_effective_index": 2.2000930312,
       "characteristic_impedance_ohm": 48.1168386,
