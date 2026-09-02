@@ -45,5 +45,9 @@ temp/
 *.npz
 *.mat
 
+# Local confidential foundry documentation; never commit to Git
+/南智光电流片说明-TFLN-on-SiN-V0.2试用版.pdf
+/42005_2023_1137_MOESM2_ESM.pdf
+
 # Foundry PDK and NDA-protected source packages (local use only)
 南智光电流片说明-*.zip

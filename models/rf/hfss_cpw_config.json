@@ -1,60 +1,160 @@
 {
-  "status": "engineering_placeholder_model_not_for_final_solve",
+  "status": "10ghz_d90_h4_t10_r45_c5_w43_g5_phasecheck_and_eo_overlap_complete_pending_material_process_corners",
   "aedt": {
-    "version": "2024.1",
+    "version": "2023.1",
     "solution_type": "Terminal",
-    "project_name": "LN_EO_Comb_RF",
+    "project_name": "LN_EO_Comb_RF_PDK_10GHz_2023R1",
     "frequency_start_ghz": 1.0,
     "frequency_stop_ghz": 50.0,
-    "field_frequency_ghz": 25.0,
-    "adaptive_frequencies_ghz": [5.0, 25.0, 50.0],
+    "field_frequency_ghz": 10.0,
+    "adaptive_frequencies_ghz": [5.0, 10.0, 20.0, 50.0],
     "maximum_delta_s": 0.01,
     "maximum_passes": 12,
     "minimum_converged_passes": 2
+  },
+  "simulation_profiles": {
+    "default": "screening",
+    "screening": {
+      "adaptive_frequencies_ghz": [10.0],
+      "frequency_stop_ghz": 15.0,
+      "maximum_delta_s": 0.03,
+      "maximum_passes": 6,
+      "minimum_converged_passes": 1,
+      "sweep_points": 101,
+      "save_field_sweep": false,
+      "assign_skin_depth_mesh": false
+    },
+    "common_mode_phase_verification": {
+      "adaptive_frequencies_ghz": [10.0],
+      "frequency_stop_ghz": 15.0,
+      "maximum_delta_s": 0.005,
+      "maximum_delta_phase_deg": 2.0,
+      "maximum_passes": 16,
+      "minimum_converged_passes": 2,
+      "sweep_points": 101,
+      "save_field_sweep": false,
+      "assign_skin_depth_mesh": false,
+      "matrix_convergence_common_mode": true
+    },
+    "common_mode_loss_verification": {
+      "adaptive_frequencies_ghz": [10.0],
+      "frequency_stop_ghz": 15.0,
+      "maximum_delta_s": 0.02,
+      "maximum_delta_phase_deg": 5.0,
+      "maximum_passes": 6,
+      "minimum_converged_passes": 2,
+      "sweep_points": 101,
+      "save_field_sweep": false,
+      "assign_skin_depth_mesh": true,
+      "matrix_convergence_common_mode": true
+    },
+    "final": {
+      "adaptive_frequencies_ghz": [5.0, 10.0, 20.0, 50.0],
+      "frequency_stop_ghz": 50.0,
+      "maximum_delta_s": 0.01,
+      "maximum_passes": 12,
+      "minimum_converged_passes": 2,
+      "sweep_points": 246,
+      "save_field_sweep": true,
+      "assign_skin_depth_mesh": true
+    }
   },
   "coordinates": {
     "global_x": "lateral_across_cpw_and_crystal_z_axis",
     "global_y": "rf_and_optical_propagation_and_crystal_y_axis",
     "global_z": "vertical_and_crystal_x_axis_for_x_cut_ln"
   },
+  "pdk_layout_rules_um": {
+    "effective_design_length": 21800.0,
+    "effective_design_width": 3800.0,
+    "gds_grid": 0.001,
+    "ln_min_line": 0.3,
+    "ln_min_space": 0.3,
+    "ln_min_bend_radius": 80.0,
+    "m1_min_line": 2.0,
+    "m1_min_space": 3.0
+  },
   "stack_um": {
     "model_width": 600.0,
-    "silicon_handle": 500.0,
-    "bottom_oxide": 2.0,
+    "silicon_handle": 716.8,
+    "bottom_oxide": 8.2,
     "sin": 0.3,
     "ln_sin_interlayer_oxide": 0.4,
     "ln": 0.4,
-    "top_cladding": 0.5,
+    "ln1_etch": 0.2,
+    "ln_residual_slab": 0.2,
+    "top_cladding": 1.0,
     "metal": 1.0
   },
   "materials": {
     "silicon_relative_permittivity": 11.7,
     "silicon_loss_tangent": 0.001,
+    "silicon_conductivity_s_per_m": 0.01,
     "silica_relative_permittivity": 3.9,
     "silica_loss_tangent": 0.0002,
     "sin_relative_permittivity": 7.0,
     "sin_loss_tangent": 0.001,
-    "ln_relative_permittivity_global_xyz": [28.0, 43.0, 43.0],
+    "ln_relative_permittivity_global_xyz": [27.9, 44.3, 44.3],
     "ln_loss_tangent_global_xyz": [0.004, 0.004, 0.004],
     "metal_conductivity_s_per_m": 41000000.0,
     "metal_relative_permeability": 1.0,
     "metal_rms_roughness_um": 0.0
   },
   "cpw_um": {
+    "default_electrode_style": "segmented_t",
     "signal_width": 43.0,
-    "signal_ground_gap": 5.5,
+    "signal_ground_gap": 5.0,
     "ground_width": 100.0,
     "short_line_lengths": [500.0, 1000.0],
     "full_line_length": 10000.0,
     "port_air_height": 250.0,
     "air_side_padding": 300.0,
-    "air_top_padding": 300.0
+    "air_top_padding": 300.0,
+    "air_bottom_padding": 100.0
+  },
+  "segmented_t_um": {
+    "inner_modulation_gap": 5.0,
+    "signal_channel_width": 43.0,
+    "ground_channel_width": 100.0,
+    "cap_lateral_width_s": 2.0,
+    "neck_lateral_length_h": 4.0,
+    "neck_longitudinal_width_t": 10.0,
+    "cap_longitudinal_length_r": 45.0,
+    "unit_gap_c": 5.0,
+    "period": 50.0,
+    "design_role": "current_10ghz_90pct_duty_velocity_matched_candidate_not_tapeout_final",
+    "mechanism_reference": "Kharel_et_al_Optica_8_357_2021_DOI_10.1364_OPTICA.416155",
+    "adaptation_note": "only_the_current_redistribution_and_periodic_slow_wave_mechanism_is_reused; dimensions_are_reoptimized_for_the_NanZhi_TFLN_on_SiN_stack",
+    "historical_25ghz_seed_um": {
+      "inner_modulation_gap": 5.0,
+      "signal_channel_width": 60.0,
+      "ground_channel_width": 100.0,
+      "cap_lateral_width_s": 2.0,
+      "neck_lateral_length_h": 6.0,
+      "neck_longitudinal_width_t": 4.0,
+      "cap_longitudinal_length_r": 34.0,
+      "unit_gap_c": 16.0,
+      "period": 50.0
+    },
+    "paper_reference_um": {
+      "inner_modulation_gap_g": 5.0,
+      "neck_lateral_length_h": 6.0,
+      "cap_lateral_width_s": 2.0,
+      "neck_longitudinal_width_t": 6.0,
+      "cap_longitudinal_length_r": 45.0,
+      "unit_gap_c": 5.0,
+      "signal_channel_width": 100.0,
+      "ground_channel_width": 100.0
+    }
   },
   "optical_rails_um": {
-    "s1_left_offset_from_signal_center": -24.25,
-    "s1_right_offset_from_signal_center": 24.25,
-    "s3_1550_offset_from_signal_center": -24.25,
-    "s3_775_offset_from_signal_center": 24.25,
+    "ln_waveguide_width": 1.33,
+    "ln_sidewall_angle_deg_from_horizontal": 70.0,
+    "ln_isolation_width": 7.2,
+    "active_region_sin_fully_removed": true,
+    "positioning": "derive_from_actual_signal_width_gap_and_t_geometry",
+    "s3_1550_offset_from_signal_center": -40.5,
+    "s3_775_offset_from_signal_center": 40.5,
     "field_export_half_width": 3.0,
     "field_export_half_height": 2.0
   },
@@ -63,31 +163,44 @@
     "signal_ground_gap": [4.0, 5.5, 7.0, 9.0],
     "ground_width": [80.0, 100.0, 120.0]
   },
+  "segmented_screening_grid_um": {
+    "inner_modulation_gap": [4.0, 5.0, 6.0, 7.0],
+    "cap_lateral_width_s": [2.0, 3.0, 4.0],
+    "neck_lateral_length_h": [4.0, 6.0, 8.0, 10.0, 20.0],
+    "neck_longitudinal_width_t": [2.0, 3.0, 4.0, 6.0, 8.0, 10.0],
+    "cap_longitudinal_length_r": [10.0, 20.0, 35.0, 40.0, 45.0],
+    "unit_gap_c": [5.0, 10.0, 15.0, 30.0, 40.0]
+  },
   "targets": {
     "impedance_min_ohm": 45.0,
     "impedance_max_ohm": 55.0,
-    "s11_max_db_20_to_30_ghz": -10.0,
-    "rf_loss_max_db_per_cm_at_25_ghz": 4.0,
+    "s11_max_db_8_to_12_ghz": -10.0,
+    "rf_loss_max_db_per_cm_at_10_ghz": 4.0,
+    "s1_abs_nrf_minus_ng1550_target": 0.02,
     "s1_abs_nrf_minus_ng1550_max": 0.1,
-    "s3_velocity_mismatch_penalty_max_db_at_25_ghz": 1.0
+    "s3_velocity_mismatch_penalty_max_db_at_10_ghz": 1.0
   },
   "required_foundry_inputs": {
     "confirmed": false,
     "items": [
-      "silicon_handle_or_actual_substrate_material_and_thickness",
-      "bottom_oxide_thickness",
-      "exact_ln1_ln2_etch_and_residual_slab",
-      "top_cladding_thickness_and_rf_loss",
-      "M1_material_thickness_conductivity_and_roughness",
+      "actual_ln1_ln2_etch_depth_sidewall_and_thickness_tolerances",
+      "top_cladding_rf_loss",
+      "M1_process_specific_conductivity_and_roughness",
       "microwave_permittivity_and_loss_tensor_or_approved_reference",
-      "whether_sin_is_removed_below_the_active_ln_waveguide",
       "actual_GSG_probe_pitch_and_pad_geometry",
       "measurement_backside_boundary_or_chuck_condition"
     ]
   },
   "placeholder_provenance": {
-    "43um_signal_5p5um_gap": "Zhang_et_al_Communications_Physics_2023_sweep_seed_only",
-    "ln_rf_tensor_28_43_43_and_loss_0p004": "literature_starting_values_require_foundry_or_measurement_confirmation",
+    "stack_geometry": "NanZhi_Photonics_TFLN_on_SiN_Beta_0p1_cross_section_with_200nm_LN1_rib_etch_and_optional_LN2_full_etch_reviewed_2026_09_02",
+    "silicon_handle_716p8um": "derived_from_725um_target_mechanical_thickness_minus_8p2um_bottom_oxide",
+    "bottom_oxide_8p2um_range": "manual_table_7p8_to_8p6um",
+    "sin_0p3um_interlayer_oxide_0p4um_ln_0p4um": "manual_process_description_and_cross_section",
+    "top_cladding_1um_and_Au_1um": "manual_cross_section_labels",
+    "60um_signal_5um_inner_gap": "historical_25ghz_candidate_retained_only_as_the_starting_seed_for_a_fresh_10ghz_sweep",
+    "segmented_t_geometry": "Kharel_et_al_Optica_2021_current_crowding_and_slow_wave_mechanism_only",
+    "high_resistivity_silicon_0p01_s_per_m": "converted_from_PDK_10000_ohm_cm_nominal_resistivity",
+    "ln_rf_tensor_global_xyz_27p9_44p3_44p3_and_loss_0p004": "Ansys_official_x_cut_TFLN_example_aligns_extraordinary_axis_and_r33_with_model_transverse_x; literature_starting_values_require_foundry_or_measurement_confirmation",
     "all_other_unconfirmed_stack_values": "engineering_placeholders_for_script_generation_only"
   }
 }

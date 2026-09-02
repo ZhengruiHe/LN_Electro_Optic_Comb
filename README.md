@@ -1,61 +1,42 @@
-# LN Electro-Optic Comb
+# 薄膜铌酸锂电光频率梳
 
-Design workspace for a compact thin-film lithium-niobate (TFLN)
-electro-optic comb and poling-free second-harmonic platform.
+本仓库用于设计基于南智 TFLN-on-SiN PDK 的四程非谐振电光频率梳，当前主设计频率为10 GHz。25 GHz论文复现与早期仿真结果仅作为历史对照，全部保留且不覆盖。
 
-The first design study is organized around three fully custom structures:
+当前器件由以下部分组成：
 
-1. a 1550-nm four-pass optical-recycling travelling-wave phase modulator for
-   low-`Vpi` 25-GHz electro-optic-comb generation;
-2. a compact x-cut LN spontaneous-quasi-phase-matched (SQPM) micro-racetrack
-   for poling-free 1550-to-775-nm SHG;
-3. a monolithic `CW SHG -> dual-rail travelling-wave PM` sequence in which
-   separately optimized 1550- and 775-nm waveguides share one RF electrode.
+1. 1550 nm双模有源LN波导，四程依次使用TE0、TE1、TE0、TE1；
+2. 绝热TE0/TE1模式复用器及三段光学回环；
+3. 1 cm长的T形周期加载GSG行波电极；
+4. 2T、2.5T、2T三段群时延回路，其中第二段的0.5T用于补偿两调制区射频场极性反转；
+5. MODE、HFSS、Maxwell 2D和Python联合后处理流程。
 
-The EO modulation remains non-resonant; only the compact SHG block is
-resonant. SHG occurs before modulation, so the SHG racetrack FSR does not need
-to equal the 25-GHz RF drive. The resonator still requires a 1550/775-nm
-double-resonant mode pair and thermal control.
+## 当前候选参数
 
-## Key documents
+- LN总厚度400 nm，LN1刻蚀200 nm并保留200 nm薄板；
+- LN1/LN2侧壁均按与水平面70°处理；
+- 有源区下方SiN完全移除，原300 nm高度用SiO2回填；
+- 有源波导顶宽1.33 µm；
+- TE0/TE1群折射率分别为2.22130和2.22061；
+- T形电极信号主干43 µm、帽内间隙5 µm、横向颈长4 µm、纵向颈宽10 µm、帽长45 µm、周期空隙5 µm；
+- 10 GHz严格两长度提取得到射频有效折射率约2.2001、特性阻抗约48.1 Ω、射频损耗约1.66 dB/cm；
+- 光电场重叠积分得到TE0/TE1单程半波电压长度积约8.15/9.36 V·cm；
+- 计入射频沿程损耗与回波后，1 cm四程结构在10 GHz的有效半波电压工程预测约2.39 V。
 
-- [`docs/project_status_summary.md`](docs/project_status_summary.md): consolidated
-  Chinese status, physics, structure/area budget, simulation workflow, risks,
-  current software state, and next-step gates
-- [`docs/three_structure_layout_plan.md`](docs/three_structure_layout_plan.md):
-  literature-backed architecture, dimensions, area budget, DOE, simulation,
-  and measurement plan
-- [`docs/three_structure_floorplan.svg`](docs/three_structure_floorplan.svg):
-  compact 21.8 mm x 3.8 mm PDK-area floorplan
-- [`docs/simulation_roadmap.md`](docs/simulation_roadmap.md): staged execution
-  gates from stack definition to tapeout
-- [`docs/hfss_electrode_simulation_plan.md`](docs/hfss_electrode_simulation_plan.md):
-  executable HFSS Driven Terminal model hierarchy, ports, boundaries, sweeps,
-  convergence and RF-to-EO extraction
-- [`docs/hfss_cpw_cross_section.svg`](docs/hfss_cpw_cross_section.svg): HFSS
-  GSG stack, boundary and dual-rail cross-section schematic
-- [`docs/pdk_compatibility_review.md`](docs/pdk_compatibility_review.md):
-  supported components, custom 775-nm gaps, and foundry questions
-- [`models/system/design_targets.json`](models/system/design_targets.json):
-  machine-readable preliminary design targets
-- [`scripts/design_budget.py`](scripts/design_budget.py): reproducible comb
-  span, QPM bandwidth, conversion, and area estimates
+上述数值是当前几何和材料假设下的仿真结果，不是流片保证值。尤其是LN射频介电常数、电光系数、M1电导率与粗糙度、顶氧化层厚度和背面载台条件仍需代工确认或工艺角点验证。
 
-## Repository layout
+## 目录
 
-- `docs/`: design decisions, evidence tables, and simulation roadmap
-- `models/optical/`: optical modes, QPM, couplers, and nonlinear propagation
-- `models/rf/`: HFSS or COMSOL RF electrode models
-- `models/system/`: EO-comb and SHG/SFG system models
-- `scripts/`: reproducible parameter sweeps and post-processing
-- `results/`: generated figures and exported data; ignored by default
+- `docs/`：中文设计说明、论文核对和仿真路线；
+- `models/optical/`：有源波导、群折射率和模式复用器模型；
+- `models/rf/`：HFSS行波电极模型和参数配置；
+- `models/eo/`：Maxwell 2D准静电场与光电重叠积分；
+- `models/layout/`：四程结构示意版图生成脚本；
+- `models/system/`：四程频率响应、半波电压和理想梳谱模型；
+- `scripts/`：射频两长度提取、速度匹配和诊断脚本；
+- `results/`：本机生成的工程、数据和图片，默认不提交Git。
 
-The foundry PDK archive is confidential local input and is intentionally
-excluded from Git. It is used only for the process stack, layer rules and die
-boundary; none of the three structures relies on a supplied device BlackBox.
-All dimensions are simulation starting points rather than fabrication-ready
-mask dimensions.
+PDK原文件及代工资料仅在本地读取，不提交仓库。仓库中保留的是从PDK提取的非敏感结构约束和可复现建模代码。
 
-PyAEDT is installed in the project-local `.venv`; reproduce it with
-`python -m pip install -r requirements-hfss.txt`. Ansys Electronics Desktop /
-HFSS itself is still required to create or solve the generated project.
+## 本机软件
+
+项目虚拟环境已安装PyAEDT。本机已验证可调用Ansys Electronics Desktop/HFSS 2023 R1、Maxwell 2D 2023 R1和Ansys MODE 2023 R2。

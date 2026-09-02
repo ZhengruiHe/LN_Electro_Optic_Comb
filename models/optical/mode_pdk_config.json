@@ -1,0 +1,79 @@
+{
+  "status": "sidewall_70deg_active_width_1p33um_selected_for_10ghz_rf_cosimulation_pending_full_link_tolerance",
+  "lumerical": {
+    "version": "v232",
+    "api_path": "C:/Program Files/Lumerical/v232/api/python",
+    "hide": true
+  },
+  "wavelength_um": 1.55,
+  "design_mode": "dual_core_mode_TE0_TE1_for_four_pass_active_section",
+  "selected_candidate_top_width_um": 1.33,
+  "selected_candidate_ln2_top_width_um": 7.2,
+  "candidate_width_tolerance_screen_um": [1.28, 1.33, 1.38],
+  "selected_70deg_optical_metrics_1550nm": {
+    "te0_group_index": 2.2212994941984143,
+    "te1_group_index": 2.2206077824625887,
+    "te1_minus_te0_group_index": -0.0006917117358256064,
+    "rf_group_index_target": 2.2209536383305015,
+    "te0_central_energy_fraction": 0.9994609086398976,
+    "te1_central_energy_fraction": 0.9697958526195704
+  },
+  "historical_60deg_optical_metrics_1550nm_not_for_design": {
+    "te0_group_index": 2.221419,
+    "te1_group_index": 2.221831,
+    "te1_minus_te0_group_index": 0.000412,
+    "rf_group_index_target": 2.221625,
+    "te0_central_energy_fraction": 0.9995,
+    "te1_central_energy_fraction": 0.9698
+  },
+  "group_index_wavelength_step_nm": 5.0,
+  "temperature_c": 20.0,
+  "stack_um": {
+    "bottom_oxide": 8.2,
+    "sin": 0.3,
+    "ln_sin_interlayer_oxide": 0.4,
+    "ln": 0.4,
+    "top_cladding": 1.0,
+    "metal": 1.0
+  },
+  "waveguide_um": {
+    "widths": [1.1, 1.2, 1.25, 1.3, 1.35, 1.4, 1.5],
+    "etch_depths": [0.2],
+    "sidewall_angle_deg_from_horizontal": 70.0,
+    "ln_isolation_width": 7.2,
+    "active_region_sin_fully_removed": true
+  },
+  "local_electrode_um": {
+    "include_in_first_sweep": false,
+    "gap": 5.0,
+    "t_cap_width": 2.0
+  },
+  "fde": {
+    "x_span_um": 24.0,
+    "y_min_um": -2.5,
+    "y_max_um": 3.2,
+    "mesh_cells_x": 480,
+    "mesh_cells_y": 200,
+    "trial_modes": 8,
+    "te_fraction_min": 0.55,
+    "modes_to_keep": 3,
+    "central_half_width_um": 1.5,
+    "central_energy_fraction_min": 0.7
+  },
+  "material_models": {
+    "ln": "Zelmon_Small_Jundt_1997_congruent_LN_preliminary",
+    "sio2": "SiO2 (Glass) - Palik",
+    "sin": "Si3N4 (Silicon Nitride) - Luke",
+    "gold": "Au (Gold) - Johnson and Christy"
+  },
+  "assumptions": [
+    "LN1_nominal_etch_is_0p2um_and_leaves_a_0p2um_residual_slab_in_the_modulator_rib_region",
+    "LN2_is_an_optional_second_0p2um_etch_used_locally_for_full_LN_removal_in_SSC_isolation_or_other_selected_regions",
+    "both_LN1_and_LN2_etch_sidewalls_use_70deg_from_horizontal_and_the_GDS_width_is_interpreted_as_the_trapezoid_top_width",
+    "the_active_modulator_cross_section_fully_removes_SiN_and_refills_its_300nm_vertical_interval_with_SiO2",
+    "LN_rib_and_residual_slab_are_confined_to_the_7p2um_LN_isolation_example_width",
+    "the_former_1p28um_candidate_was_calculated_at_60deg_and_is_historical_only_after_the_sidewall_was_updated_to_70deg",
+    "first_sweep_omits_metal_and_a_second_worst_case_cap_cross_section_will_check_metal_absorption",
+    "MODE_2023R2_anisotropic_sampled_material_API_stalls_so_each_wavelength_uses_object_defined_anisotropic_index_and_group_index_is_computed_by_central_finite_difference"
+  ]
+}

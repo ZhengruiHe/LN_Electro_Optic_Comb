@@ -1,5 +1,5 @@
-# Scripts
+# 脚本
 
-Store reproducible simulation setup, parameter-sweep, data-extraction, and
-plotting scripts here.
+此处存放可复现的仿真设置、参数扫描、数据提取和绘图脚本。
 
+- `analyze_hfss_two_length.py`：读取 500 µm 与 1 mm 的四端口混合模 Touchstone 文件，提取射频有效折射率、单位长度衰减、回波和特性阻抗近似值。

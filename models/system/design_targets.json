@@ -1,6 +1,6 @@
 {
-  "status": "fully_custom_compact_concept_not_for_fabrication",
-  "revision": "2026-08-30",
+  "status": "10ghz_pdk_geometry_optical_rf_and_eo_overlap_complete_pending_process_corners_and_full_link_not_for_fabrication",
+  "revision": "2026-09-03",
   "architecture_decision": {
     "shg_method": "poling_free_spontaneous_quasi_phase_matched_racetrack",
     "integrated_order": "cw_shg_before_dual_wavelength_eo_modulation",
@@ -26,16 +26,53 @@
   },
   "custom_eo_comb": {
     "center_wavelength_nm": 1550.0,
-    "rf_frequency_ghz": 25.0,
+    "rf_frequency_ghz": 10.0,
     "first_pass_target_line_count": 15,
     "advanced_target_line_count": 40,
     "travelling_wave_electrode_length_mm": 10.0,
     "optical_passes": 4,
+    "loop_period_multipliers": [2.0, 2.5, 2.0],
+    "loop_period_note": "Loop 2 includes a half-period polarity compensation; loop 3 uses 2T for physical routing margin",
+    "active_ln_waveguide_top_width_um": 1.33,
+    "active_ln_waveguide_sidewall_deg_from_horizontal": 70.0,
+    "optical_group_indices_1550nm": {"TE0": 2.2212994941984143, "TE1": 2.2206077824625887},
+    "rf_group_index_target_1550nm": 2.2209536383305015,
     "target_impedance_ohm": 50.0,
-    "target_effective_vpi_v_at_25ghz": 2.5,
+    "target_effective_vpi_v_at_10ghz": 2.5,
     "starting_signal_width_um": 43.0,
     "starting_signal_ground_gap_um": 5.5,
-    "starting_geometry_source": "Zhang_Communications_Physics_2023_only_a_sweep_seed"
+    "starting_geometry_source": "Zhang_Communications_Physics_2023_only_a_sweep_seed",
+    "selected_signal_width_um": 43.0,
+    "selected_inner_modulation_gap_um": 5.0,
+    "selected_t_cap_length_um": 45.0,
+    "selected_t_unit_gap_um": 5.0,
+    "selected_t_neck_lateral_length_um": 4.0,
+    "selected_t_neck_longitudinal_width_um": 10.0,
+    "selected_period_um": 50.0,
+    "selected_geometry_source": "fresh_10ghz_hfss_phasecheck_with_90pct_t_cap_duty_cycle",
+    "hfss_10ghz_phasecheck": {
+      "rf_effective_index": 2.2000930312,
+      "characteristic_impedance_ohm": 48.1168386,
+      "rf_loss_db_per_cm": 1.66294595
+    },
+    "eo_overlap_prediction": {
+      "method": "Maxwell2D_unit_voltage_field_plus_MODE_complex_field_Pockels_overlap",
+      "te0_vpi_l_v_cm": 8.1509065974,
+      "te1_vpi_l_v_cm": 9.3556555056,
+      "ideal_four_pass_vpi_v_for_1cm": 2.1779568637,
+      "four_pass_vpi_v_at_10ghz_including_rf_loss_and_return_loss": 2.3942301263,
+      "ideal_comb_lines_above_minus20db_at_28dbm": 27,
+      "r33_pm_per_v_assumption": 30.9,
+      "r13_pm_per_v_assumption": 9.6,
+      "coefficient_note": "Ansys official example starting values, not foundry-confirmed PDK data"
+    }
+  },
+  "historical_25ghz_reference": {
+    "preserve_files": true,
+    "role": "literature_and_previous_simulation_comparison_only",
+    "paper_nominal_frequency_ghz": 25.0,
+    "paper_measured_optimum_frequency_ghz": 24.95,
+    "note": "Existing 25 GHz AEDT, CSV and reports must not be deleted or overwritten"
   },
   "poling_free_shg": {
     "preferred_mechanism": "spontaneous_quasi_phase_matching_in_x_cut_ln_racetrack",
@@ -80,10 +117,10 @@
   },
   "release_blockers": [
     "foundry confirmation of custom 775 nm routing and visible-light handling",
-    "LN1 and LN2 etch depths, sidewall angle and final top-cladding thickness",
+    "foundry tolerance confirmation for LN1 and LN2 etch depths, 70-degree sidewall assumption and final top-cladding thickness",
     "M1 material, thickness and RF conductivity",
     "simulated and measured dual resonance for the selected SHG mode pair",
-    "dual-band coupling and EO overlap validation",
+    "EO material and geometry process corners plus full four-pass optical-link validation",
     "official foundry DRC"
   ]
 }
