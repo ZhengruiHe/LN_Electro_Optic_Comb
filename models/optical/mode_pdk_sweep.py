@@ -16,6 +16,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = Path(__file__).with_name("mode_pdk_config.json")
 RESULTS = ROOT / "results" / "optical"
+SWEEP_RESULTS = RESULTS / "扫描结果" / "波导截面"
 C_M_PER_S = 299_792_458.0
 
 
@@ -499,7 +500,11 @@ def write_results(path: Path, rows: list[dict[str, Any]]) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    parser.add_argument("--output", type=Path, default=RESULTS / "pdk_1550_mode_sweep.csv")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=SWEEP_RESULTS / "pdk_1550_mode_sweep.csv",
+    )
     parser.add_argument("--include-metal", action="store_true")
     parser.add_argument("--save-projects", action="store_true")
     parser.add_argument("--max-cases", type=int)
@@ -599,7 +604,7 @@ def main() -> None:
                 sidewall_angle_deg = cfg["waveguide_um"].get(
                     "sidewall_angle_deg_from_horizontal", 90.0
                 )
-                project = RESULTS / (
+                project = SWEEP_RESULTS / (
                     f"mode_w{width_um:g}_e{etch_depth_um:g}_a{sidewall_angle_deg:g}_"
                     f"ln2w{cfg['waveguide_um']['ln_isolation_width']:g}_"
                     f"wl{cfg['wavelength_um'] * 1000:g}_{suffix}.lms"

@@ -26,6 +26,8 @@ from mode_pdk_sweep import (
     scalar,
 )
 
+SWEEP_RESULTS = RESULTS / "扫描结果" / "模式复用器"
+
 
 def interpolate(start: float, stop: float, position: float) -> float:
     return start + (stop - start) * position
@@ -321,7 +323,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=RESULTS / "模式复用器局部截面扫描.csv",
+        default=SWEEP_RESULTS / "模式复用器局部截面扫描.csv",
     )
     parser.add_argument("--main-start-um", type=float, default=1.60)
     parser.add_argument("--main-stop-um", type=float, default=1.10)

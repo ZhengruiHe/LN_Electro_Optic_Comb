@@ -1,7 +1,7 @@
-"""建立10 GHz候选T形电极的二维静电截面并导出电场。
+"""建立10 GHz候选T形电极或普通CPW的二维静电截面并导出电场。
 
 本模型不替代HFSS传输线结果。它只计算单位线电压下，T形帽覆盖区与
-主干空隙区在LN波导附近的横向准静电场，供后续光电重叠积分使用。
+主干空隙区或普通CPW在LN波导附近的横向准静电场，供后续光电重叠积分使用。
 """
 
 from __future__ import annotations
@@ -184,12 +184,20 @@ def build_cross_section(app: Any, cfg: dict[str, Any], section: str) -> dict[str
         material=materials["silica"],
     )
 
-    signal_width = segmented["signal_channel_width"]
-    ground_width = segmented["ground_channel_width"]
-    h = segmented["neck_lateral_length_h"]
-    s = segmented["cap_lateral_width_s"]
-    gap = segmented["inner_modulation_gap"]
-    base_gap = gap + 2.0 * (h + s)
+    if section == "regular":
+        signal_width = cpw["signal_width"]
+        ground_width = cpw["ground_width"]
+        h = 0.0
+        s = 0.0
+        gap = cpw["signal_ground_gap"]
+        base_gap = gap
+    else:
+        signal_width = segmented["signal_channel_width"]
+        ground_width = segmented["ground_channel_width"]
+        h = segmented["neck_lateral_length_h"]
+        s = segmented["cap_lateral_width_s"]
+        gap = segmented["inner_modulation_gap"]
+        base_gap = gap + 2.0 * (h + s)
     signal_left = -0.5 * signal_width
     signal_right = 0.5 * signal_width
     ground_right_inner = signal_right + base_gap
@@ -286,8 +294,8 @@ def build_cross_section(app: Any, cfg: dict[str, Any], section: str) -> dict[str
                 ),
             ]
         )
-    elif section != "trunk":
-        raise ValueError("截面类型只能是cap或trunk")
+    elif section not in {"trunk", "regular"}:
+        raise ValueError("截面类型只能是cap、trunk或regular")
 
     region = app.modeler.create_region(
         [80.0, 80.0, 35.0, 35.0], pad_type="Absolute Offset", name="Air_Region"
@@ -369,7 +377,11 @@ def export_field(app: Any, section: str, output_dir: Path) -> tuple[Path, Path]:
     if not exported:
         raise RuntimeError(f"{section}截面的电场导出失败")
     values = parse_field_file(field_path)
-    csv_path = output_dir / f"T形电极_{section}_单位电压电场.csv"
+    csv_path = output_dir / (
+        "普通CPW_单位电压电场.csv"
+        if section == "regular"
+        else f"T形电极_{section}_单位电压电场.csv"
+    )
     with csv_path.open("w", newline="", encoding="utf-8-sig") as stream:
         writer = csv.writer(stream)
         writer.writerow(["x_um", "y_um", "Ex_V_per_m", "Ey_V_per_m", "Eabs_V_per_m"])
@@ -419,7 +431,9 @@ def main() -> None:
         type=Path,
         default=RESULTS / "LN_EO_Comb_EO_PDK_10GHz_2023R1_v3.aedt",
     )
-    parser.add_argument("--section", choices=["cap", "trunk", "both"], default="both")
+    parser.add_argument(
+        "--section", choices=["cap", "trunk", "regular", "both"], default="both"
+    )
     parser.add_argument("--non-graphical", action="store_true", default=True)
     args = parser.parse_args()
     args.project = args.project.resolve()
@@ -436,7 +450,11 @@ def main() -> None:
     app = None
     try:
         for index, section in enumerate(sections):
-            design_name = "EO_Cap_Section" if section == "cap" else "EO_Trunk_Section"
+            design_name = {
+                "cap": "EO_Cap_Section",
+                "trunk": "EO_Trunk_Section",
+                "regular": "EO_Regular_CPW_Section",
+            }[section]
             if index == 0:
                 app = Maxwell2d(
                     project=str(args.project),

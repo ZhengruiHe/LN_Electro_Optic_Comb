@@ -662,7 +662,8 @@ def build_or_solve(args: argparse.Namespace, cfg: dict[str, Any]) -> None:
 
     from ansys.aedt.core import Hfss
 
-    RESULTS.mkdir(parents=True, exist_ok=True)
+    output_dir = args.results_dir
+    output_dir.mkdir(parents=True, exist_ok=True)
     cpw = cfg["cpw_um"]
     segmented = cfg["segmented_t_um"]
     if args.t_neck_length_um is not None:
@@ -688,7 +689,7 @@ def build_or_solve(args: argparse.Namespace, cfg: dict[str, Any]) -> None:
     design_name = args.design_name or (
         f"CPW_{electrode_style}_L{line_length_um:g}um"
     )
-    project_file = RESULTS / f"{cfg['aedt']['project_name']}.aedt"
+    project_file = output_dir / f"{cfg['aedt']['project_name']}.aedt"
     hfss = Hfss(
         project=str(project_file),
         design=design_name,
@@ -745,7 +746,7 @@ def build_or_solve(args: argparse.Namespace, cfg: dict[str, Any]) -> None:
             )
             if not hfss.analyze(setup=setup_name, cores=args.cores):
                 raise RuntimeError("HFSS refinement failed")
-            touchstone = RESULTS / f"{design_name}{output_suffix}.s4p"
+            touchstone = output_dir / f"{design_name}{output_suffix}.s4p"
             hfss.export_touchstone(
                 setup=setup_name,
                 sweep="Sweep_RF",
@@ -782,7 +783,7 @@ def build_or_solve(args: argparse.Namespace, cfg: dict[str, Any]) -> None:
             simulation_profile=simulation_profile,
         )
         setup_name = add_solution(hfss, cfg, simulation_profile)
-        validation_log = RESULTS / f"{design_name}_validation.log"
+        validation_log = output_dir / f"{design_name}_validation.log"
         validation_code = hfss.validate_simple(validation_log)
         hfss.save_project(str(project_file))
         print(f"project={project_file}")
@@ -797,7 +798,7 @@ def build_or_solve(args: argparse.Namespace, cfg: dict[str, Any]) -> None:
                 raise RuntimeError("HFSS solve failed")
             # Each physical GSG port is exported as odd/common mixed modes,
             # therefore the Touchstone network contains four ports.
-            touchstone = RESULTS / f"{design_name}{output_suffix}.s4p"
+            touchstone = output_dir / f"{design_name}{output_suffix}.s4p"
             hfss.export_touchstone(
                 setup=setup_name,
                 sweep="Sweep_RF",
@@ -821,6 +822,12 @@ def parse_args() -> argparse.Namespace:
         default="check",
     )
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument(
+        "--results-dir",
+        type=Path,
+        default=RESULTS,
+        help="工程、Touchstone和验证日志的保存目录；扫参应指定results/hfss/扫描结果下的子目录",
+    )
     parser.add_argument("--aedt-version")
     parser.add_argument(
         "--project-name",

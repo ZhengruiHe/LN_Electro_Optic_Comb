@@ -188,6 +188,7 @@ def plot_overlap(
     results: list[dict[str, Any]],
     arrays: list[dict[str, np.ndarray]],
     output: Path,
+    electrode_type: str,
 ) -> None:
     plt.rcParams.update(
         {
@@ -241,8 +242,14 @@ def plot_overlap(
     axes[0].set_ylabel("竖直位置（µm）")
     if image is not None:
         bar = fig.colorbar(image, ax=axes.ravel().tolist(), fraction=0.03, pad=0.025)
-        bar.set_label("90%/10%加权横向电场（10⁵ V/m，每1 V线电压）")
-    fig.suptitle("PDK有源LN波导：光场等强线与T形电极横向场重叠", fontsize=13)
+        field_label = (
+            "普通CPW横向电场（10⁵ V/m，每1 V线电压）"
+            if electrode_type == "regular"
+            else "90%/10%加权横向电场（10⁵ V/m，每1 V线电压）"
+        )
+        bar.set_label(field_label)
+    electrode_label = "普通连续CPW" if electrode_type == "regular" else "T形电极"
+    fig.suptitle(f"PDK有源LN波导：光场等强线与{electrode_label}横向场重叠", fontsize=13)
     fig.subplots_adjust(left=0.08, right=0.90, bottom=0.16, top=0.76, wspace=0.10)
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, dpi=240, facecolor="white")
@@ -267,6 +274,11 @@ def main() -> None:
         default=ROOT / "results" / "eo" / "T形电极_trunk_单位电压电场.csv",
     )
     parser.add_argument("--duty-cycle", type=float, default=0.9)
+    parser.add_argument(
+        "--electrode-type",
+        choices=("segmented_t", "regular"),
+        default="segmented_t",
+    )
     parser.add_argument("--rail-center-um", type=float, default=30.0)
     parser.add_argument("--r33-pm-per-v", type=float, default=30.9)
     parser.add_argument("--r13-pm-per-v", type=float, default=9.6)
@@ -310,7 +322,10 @@ def main() -> None:
         "ln_sidewall_angle_deg_from_horizontal": float(optical["sidewall_angle_deg"]),
         "active_region_sin_fully_removed_and_sio2_refilled": True,
         "metal_included_in_optical_mode": bool(optical["metal_included"]),
-        "t_cap_duty_cycle": args.duty_cycle,
+        "electrode_type": args.electrode_type,
+        "t_cap_duty_cycle": (
+            args.duty_cycle if args.electrode_type == "segmented_t" else None
+        ),
         "electrode_length_cm": args.electrode_length_cm,
         "electro_optic_coefficients_pm_per_v": {
             "r33": args.r33_pm_per_v,
@@ -326,20 +341,30 @@ def main() -> None:
         "four_pass_sequence": ["TE0", "TE1", "TE0", "TE1"],
         "limitations": [
             "r33与r13采用Ansys示例文献起始值，不是本PDK代工实测值",
-            "二维场按帽区90%与主干区10%加权，未单独积分10 µm颈部三维边缘场",
+            (
+                "普通CPW采用二维均匀截面，不包含探针焊盘和过渡结构"
+                if args.electrode_type == "regular"
+                else "二维场按帽区90%与主干区10%加权，未单独积分10 µm颈部三维边缘场"
+            ),
             "半波电压尚未乘入HFSS沿程损耗、端口失配和四程光学插损",
             "最终流片前还需电极尺寸、顶氧化层厚度和LN电光系数的工艺角点扫描",
         ],
     }
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    summary_path = args.output_dir / "电光重叠_半波电压摘要.json"
-    report_path = args.output_dir / "电光重叠与半波电压报告.md"
-    figure_path = args.output_dir / "TE0_TE1光场与T形电极横向场重叠.png"
+    if args.electrode_type == "regular":
+        summary_path = args.output_dir / "普通CPW_电光重叠_半波电压摘要.json"
+        report_path = args.output_dir / "普通CPW_电光重叠与半波电压报告.md"
+        figure_path = args.output_dir / "TE0_TE1光场与普通CPW横向场重叠.png"
+    else:
+        summary_path = args.output_dir / "电光重叠_半波电压摘要.json"
+        report_path = args.output_dir / "电光重叠与半波电压报告.md"
+        figure_path = args.output_dir / "TE0_TE1光场与T形电极横向场重叠.png"
     with summary_path.open("w", encoding="utf-8") as stream:
         json.dump(summary, stream, ensure_ascii=False, indent=2)
-    plot_overlap(results, arrays, figure_path)
+    plot_overlap(results, arrays, figure_path, args.electrode_type)
+    electrode_label = "普通连续CPW" if args.electrode_type == "regular" else "T形电极"
     report_lines = [
-        "# 电光重叠与半波电压结果",
+        f"# {electrode_label}电光重叠与半波电压结果",
         "",
         "当前PDK几何下的光电重叠积分已经完成。1 cm单程的TE0半波电压为"
         f"{vpi_single_pass[0]:.3f} V，TE1为{vpi_single_pass[1]:.3f} V；"
@@ -351,7 +376,11 @@ def main() -> None:
         f"- LN1刻蚀：{float(optical['etch_depth_um']) * 1000:.0f} nm；",
         f"- LN1/LN2侧壁与水平面夹角：{float(optical['sidewall_angle_deg']):.0f}°；",
         "- 有源区下方SiN：完全移除并用SiO2回填；",
-        f"- T形帽/主干权重：{args.duty_cycle * 100:.0f}%/{(1.0 - args.duty_cycle) * 100:.0f}%；",
+        (
+            "- 电极截面：43 µm信号线、5 µm连续槽宽、100 µm地线；"
+            if args.electrode_type == "regular"
+            else f"- T形帽/主干权重：{args.duty_cycle * 100:.0f}%/{(1.0 - args.duty_cycle) * 100:.0f}%；"
+        ),
         f"- 电光系数：r33={args.r33_pm_per_v:g} pm/V、r13={args.r13_pm_per_v:g} pm/V。",
         "",
         "## 结果",

@@ -7,9 +7,19 @@
 - `analyze_mode_localization.py`：从模式场中计算中心能量占比、横向展宽和奇偶对称性，用于区分波导芯区的TE₀/TE₁与LN平台模式。
 - `mode_mux_cross_section_sweep.py`：扫描主波导TE₁与辅助波导TE₀的局部避免交叉。
 - `mode_mux_eme.py`：建立两级梯形LN结构的三维EME模式复用器，LN1和LN2均以配置中的“与水平面夹角”生成。
+- `../../docs/模式复用器EME仿真思路与建立方法.md`：从避免交叉、各向异性坐标、EME单元与端口设置到S矩阵和传播场判读的完整中文学习说明。
 - `repropagate_eme_ports.py`：制造偏差导致端口本征模编号重排时，复用工程几何重新选择物理端口模式、重算EME基底并导出S矩阵；MODE 2023 R2切回布局态会清除旧结果，因此不能只做传播。
 - `export_mode_mux_fields.py`：导出输入端、避免交叉中心和输出端的TE0直通分支及TE1→TE0转换分支光强图。
 - `export_active_mode_fields.py`：导出当前1.33 µm、70°有源LN脊波导的TE0/TE1光强图。
+
+## 输出目录约定
+
+- `results/optical/`根目录：只保留当前名义结构的可复现工程、几何轨迹、S矩阵和阶段报告；
+- `results/optical/扫描结果/波导截面/`：保存宽度、刻蚀深度、波长等FDE扫描输出；
+- `results/optical/扫描结果/模式复用器/`：保存局部避免交叉、长度、间隙、波长和工艺角点扫描输出；
+- 扫描工程和数值结果由Git忽略，不上传仓库；仓库只跟踪建模脚本、配置和中文使用说明。
+
+运行扫描时若显式指定`--output`、`--project`、`--geometry-output`或`--s-output`，也应遵守上述目录约定，避免覆盖基准工程。
 
 ## 当前光学结论
 
@@ -21,7 +31,7 @@
 
 详细结果见 `results/optical/光学双模候选报告.md`和 `results/optical/70度模式复用器阶段报告.md`。
 
-运行完整扫描：
+运行完整扫描（结果默认写入`results/optical/扫描结果/波导截面/`）：
 
 ```powershell
 .\.venv\Scripts\python.exe -u models\optical\mode_pdk_sweep.py

@@ -43,9 +43,28 @@ T形帽占空比固定为90%，没有通过降低占空比实现速度匹配。�
 建立 500 µm 的 T 形电极短线模型：
 
 ```powershell
-.\.venv\Scripts\python.exe models\rf\build_hfss_cpw.py build --allow-placeholders --non-graphical --aedt-version 2023.1 --electrode-style segmented_t --length-um 500
+.\.venv\Scripts\python.exe models\rf\build_hfss_cpw.py build `
+  --allow-placeholders `
+  --non-graphical `
+  --aedt-version 2023.1 `
+  --electrode-style segmented_t `
+  --length-um 500
 ```
 
 `--allow-placeholders` 只允许检查建模链路，不能把结果当作最终器件数据。当前 PDK 中仍未确认 LN1/LN2 刻蚀深度、射频材料损耗、金属工艺电导率与粗糙度、背面载台边界和探针焊盘，因此正式扫频前必须补齐或做敏感性分析。
 
-生成的 AEDT 工程、网格、Touchstone 数据、场文件和预览图统一保存在 `results/hfss/`，并由 Git 忽略。
+名义基准的AEDT工程、Touchstone数据和验证日志默认保存在`results/hfss/`。结构扫参时必须通过`--results-dir`写入独立子目录，例如：
+
+```powershell
+.\.venv\Scripts\python.exe models\rf\build_hfss_cpw.py solve `
+  --allow-placeholders `
+  --non-graphical `
+  --aedt-version 2023.1 `
+  --project-name T形电极局部扫描 `
+  --design-name h4_r45_c5_w43_g5_L500um `
+  --electrode-style segmented_t `
+  --length-um 500 `
+  --results-dir results\hfss\扫描结果\T形电极局部扫描
+```
+
+扫描结果必须保留在本机，便于比较和追溯，但`results/hfss/`整体由Git忽略，不上传工程、网格、Touchstone、CSV、图片或日志。Git只保存建模脚本、参数配置和中文运行说明。

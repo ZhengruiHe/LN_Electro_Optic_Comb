@@ -14,7 +14,8 @@ from scipy.special import jv
 
 C_M_PER_S = 299_792_458.0
 VALIDATED_RF_DATASETS = {
-    "pdk_10GHz_a70_D90_h4_t10_r45_c5_w43_g5_phasecheck_500_1000.csv"
+    "pdk_10GHz_a70_D90_h4_t10_r45_c5_w43_g5_phasecheck_500_1000.csv",
+    "pdk_10GHz_a70_regular_w43_g5_phasecheck_500_1000.csv",
 }
 
 
@@ -206,6 +207,15 @@ def main() -> None:
         pass_beta_per_v_per_m = np.full(
             4, math.pi / (args.continuous_vpi_l_v_cm * 1e-2)
         )
+    electrode_type = (
+        str(eo_overlap.get("electrode_type") or "segmented_t")
+        if eo_overlap_used
+        else "segmented_t"
+    )
+    electrode_label = "普通CPW" if electrode_type == "regular" else "T形电极"
+    passive_lengths_m = loop_lengths_m - electrode_length_m
+    if np.any(passive_lengths_m <= 0.0):
+        raise ValueError("有源电极长度已经超过至少一段四程总回路长度")
     coherent_phase_per_v = np.zeros_like(frequency_hz, dtype=complex)
     for pass_index in range(4):
         mismatch_x = (
@@ -288,8 +298,12 @@ def main() -> None:
 
     output_dir = args.output_dir
     geometry_tag = (
-        f"h{args.t_neck_length_um:g}_r{args.t_cap_length_um:g}_"
-        f"c{args.t_unit_gap_um:g}_w{args.signal_width_um:g}_g{args.inner_gap_um:g}"
+        f"regular_w{args.signal_width_um:g}_g{args.inner_gap_um:g}"
+        if electrode_type == "regular"
+        else (
+            f"h{args.t_neck_length_um:g}_r{args.t_cap_length_um:g}_"
+            f"c{args.t_unit_gap_um:g}_w{args.signal_width_um:g}_g{args.inner_gap_um:g}"
+        )
     ).replace(".", "p")
     frequency_tag = f"{args.target_frequency_ghz:g}GHz".replace(".", "p")
     response_path = output_dir / f"four_pass_{frequency_tag}_{geometry_tag}_response.csv"
@@ -307,9 +321,10 @@ def main() -> None:
         limitations.append(
             "Vpi uses a Maxwell2D/MODE overlap integral, but r33 and r13 are Ansys example starting values rather than foundry-confirmed coefficients"
         )
-        limitations.append(
-            "The electrostatic period average uses 90% cap and 10% trunk cross-sections and omits the three-dimensional neck-edge correction"
-        )
+        if electrode_type == "segmented_t":
+            limitations.append(
+                "The electrostatic period average uses 90% cap and 10% trunk cross-sections and omits the three-dimensional neck-edge correction"
+            )
     else:
         limitations.append(
             "Vpi uses the 3 Vcm reference and a gap-weighted field approximation because no electro-optic overlap result was supplied"
@@ -322,20 +337,13 @@ def main() -> None:
         limitations.append(
             "HFSS port mode isolation has not been cleared and must be revalidated"
         )
-    summary = {
-        "status": (
-            "preliminary_engineering_estimate_not_tapeout_ready"
-            if rf_validated
-            else "screening_only_rf_not_numerically_validated"
-        ),
-        "rf_adaptive_converged": rf_validated,
-        "rf_port_extra_mode_cleared": rf_validated,
-        "target_frequency_ghz": args.target_frequency_ghz,
-        "optical_geometry_um": {
-            "width": args.waveguide_width_um,
-            "etch_depth": args.etch_depth_um,
-        },
-        "electrode_geometry_um": {
+    electrode_geometry_um = (
+        {
+            "signal_width": args.signal_width_um,
+            "signal_ground_gap": args.inner_gap_um,
+        }
+        if electrode_type == "regular"
+        else {
             "signal_width": args.signal_width_um,
             "inner_gap": args.inner_gap_um,
             "t_neck_length": args.t_neck_length_um,
@@ -345,12 +353,32 @@ def main() -> None:
             "t_unit_gap": args.t_unit_gap_um,
             "trunk_gap": args.trunk_gap_um,
             "t_cap_duty_cycle": duty_cycle,
+        }
+    )
+    summary = {
+        "status": (
+            "preliminary_engineering_estimate_not_tapeout_ready"
+            if rf_validated
+            else "screening_only_rf_not_numerically_validated"
+        ),
+        "rf_adaptive_converged": rf_validated,
+        "rf_port_extra_mode_cleared": rf_validated,
+        "target_frequency_ghz": args.target_frequency_ghz,
+        "electrode_type": electrode_type,
+        "active_electrode_length_mm": args.electrode_length_cm * 10.0,
+        "optical_geometry_um": {
+            "width": args.waveguide_width_um,
+            "etch_depth": args.etch_depth_um,
         },
+        "electrode_geometry_um": electrode_geometry_um,
         "ng_te0": ng_te0,
         "ng_te1": ng_te1,
         "loop_delay_multipliers": loop_multipliers.tolist(),
         "loop_length_definition": "total group-delay path from one pass reference plane to the next, including the preceding modulation arm, multiplexers, tapers, bends and passive delay routing",
         "loop_lengths_mm": (loop_lengths_m * 1e3).tolist(),
+        "passive_lengths_after_subtracting_active_arm_mm": (
+            passive_lengths_m * 1e3
+        ).tolist(),
         "eo_overlap_used": eo_overlap_used,
         "eo_overlap_source": str(args.eo_overlap_json) if eo_overlap_used else None,
         "eo_overlap_mode_vpi_l_v_cm": (
@@ -388,7 +416,7 @@ def main() -> None:
         json.dump(summary, stream, ensure_ascii=False, indent=2)
 
     report_lines = [
-        "# 四程电光梳工程估计",
+        f"# 四程电光梳工程估计（{electrode_label}）",
         "",
         f"当前结论：HFSS传输参数、MODE群折射率与光电场重叠积分已接入四程相干模型；在{args.target_frequency_ghz:g} GHz、{args.rf_power_dbm:g} dBm射频驱动下，理想纯相位调制模型给出{line_counts['above_20.0dB']}根高于最强梳齿−20 dB的谱线。含射频沿程损耗与回波后的有效半波电压工程预测为{vpi_v[center_index]:.3f} V。",
         "",
@@ -396,8 +424,14 @@ def main() -> None:
         "",
         f"- LN波导：顶宽 {args.waveguide_width_um:g} µm、刻蚀 {args.etch_depth_um * 1000:g} nm、侧壁与水平面夹角 {args.sidewall_angle_deg_from_horizontal:g}°；",
         f"- 光学群折射率：TE0为 {ng_te0:.4f}，TE1为 {ng_te1:.4f}；",
-        f"- T形电极：{args.signal_width_um:g} µm信号主干、{args.inner_gap_um:g} µm内间隙、{args.t_cap_length_um:g}/{args.t_unit_gap_um:g} µm加载/空隙、占空比 {duty_cycle * 100:.1f}%；",
+        f"- 有源电极长度：{args.electrode_length_cm * 10.0:g} mm；",
+        (
+            f"- 普通CPW：{args.signal_width_um:g} µm信号线、{args.inner_gap_um:g} µm连续间隙；"
+            if electrode_type == "regular"
+            else f"- T形电极：{args.signal_width_um:g} µm信号主干、{args.inner_gap_um:g} µm内间隙、{args.t_cap_length_um:g}/{args.t_unit_gap_um:g} µm加载/空隙、占空比 {duty_cycle * 100:.1f}%；"
+        ),
         f"- 四程回路：{loop_multipliers[0]:g}T、{loop_multipliers[1]:g}T、{loop_multipliers[2]:g}T，对应名义长度 {loop_lengths_m[0] * 1e3:.3f}、{loop_lengths_m[1] * 1e3:.3f}、{loop_lengths_m[2] * 1e3:.3f} mm。",
+        f"- 扣除有源电极后的无源长度：{passive_lengths_m[0] * 1e3:.3f}、{passive_lengths_m[1] * 1e3:.3f}、{passive_lengths_m[2] * 1e3:.3f} mm。",
         "",
         f"## {args.target_frequency_ghz:g} GHz结果",
         "",

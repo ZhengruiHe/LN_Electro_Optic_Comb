@@ -60,6 +60,12 @@ def main() -> None:
     parser.add_argument("--mesh-scale", type=float, default=1.5)
     parser.add_argument("--search-neff", type=float, default=1.8)
     parser.add_argument(
+        "--metal-style",
+        choices=("t_cap", "regular"),
+        default="t_cap",
+        help="regular把5 µm槽外的金属扩展为连续CPW边缘",
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         default=RESULTS / "active_waveguide_TE0_TE1_complex_fields_1550nm.npz",
@@ -82,6 +88,15 @@ def main() -> None:
             True,
             args.wavelength_nm * 1e-3,
         )
+        if args.metal_style == "regular":
+            half_gap_um = 0.5 * float(cfg["local_electrode_um"]["gap"])
+            half_span_um = 0.5 * float(cfg["fde"]["x_span_um"])
+            mode.select("M1_Left_T_Cap")
+            mode.set("x min", -half_span_um * 1e-6)
+            mode.set("x max", -half_gap_um * 1e-6)
+            mode.select("M1_Right_T_Cap")
+            mode.set("x min", half_gap_um * 1e-6)
+            mode.set("x max", half_span_um * 1e-6)
         found = int(mode.findmodes())
         candidates = [
             read_mode(
@@ -117,6 +132,7 @@ def main() -> None:
                 cfg["waveguide_um"]["sidewall_angle_deg_from_horizontal"]
             ),
             "metal_included": np.asarray(True),
+            "metal_style": np.asarray(args.metal_style),
         }
         for mode_index, result in enumerate(candidates[:2]):
             prefix = f"te{mode_index}_"
