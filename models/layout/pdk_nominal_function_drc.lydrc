@@ -1,0 +1,25 @@
+# 历史宽松初筛，仅供复现旧结果；不能用于声明PDK合规。
+# 流片手册LN规则为0.30/0.30µm，M1为2/3µm；使用pdk_manual_function_drc.lydrc。
+# 软件技术树给出的全局默认最小线宽为0.15 µm、最小间距为0.20 µm。
+# 本规则只检查本项目用到的核心层及基本包覆关系，不替代代工方官方DRC。
+
+source($input_layout, $topcell)
+report("四程电光梳名义功能DRC", $output_rdb)
+
+ln_core = input(20, 0).merged
+ln_clad = input(20, 1).merged
+sin_trench = input(10, 2).merged
+metal = input(42, 0).merged
+
+ln_core.width(0.15.um).output("LN核心最小线宽", "LN核心线宽小于0.15 µm")
+ln_core.space(0.20.um).output("LN核心最小间距", "不同LN核心间距小于0.20 µm")
+ln_clad.width(0.15.um).output("LN包络最小线宽", "LN包络线宽小于0.15 µm")
+ln_clad.space(0.20.um).output("LN包络最小间距", "不同LN包络间距小于0.20 µm")
+sin_trench.width(0.15.um).output("SiN挖除最小线宽", "SiN挖除图形线宽小于0.15 µm")
+sin_trench.space(0.20.um).output("SiN挖除最小间距", "不同SiN挖除图形间距小于0.20 µm")
+metal.width(0.15.um).output("金属最小线宽", "金属线宽小于0.15 µm")
+metal.space(0.20.um).output("金属最小间距", "不同金属图形间距小于0.20 µm")
+
+(ln_core - ln_clad).output("LN核心超出包络", "LN核心存在未被20/1包络覆盖的区域")
+(ln_clad - sin_trench).output("LN包络超出SiN挖除", "LN包络存在未被10/2挖除窗口覆盖的区域")
+ln_core.separation(metal, 0.20.um).output("LN核心到金属间距", "LN核心与金属间距小于0.20 µm")

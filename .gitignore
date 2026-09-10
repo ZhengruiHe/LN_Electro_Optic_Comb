@@ -51,3 +51,30 @@ temp/
 
 # Foundry PDK and NDA-protected source packages (local use only)
 南智光电流片说明-*.zip
+/SiN_TFLN_V0.1_BlackBox/
+/ioptee_sin_tfln_v1.0_beta/
+
+# 本机凭据与个人文件：只按文件名排除，禁止读取或上传
+.env
+.env.*
+!.env.example
+*recovery*key*
+*recovery*code*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# 版图与求解工程仅保存在本地；版本管理保留生成脚本
+*.gds
+*.gdsii
+*.oas
+*.fsp
+*.lms
+*.aedt
+*.aedt.lock
+*.rdb
+
+# 一次性调试与已知不匹配的历史外接续模型，仅留本地追溯
+/models/layout/probe_*.py
+/models/optical/mux_external_taper_eme.py

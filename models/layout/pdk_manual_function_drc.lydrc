@@ -1,0 +1,32 @@
+# 来源：本地流片手册2.2、4.3节。分层规则优先于IPKISS通用默认值。
+# 这是本项目的手册规则筛查，不是官方完整DRC。
+source($input_layout, $topcell)
+report("四程电光梳手册规则筛查", $output_rdb)
+
+core = input(20, 0).merged
+clad1 = input(20, 1).merged
+keep2 = input(21, 0).merged
+clad2 = input(21, 1).merged
+trench = input(10, 2).merged
+metal = input(42, 0).merged
+etch1 = ((clad1 - core) + input(20, 2)).merged
+etch2 = ((clad2 - keep2) + input(21, 2)).merged
+
+core.width(0.30.um).output("LN核心线宽030", "手册LN最小线宽0.30um")
+core.space(0.30.um).output("LN核心间距030", "手册LN最小间距0.30um")
+keep2.width(0.30.um).output("LN2保留区线宽030")
+keep2.space(0.30.um).output("LN2保留区间距030")
+etch1.width(0.30.um).output("LN1刻蚀区线宽030")
+etch1.space(0.30.um).output("LN1刻蚀区间距030")
+etch2.width(0.30.um).output("LN2刻蚀区线宽030")
+etch2.space(0.30.um).output("LN2刻蚀区间距030")
+trench.width(0.20.um).output("SiN挖除线宽020")
+trench.space(0.20.um).output("SiN挖除间距020")
+metal.width(2.0.um).output("M1线宽2um")
+metal.space(3.0.um).output("M1间距3um")
+(core - trench).output("LN核心未覆盖SiN挖除")
+(keep2 - trench).output("LN2保留区未覆盖SiN挖除")
+(etch2 - etch1).output("第二遍刻蚀不在第一遍刻蚀内", "当前项目400/200/0nm模型不允许此区域")
+if etch2.is_empty?
+  core.output("项目两次刻蚀映射缺失", "当前有限残余平台模型需要显式LN2刻透定义；不属于普适PDK规则")
+end

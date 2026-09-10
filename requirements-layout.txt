@@ -1,0 +1,2 @@
+klayout-klink==0.5.8
+shapely>=2.0,<3

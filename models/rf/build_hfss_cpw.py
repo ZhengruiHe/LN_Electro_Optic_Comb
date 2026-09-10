@@ -219,6 +219,7 @@ def create_stack_and_cpw(
     ground_width_um: float,
     electrode_style: str,
     simulation_profile: dict[str, Any],
+    metal_polygons_xy: dict[str, list[list[float]]] | None = None,
 ) -> dict[str, Any]:
     stack = cfg["stack_um"]
     cpw = cfg["cpw_um"]
@@ -459,6 +460,23 @@ def create_stack_and_cpw(
         solids["ground_right"] = solids["ground_right"].unite(
             right_ground_segments
         )
+
+    if metal_polygons_xy is not None:
+        # 可选接口筛查：以实际GDS轮廓替换本次新工程的三条金属，
+        # 保持默认基准路径不变，并在创建端口前完成替换。
+        expected = {"signal", "ground_left", "ground_right"}
+        if set(metal_polygons_xy) != expected:
+            raise ValueError("GDS金属必须明确提供信号与两条地轮廓")
+        hfss.modeler.delete([solids[key].name for key in expected])
+        for key in ("signal", "ground_left", "ground_right"):
+            polygon = hfss.modeler.create_polyline(
+                [[x, y, metal_z] for x, y in metal_polygons_xy[key]],
+                cover_surface=True, close_surface=True,
+                name="GDS_M1_" + key, material=materials["metal"],
+            )
+            if not polygon or not polygon.sweep_along_vector([0.0, 0.0, stack["metal"]]):
+                raise RuntimeError("GDS金属拉伸失败：" + key)
+            solids[key] = polygon
 
     region = hfss.modeler.create_region(
         [

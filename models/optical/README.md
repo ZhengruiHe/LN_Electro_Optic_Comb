@@ -1,6 +1,12 @@
 # 光学模型
 
-此处存放波导模式、色散、跑道形谐振器谐振、波长选择性耦合器和 PPLN 模场重叠的源模型及可复现脚本。
+此处存放本项目的LN波导模式、群折射率、模式复用器、交叉器、欧拉弯及二维近邻验证脚本。
+
+2026-09-11阶段决定：用户接受现有二维仿真，不再补跑。四组近邻共8例有结果，其中6例触发能量停止、2例时间窗初筛；保留原始状态，不宣称全部数值收敛。当前交付口径以 [阶段交付核查](../../docs/阶段交付核查与进展_20260911.md) 为准；下文保留早期有源和MUX基线说明，不表示此刻要执行新的容差任务。
+
+当前只读入口为 `link_2d_neighbors_status.py`、`audit_mux_external_results.py`。二维复现入口是 `link_2d_effective_model.py`、`prepare_link_2d_layout_validation.py`、`link_2d_component.py`、`run_link_2d_neighbors.py`，均需用户主动执行才启动计算。`scan_crossing_ln2.py`等参数扫描能力保留，结果不上传。
+
+本地历史脚本 `mux_external_taper_eme.py` 已查出几何和模式标签问题，不纳入当前基准提交，也不将其结果用于版图通过判断。MUX本体的原始`mode_mux_eme.py`基线仍保留。
 
 - `mode_pdk_config.json`：南智 TFLN-on-SiN 堆栈、待扫描波导尺寸和 MODE 求解设置。
 - `mode_pdk_sweep.py`：调用本机 Lumerical MODE 2023 R2，扫描1550 nm下的TE0/TE1有效折射率和群折射率。当前采用LN1刻蚀200 nm并保留200 nm薄膜、LN2继续刻透的两级截面；LN1和LN2两次刻蚀形成的侧壁均按相对水平面70°建模，版图宽度解释为梯形顶宽。有源区下方的SiN全部移除，原300 nm SiN高度以SiO₂填满。
