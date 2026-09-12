@@ -9,7 +9,7 @@ from pathlib import Path
 from klink import KLinkClient
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = ROOT / "results/layout/尾端线宽修正_工作稿_v6/四程10GHz_15mm_尾端线宽修正_待验证工作稿.gds"
+BASE = ROOT / "results/layout/_历史归档/迭代版本_20260912/尾端线宽修正_工作稿_v6/四程10GHz_15mm_尾端线宽修正_待验证工作稿.gds"
 
 CODE = r'''
 import json

@@ -58,7 +58,7 @@ def main():
             ('90度_R80_细网格',90.,80.,41,20,400,200,16.,False,0.),
             ('90度_R80_扩大边界',90.,80.,41,20,480,200,19.2,False,0.),
         ]
-        budget_path=ROOT/'results/layout/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json'
+        budget_path=ROOT/'results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json'
         budget=json.loads(budget_path.read_text(encoding='utf-8'))
         radius_special=budget['route_metadata']['loop1']['start_radius_um']
         for label,radius in [('R80',80.),('R81p67',radius_special),('R270',270.)]:

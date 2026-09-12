@@ -1,0 +1,359 @@
+{
+  "source_sha256": "b003ee44f75bbce43b24d40a5ed8c568cddef09a00bb5f31f927eebd6b0705f0",
+  "original_result": {
+    "status": "completed_local_mode_absorption_estimate",
+    "wavelength_nm": 1550.0,
+    "material_file": "[外部本地文件，未包含]",
+    "metal_material": "Al (Aluminium) - Palik",
+    "source_config": "[PROJECT_ROOT]\\models\\optical\\mode_pdk_config.json",
+    "cases": [
+      {
+        "with_tin_metal": false,
+        "geometry": {
+          "top_width_um": 1.33,
+          "etch_depth_um": 0.2,
+          "sidewall_deg_from_horizontal": 70.0,
+          "top_cladding_um": 1.0,
+          "metal_thickness_um": 1.0,
+          "metal_width_um": 0.0
+        },
+        "modes": [
+          {
+            "solver_mode": 1,
+            "neff_real": 1.8128448470589846,
+            "neff_imag": 1.422717370145776e-14,
+            "loss_db_per_m": 5.009346936843734e-07,
+            "loss_db_per_cm": 5.009346936843734e-09,
+            "te_fraction": 0.9968259135688476,
+            "central_energy_fraction": 0.9998091210195932,
+            "peak_x_um": 0.0,
+            "rms_x_um": 0.36960886650154107,
+            "parity_correlation": 0.9093928054948596
+          },
+          {
+            "solver_mode": 2,
+            "neff_real": 1.7240768769581827,
+            "neff_imag": -8.389473944183142e-13,
+            "loss_db_per_m": -2.953909644029865e-05,
+            "loss_db_per_cm": -2.953909644029865e-07,
+            "te_fraction": 0.05827120654992713,
+            "central_energy_fraction": 0.9997304720200828,
+            "peak_x_um": 0.0,
+            "rms_x_um": 0.3738564614887001,
+            "parity_correlation": 0.9074716708027251
+          },
+          {
+            "solver_mode": 3,
+            "neff_real": 1.6710654770242024,
+            "neff_imag": 8.20957675484375e-13,
+            "loss_db_per_m": 2.8905683611247608e-05,
+            "loss_db_per_cm": 2.8905683611247606e-07,
+            "te_fraction": 0.937554352176888,
+            "central_energy_fraction": 0.9880233660392013,
+            "peak_x_um": -0.46666666666666673,
+            "rms_x_um": 0.6433625157852156,
+            "parity_correlation": -0.6405288257870777
+          },
+          {
+            "solver_mode": 4,
+            "neff_real": 1.5921805787111627,
+            "neff_imag": 9.646955818522374e-11,
+            "loss_db_per_m": 0.0033966653949287465,
+            "loss_db_per_cm": 3.396665394928746e-05,
+            "te_fraction": 0.8814700944728755,
+            "central_energy_fraction": 0.46869420633929704,
+            "peak_x_um": -1.6666666666666672,
+            "rms_x_um": 1.7678749482485372,
+            "parity_correlation": 0.6861230533979261
+          },
+          {
+            "solver_mode": 5,
+            "neff_real": 1.5825144586694497,
+            "neff_imag": 1.6582458200107158e-10,
+            "loss_db_per_m": 0.005838635834012116,
+            "loss_db_per_cm": 5.8386358340121166e-05,
+            "te_fraction": 0.9995007930296248,
+            "central_energy_fraction": 0.11850970263743381,
+            "peak_x_um": 2.2666666666666666,
+            "rms_x_um": 2.299813664797915,
+            "parity_correlation": -0.9370568388159249
+          },
+          {
+            "solver_mode": 6,
+            "neff_real": 1.5750222218787402,
+            "neff_imag": 3.267666820760567e-11,
+            "loss_db_per_m": 0.0011505360883817457,
+            "loss_db_per_cm": 1.1505360883817458e-05,
+            "te_fraction": 0.3129152797791177,
+            "central_energy_fraction": 0.7713449364611407,
+            "peak_x_um": -0.46666666666666673,
+            "rms_x_um": 1.31507262487755,
+            "parity_correlation": -0.4605868180363335
+          },
+          {
+            "solver_mode": 7,
+            "neff_real": 1.5459447727266722,
+            "neff_imag": 4.1947961206801554e-10,
+            "loss_db_per_m": 0.014769756480628364,
+            "loss_db_per_cm": 0.00014769756480628363,
+            "te_fraction": 0.8504504951761955,
+            "central_energy_fraction": 0.5363151305768944,
+            "peak_x_um": -1.0000000000000007,
+            "rms_x_um": 2.0080179057718786,
+            "parity_correlation": 0.5331167563257927
+          },
+          {
+            "solver_mode": 8,
+            "neff_real": 1.5258056818434897,
+            "neff_imag": 1.0312589126851496e-09,
+            "loss_db_per_m": 0.03631032968145203,
+            "loss_db_per_cm": 0.00036310329681452026,
+            "te_fraction": 0.9980432790963373,
+            "central_energy_fraction": 0.3210104454702114,
+            "peak_x_um": 3.0,
+            "rms_x_um": 2.323696691104624,
+            "parity_correlation": -0.7920396690604272
+          },
+          {
+            "solver_mode": 9,
+            "neff_real": 1.4809375684307555,
+            "neff_imag": 2.394111225450311e-08,
+            "loss_db_per_m": 0.8429596759927014,
+            "loss_db_per_cm": 0.008429596759927015,
+            "te_fraction": 0.9640165826784749,
+            "central_energy_fraction": 0.35389265311400525,
+            "peak_x_um": -0.7333333333333336,
+            "rms_x_um": 2.2359641513310873,
+            "parity_correlation": 0.616555246057275
+          },
+          {
+            "solver_mode": 10,
+            "neff_real": 1.442671029304458,
+            "neff_imag": -1.1816163670669535e-05,
+            "loss_db_per_m": -416.04372400997494,
+            "loss_db_per_cm": -4.16043724009975,
+            "te_fraction": 0.25375376986840986,
+            "central_energy_fraction": 0.332676426004668,
+            "peak_x_um": 2.1999999999999993,
+            "rms_x_um": 2.294626868947427,
+            "parity_correlation": 0.5338890402077816
+          },
+          {
+            "solver_mode": 11,
+            "neff_real": 1.4385258298646293,
+            "neff_imag": -4.022174735575844e-06,
+            "loss_db_per_m": -141.61961549005787,
+            "loss_db_per_cm": -1.4161961549005786,
+            "te_fraction": 0.6462662271858934,
+            "central_energy_fraction": 0.35248263203104313,
+            "peak_x_um": 2.1333333333333337,
+            "rms_x_um": 2.3489977619046196,
+            "parity_correlation": -0.12468746692505572
+          },
+          {
+            "solver_mode": 12,
+            "neff_real": 1.436285526662318,
+            "neff_imag": -2.4887954467665644e-05,
+            "loss_db_per_m": -876.2977179658171,
+            "loss_db_per_cm": -8.762977179658172,
+            "te_fraction": 0.004756956407147684,
+            "central_energy_fraction": 0.11194984708383457,
+            "peak_x_um": -2.4666666666666663,
+            "rms_x_um": 2.6889209794380977,
+            "parity_correlation": -0.990827584813341
+          }
+        ],
+        "selected_TE0": {
+          "solver_mode": 1,
+          "neff_real": 1.8128448470589846,
+          "neff_imag": 1.422717370145776e-14,
+          "loss_db_per_m": 5.009346936843734e-07,
+          "loss_db_per_cm": 5.009346936843734e-09,
+          "te_fraction": 0.9968259135688476,
+          "central_energy_fraction": 0.9998091210195932,
+          "peak_x_um": 0.0,
+          "rms_x_um": 0.36960886650154107,
+          "parity_correlation": 0.9093928054948596
+        }
+      },
+      {
+        "with_tin_metal": true,
+        "geometry": {
+          "top_width_um": 1.33,
+          "etch_depth_um": 0.2,
+          "sidewall_deg_from_horizontal": 70.0,
+          "top_cladding_um": 1.0,
+          "metal_thickness_um": 1.0,
+          "metal_width_um": 20.0
+        },
+        "modes": [
+          {
+            "solver_mode": 1,
+            "neff_real": 1.8128342459223696,
+            "neff_imag": 1.4145726692159324e-07,
+            "loss_db_per_m": 4.980669679146205,
+            "loss_db_per_cm": 0.049806696791462046,
+            "te_fraction": 0.9968255842581814,
+            "central_energy_fraction": 0.9998093329673093,
+            "peak_x_um": 0.0,
+            "rms_x_um": 0.3695954755057694,
+            "parity_correlation": 0.9093857715980462
+          },
+          {
+            "solver_mode": 2,
+            "neff_real": 1.7241748979997031,
+            "neff_imag": 1.5709522498615413e-06,
+            "loss_db_per_m": 55.31277684453489,
+            "loss_db_per_cm": 0.5531277684453488,
+            "te_fraction": 0.057883255586901175,
+            "central_energy_fraction": 0.9997299655177948,
+            "peak_x_um": 0.0,
+            "rms_x_um": 0.37388111476596525,
+            "parity_correlation": 0.907994038696169
+          },
+          {
+            "solver_mode": 3,
+            "neff_real": 1.6710634304145218,
+            "neff_imag": 6.405666508972829e-07,
+            "loss_db_per_m": 22.55416752371392,
+            "loss_db_per_cm": 0.22554167523713922,
+            "te_fraction": 0.9376623662472482,
+            "central_energy_fraction": 0.9880448742642138,
+            "peak_x_um": -0.46666666666666673,
+            "rms_x_um": 0.6433200590432522,
+            "parity_correlation": -0.6410438943347809
+          },
+          {
+            "solver_mode": 4,
+            "neff_real": 1.5921439979709142,
+            "neff_imag": 1.0328581376014412e-06,
+            "loss_db_per_m": 36.366637930749135,
+            "loss_db_per_cm": 0.36366637930749135,
+            "te_fraction": 0.8779238401342883,
+            "central_energy_fraction": 0.47222632413582666,
+            "peak_x_um": -1.6666666666666672,
+            "rms_x_um": 1.7624358668275661,
+            "parity_correlation": 0.678777649817217
+          },
+          {
+            "solver_mode": 5,
+            "neff_real": 1.5824406640989983,
+            "neff_imag": 7.332272405784689e-07,
+            "loss_db_per_m": 25.81672023323783,
+            "loss_db_per_cm": 0.25816720233237833,
+            "te_fraction": 0.999496394209081,
+            "central_energy_fraction": 0.11856903149094615,
+            "peak_x_um": -2.2666666666666666,
+            "rms_x_um": 2.2995294852401247,
+            "parity_correlation": -0.9370583892731768
+          },
+          {
+            "solver_mode": 6,
+            "neff_real": 1.5752211299909917,
+            "neff_imag": 4.727093249158204e-06,
+            "loss_db_per_m": 166.43959358856395,
+            "loss_db_per_cm": 1.6643959358856395,
+            "te_fraction": 0.31196205955927986,
+            "central_energy_fraction": 0.7703000694742665,
+            "peak_x_um": -0.46666666666666673,
+            "rms_x_um": 1.3155888041340031,
+            "parity_correlation": -0.4612378569187699
+          },
+          {
+            "solver_mode": 7,
+            "neff_real": 1.5459840032887713,
+            "neff_imag": 2.9644954726885906e-06,
+            "loss_db_per_m": 104.37903287761303,
+            "loss_db_per_cm": 1.0437903287761303,
+            "te_fraction": 0.8531875481719645,
+            "central_energy_fraction": 0.5345637961073462,
+            "peak_x_um": 1.0000000000000007,
+            "rms_x_um": 2.0114674361604736,
+            "parity_correlation": 0.5397432039007549
+          },
+          {
+            "solver_mode": 8,
+            "neff_real": 1.5257201382117993,
+            "neff_imag": 8.206927174966214e-07,
+            "loss_db_per_m": 28.896354516712066,
+            "loss_db_per_cm": 0.28896354516712064,
+            "te_fraction": 0.9980366662141053,
+            "central_energy_fraction": 0.32118627201168065,
+            "peak_x_um": -3.0,
+            "rms_x_um": 2.3230839896221256,
+            "parity_correlation": -0.7919632468305442
+          },
+          {
+            "solver_mode": 9,
+            "neff_real": 1.4809421269648098,
+            "neff_imag": 4.3968919607527055e-06,
+            "loss_db_per_m": 154.8133012038266,
+            "loss_db_per_cm": 1.548133012038266,
+            "te_fraction": 0.9623929321596709,
+            "central_energy_fraction": 0.353819375527097,
+            "peak_x_um": -0.7333333333333336,
+            "rms_x_um": 2.2344234817821698,
+            "parity_correlation": 0.6151573938708766
+          },
+          {
+            "solver_mode": 10,
+            "neff_real": 1.4442030451733978,
+            "neff_imag": 0.00016374014246391298,
+            "loss_db_per_m": 5765.243317482768,
+            "loss_db_per_cm": 57.652433174827685,
+            "te_fraction": 0.10586372812663151,
+            "central_energy_fraction": 0.29662679178267976,
+            "peak_x_um": -2.1999999999999993,
+            "rms_x_um": 2.2977900739051433,
+            "parity_correlation": 0.7999277104341117
+          },
+          {
+            "solver_mode": 11,
+            "neff_real": 1.4389713149601355,
+            "neff_imag": 6.499391596928426e-05,
+            "loss_db_per_m": 2288.4170862470987,
+            "loss_db_per_cm": 22.884170862470988,
+            "te_fraction": 0.8254641382455271,
+            "central_energy_fraction": 0.33466463344025993,
+            "peak_x_um": 2.1999999999999993,
+            "rms_x_um": 2.440134184078756,
+            "parity_correlation": -0.39595543068372646
+          },
+          {
+            "solver_mode": 12,
+            "neff_real": 1.4389618552998074,
+            "neff_imag": 0.00029264192862114597,
+            "loss_db_per_m": 10303.838130409378,
+            "loss_db_per_cm": 103.03838130409378,
+            "te_fraction": 0.004261428498943832,
+            "central_energy_fraction": 0.09977381805127318,
+            "peak_x_um": -2.4666666666666663,
+            "rms_x_um": 2.703475176570771,
+            "parity_correlation": -0.9917593777547977
+          }
+        ],
+        "selected_TE0": {
+          "solver_mode": 1,
+          "neff_real": 1.8128342459223696,
+          "neff_imag": 1.4145726692159324e-07,
+          "loss_db_per_m": 4.980669679146205,
+          "loss_db_per_cm": 0.049806696791462046,
+          "te_fraction": 0.9968255842581814,
+          "central_energy_fraction": 0.9998093329673093,
+          "peak_x_um": 0.0,
+          "rms_x_um": 0.3695954755057694,
+          "parity_correlation": 0.9093857715980462
+        }
+      }
+    ],
+    "solver_version": "7.22.3536",
+    "material_exists_metal": true,
+    "material_exists_sio2": true,
+    "incremental_loss_db_per_cm": 0.04980669178211511,
+    "incremental_loss_db_per_um": 4.980669178211511e-06,
+    "metal_bridge_length_um": 20.0,
+    "estimated_bridge_extra_loss_db": 9.961338356423022e-05,
+    "interpretation": "局部连续TiN覆盖的单位长度吸收；有限20um桥边缘散射、真实金属位置和工艺参数未包含"
+  },
+  "review_note": "简化截面筛查：刻蚀区SiO2填充有遗漏，非实际桥结构总损耗；用户接受用于当前阶段，非收敛签核。"
+}

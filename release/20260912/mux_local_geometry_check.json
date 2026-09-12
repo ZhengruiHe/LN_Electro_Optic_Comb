@@ -1,0 +1,11 @@
+{
+  "source_gds_sha256": "0b765e5374e1b4aa9798d2827d286ad3501c5947d113c2120f93cec5cc5a78af",
+  "markers": {
+    "core_width_030": 0,
+    "core_space_030": 0,
+    "etch_width_030": 0,
+    "etch_space_030": 0
+  },
+  "scope": "仅自定义MUX单元；非完整DRC",
+  "foundry_signoff": false
+}

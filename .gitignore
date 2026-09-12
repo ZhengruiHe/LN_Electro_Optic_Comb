@@ -54,6 +54,10 @@ temp/
 /SiN_TFLN_V0.1_BlackBox/
 /ioptee_sin_tfln_v1.0_beta/
 
+# 其他版本代工手册、光学材料库仍不提交
+/南智*.pdf
+*.mdf
+
 # 本机凭据与个人文件：只按文件名排除，禁止读取或上传
 .env
 .env.*
@@ -74,6 +78,9 @@ temp/
 *.aedt
 *.aedt.lock
 *.rdb
+
+# 经审查的自定义单元小库；不含YSJ、PDK及黑盒实例
+!/release/20260912/self_cells/*.gds
 
 # 一次性调试与已知不匹配的历史外接续模型，仅留本地追溯
 /models/layout/probe_*.py

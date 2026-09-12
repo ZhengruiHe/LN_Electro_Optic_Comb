@@ -14,7 +14,7 @@ def main():
     p.add_argument('--directory',type=Path,required=True)
     p.add_argument('--overwrite',action='store_true',help='仅重绘本脚本生成的预览PNG，不修改GDS')
     a=p.parse_args();d=a.directory
-    old=json.loads(Path('results/layout/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
+    old=json.loads(Path('results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
     new=json.loads((d/'合并回读_四程几何.json').read_text(encoding='utf-8'))
     manifest=json.loads((d/'合并清单.json').read_text(encoding='utf-8'))
     centers=sorted(tuple(c['center_um']) for c in manifest['crossings'])

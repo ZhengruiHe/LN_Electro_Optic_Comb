@@ -87,7 +87,7 @@ def build(periods=(3.,3.5,4.),access_radius1=165.,right_fanout_um=80.):
                 line=LineString(routes[name]);s=line.project(point);seg=substring(line,max(0,s-122.5),min(line.length,s+122.5))
                 r['straight_245um_each_route'][name]=s>=122.5 and s+122.5<=line.length and abs(seg.length-math.dist(seg.coords[0],seg.coords[-1]))<1e-5
         crossings.append(r)
-    source=json.loads((ROOT/'results/layout/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
+    source=json.loads((ROOT/'results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
     oc,os,oe=(geometry(source,k) for k in [(20,0),(10,0),(21,2)])
     checks={}
     for name,pts in routes.items():

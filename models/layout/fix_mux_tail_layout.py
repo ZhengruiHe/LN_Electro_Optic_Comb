@@ -7,7 +7,7 @@ from pathlib import Path
 from klink import KLinkClient
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = ROOT/'results/layout/黑盒交叉_拉锥工作稿_v5/四程10GHz_15mm_PDK黑盒交叉_拉锥接续_待验证工作稿.gds'
+BASE = ROOT/'results/layout/_历史归档/迭代版本_20260912/黑盒交叉_拉锥工作稿_v5/四程10GHz_15mm_PDK黑盒交叉_拉锥接续_待验证工作稿.gds'
 
 CODE = r'''
 import hashlib

@@ -123,7 +123,7 @@ def generate(active=20.,external=20.,dx=-11620.,dy=-1600.,target=254.,output_y=-
         edge_ports_um=[[-10380.,-1720.],[10380.,output_y]],
         scope='仅端口摆位、外部接续与路由；未写GDS；镜像摆位/20um接续不是新场求解结果')
     # 原YSJ的跨层刻蚀安全也必须检查，不只检查同层线交点。
-    source=json.loads((ROOT/'results/layout/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
+    source=json.loads((ROOT/'results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
     r['YSJ_route_checks']={}
     for name,pts in routes.items():
         line=LineString(pts);core=line.buffer(.35);trench=line.buffer(8.35)
@@ -143,7 +143,7 @@ def main():
     with (a.output_dir/'五路联合布线.json').open('x',encoding='utf-8') as f:json.dump(r,f,ensure_ascii=False,indent=2)
     plt.rcParams.update({'font.sans-serif':['Microsoft YaHei'],'axes.unicode_minus':False})
     fig,axes=plt.subplots(1,2,figsize=(17,8),layout='constrained')
-    source=json.loads((ROOT/'results/layout/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
+    source=json.loads((ROOT/'results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1/YSJ源版图几何.json').read_text(encoding='utf-8'))
     for ax in axes:
         draw_layer(ax,source,(20,0),0,0,'#bbbbbb')
         for name,pts in r['routes'].items():

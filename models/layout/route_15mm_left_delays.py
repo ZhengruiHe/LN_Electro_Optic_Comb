@@ -84,7 +84,7 @@ def main():
     ap.add_argument("--include-io", action="store_true")
     a = ap.parse_args()
     a.output_dir.mkdir(parents=True, exist_ok=False)
-    base = ROOT/"results/layout/合并YSJ_版图确认_20260909_v1"
+    base = ROOT/"results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1"
     study = json.loads((base/"15mm重新布局可行性_v9_四出口完整局部检查/15mm上方模块可行性.json").read_text(encoding="utf-8"))
     budget = json.loads((base/"15mm重新布局可行性_v9_四出口完整局部检查/局部候选与时延保留检查.json").read_text(encoding="utf-8"))
     ng = json.loads((ROOT/"results/optical/欧拉时延输入_0p7um方向群折射率_v1/0p7um_rib_两个晶向群折射率.json").read_text(encoding="utf-8"))

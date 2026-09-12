@@ -17,9 +17,9 @@ from shapely.geometry import LineString, box
 
 
 ROOT=Path(__file__).resolve().parents[2]
-DEFAULT_SOURCE=(ROOT/'results/layout/MUX外端公共窗口加宽_工作稿_v11_01/'
+DEFAULT_SOURCE=(ROOT/'results/layout/_历史归档/迭代版本_20260912/MUX外端公共窗口加宽_工作稿_v11_01/'
                 '四程10GHz_15mm_MUX外端公共窗口加宽_待验证工作稿.gds')
-DEFAULT_BUDGET=(ROOT/'results/layout/欧拉回路时延预算_v3_无斜直线/'
+DEFAULT_BUDGET=(ROOT/'results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v3_无斜直线/'
                 '欧拉回路_10GHz方向时延预算.json')
 SOURCE_TOP='EO4P_10G_15MM_EXTERNAL_WINDOWS_WIDENED_DRAFT'
 OUTPUT_TOP='EO4P_10G_15MM_EULER_DELAY_CLOSED_DRAFT'

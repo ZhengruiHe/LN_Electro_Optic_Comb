@@ -14,7 +14,7 @@ class CycleRouteTests(unittest.TestCase):
     def test_aux_tail_length_guard(self):
         with self.assertRaises(ValueError):build(active=20.)
 
-    @unittest.skipUnless((ROOT/'results/layout/YSJ合并15mm_功能候选_v10/合并版时延预算.json').exists(),'需要本地预算输入')
+    @unittest.skipUnless((ROOT/'results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v10/合并版时延预算.json').exists(),'需要本地预算输入')
     def test_complete_nominal_routes(self):
         r=build()
         self.assertEqual(len(r['routes']),5)

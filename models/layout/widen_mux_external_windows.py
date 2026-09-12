@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = ROOT / "results/layout/直脊平行公共窗口_工作稿_v10/四程10GHz_15mm_直脊平行公共窗口_待验证工作稿.gds"
+BASE = ROOT / "results/layout/_历史归档/迭代版本_20260912/直脊平行公共窗口_工作稿_v10/四程10GHz_15mm_直脊平行公共窗口_待验证工作稿.gds"
 KLAYOUT = Path(r"C:\Users\PC\AppData\Roaming\KLayout\klayout_app.exe")
 
 JOB = r'''

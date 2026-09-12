@@ -9,3 +9,8 @@
 
 * text=auto
 
+# 提交快照应保持可校验的二进制与文本形式
+/release/20260912/self_cells/*.gds -text
+/release/20260912/*.json text eol=lf
+/release/20260912/*.s4p text eol=lf
+

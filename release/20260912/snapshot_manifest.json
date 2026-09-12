@@ -1,0 +1,68 @@
+{
+  "source_layout_sha256": "0b765e5374e1b4aa9798d2827d286ad3501c5947d113c2120f93cec5cc5a78af",
+  "files": [
+    {
+      "path": "Al_absorption_simplified.json",
+      "bytes": 14525,
+      "sha256": "64afdd5676ccf00d97cceb4372253bf8f3a7b5e6e47edeec3211665ed1be133d"
+    },
+    {
+      "path": "archive_index.json",
+      "bytes": 104563,
+      "sha256": "1324acb1ee898e7a396f1f06dcaef54ac226d3edc3477243cb33109d6d0652b2"
+    },
+    {
+      "path": "hfss_input_cpw_summary.json",
+      "bytes": 10289,
+      "sha256": "283cb8a95a108f843a5c93252daea0b1b898e165db6a23f534471135ff408352"
+    },
+    {
+      "path": "mux_local_geometry_check.json",
+      "bytes": 292,
+      "sha256": "edab2c7e89171332217314b2fbeed6e09d55e0b0c3c07d5f284ba75c0be869c9"
+    },
+    {
+      "path": "O_input_GSG150_8_12GHz.s4p",
+      "bytes": 81885,
+      "sha256": "91f4511b7d6a4d1589af5949f1acaaa77d6b9b447ad6a6ffe0ae97353d3e2b22"
+    },
+    {
+      "path": "resistor_readback.json",
+      "bytes": 4043,
+      "sha256": "d3a68c069f7fc4182b2c6ad2e6945c80aa62279e2dde38ef13dd6e3414a2bcdb"
+    },
+    {
+      "path": "self_cells/DUAL_RAIL_ACTIVE_LN_PARALLEL_WINDOWS_UNVERIFIED.gds",
+      "bytes": 534,
+      "sha256": "316d676ba82672663e2699a1875460e90512a7b86b9ee28f3bb3f0ac77a3669c"
+    },
+    {
+      "path": "self_cells/GSG150_LAUNCH_O_STYLE_50UM_DRAFT.gds",
+      "bytes": 784,
+      "sha256": "5f027c4857641ef17f49eb37f9ab6c7893b6ea71e34fb70aca3bd029a99fc47c"
+    },
+    {
+      "path": "self_cells/MUX_TE01_A70_M04_A100_E50_BODY750_DRAFT.gds",
+      "bytes": 19752,
+      "sha256": "541a1677e43e9fd2d160d22829fb0d7ab4ff29cdd841b98ba56de3380f40bc54"
+    },
+    {
+      "path": "self_cells/RF_TERMINATION_50R_RS20_EST_DRAFT.gds",
+      "bytes": 584,
+      "sha256": "e6676bcc3ce9388d40992cc9837c624cdca818c23eec575629b063305c7484fe"
+    },
+    {
+      "path": "self_cells/T_GSG_15MM_RECTANGULAR_BASELINE.gds",
+      "bytes": 153926,
+      "sha256": "29f96d66338f6a4e982921e5cafae997f5313689c17d2098b1f2bb97009b0cea"
+    },
+    {
+      "path": "TiN_absorption_simplified.json",
+      "bytes": 14461,
+      "sha256": "3b4700f4f757ce6a269d701602490dad2e6cd3d3bb6d2b77e2dbc43749721471"
+    }
+  ],
+  "pdk_included": false,
+  "contains_full_chip": false,
+  "scope": "自定义单元小库、轻量数值结果与归档索引；非生产签核包"
+}

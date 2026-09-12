@@ -1,0 +1,133 @@
+{
+  "source_sha256": "5a947af221be855e0bfdba84854856c776a94a13dcdac73232de5686df07cf59",
+  "original_result": {
+    "checks": {
+      "one_top": true,
+      "all_other_cells_unchanged": true,
+      "exposed_region_is_exact_rectangle": true,
+      "no_other_metal_covers_resistor_gap": true,
+      "resistance_50R_under_ideal_contact_model": true,
+      "signal_and_common_ground_are_distinct_metal_components": true,
+      "both_resistor_contacts_overlap_metal": true,
+      "local_M1_width_2um": true,
+      "local_M1_space_3um": true,
+      "local_HTR_width_2um": true,
+      "new_terminal_inside_physical_block": true,
+      "full_bbox_unchanged": true
+    },
+    "readback_effective_length_um": 31.25,
+    "readback_effective_width_um": 12.5,
+    "readback_square_count": 2.5,
+    "nominal_resistance_ohm": 50.0,
+    "total_TiN_length_um": 51.25,
+    "metal_contact_edges_local_x_um": [
+      10.0,
+      41.25
+    ],
+    "terminal_origin_in_ours_um": [
+      5380.0,
+      1620.0
+    ],
+    "contact_areas": {
+      "signal_contact_area_um2": 125.0,
+      "ground_contact_area_um2": 125.0
+    },
+    "metal_components": {
+      "signal": [
+        0
+      ],
+      "upper_ground": [
+        1
+      ],
+      "lower_ground": [
+        1
+      ]
+    },
+    "ground_bridge_optical_overlap": {
+      "before_area_um2": 69.60083399999999,
+      "after_area_um2": 70.7175,
+      "after_polygon_count": 4,
+      "after_bboxes_um": [
+        [
+          5436.25,
+          1589.262,
+          5456.25,
+          1590.695
+        ],
+        [
+          5436.25,
+          1593.19,
+          5456.25,
+          1593.546
+        ],
+        [
+          5436.25,
+          1646.454,
+          5456.25,
+          1646.81
+        ],
+        [
+          5436.25,
+          1649.305,
+          5456.25,
+          1650.738
+        ]
+      ],
+      "closed": false,
+      "note": "仍存在金属覆盖光芯；本次不改变光路或虚构光学验证。"
+    },
+    "status": "resistor_dimensions_corrected_not_tapeout_ready",
+    "source_gds": "[PROJECT_ROOT]\\results\\layout\\YSJ合并15mm_M04_MUX_750um_KLink_v6c_O型输入\\YSJ与四程15mm_M04_MUX_750um_50R终端_O型输入_功能候选.gds",
+    "output_gds": "[PROJECT_ROOT]\\results\\layout\\YSJ合并15mm_M04_KLink_v7_HTR有效电阻修正\\YSJ与四程15mm_M04_O型输入_HTR有效50R_候选.gds",
+    "sheet_resistance_ohm_per_square": 20.0,
+    "target_ohm": 50.0,
+    "top_cell": "YSJ_EO4P_M04_OINPUT_HTR50_LEFF_V7",
+    "changed_layers": [
+      "41/0",
+      "42/0"
+    ],
+    "resistor_geometry_pass": true,
+    "sheet_resistance_is_user_authorized_estimate": true,
+    "contact_and_temperature_model": "ideal contacts; no TCR/heating calibration",
+    "rf_signoff": false,
+    "tapeout_ready": false,
+    "notes": [
+      "未改YSJ、光路、MUX、O型输入、15mm电极本体和LN2。",
+      "地桥及地侧接触右移，以保留金属接触边缘间31.25um电阻区。",
+      "地桥跨光芯仍未关闭；没有启动光学、HFSS或容差求解。"
+    ],
+    "source_sha256": "878d88e2d5941675c6299faf5568f288bf76a4eaf3c1448356c40a6c4ef41fb0",
+    "output_sha256": "0b765e5374e1b4aa9798d2827d286ad3501c5947d113c2120f93cec5cc5a78af",
+    "ideal_load_mismatch_budget": [
+      {
+        "R_ohm": 24.0,
+        "Z0_ohm": 50.0,
+        "Gamma": -0.35135135135135137,
+        "reflected_power_percent": 12.344777209642075,
+        "VSWR": 2.083333333333333
+      },
+      {
+        "R_ohm": 45.0,
+        "Z0_ohm": 50.0,
+        "Gamma": -0.05263157894736842,
+        "reflected_power_percent": 0.27700831024930744,
+        "VSWR": 1.111111111111111
+      },
+      {
+        "R_ohm": 50.0,
+        "Z0_ohm": 50.0,
+        "Gamma": 0.0,
+        "reflected_power_percent": 0.0,
+        "VSWR": 1.0
+      },
+      {
+        "R_ohm": 55.0,
+        "Z0_ohm": 50.0,
+        "Gamma": 0.047619047619047616,
+        "reflected_power_percent": 0.22675736961451243,
+        "VSWR": 1.1
+      }
+    ]
+  },
+  "review_note": "几何电阻按20 ohm/square用户假设，不是RF实测。"
+}

@@ -18,7 +18,7 @@ from check_crossing_candidate import build
 from route_geometry import check_route_network
 
 ROOT = Path(__file__).resolve().parents[2]
-BASELINE = ROOT / "results/layout/自定义交叉_初稿_v4/四程10GHz_15mm_自定义交叉_待验证工作稿.gds"
+BASELINE = ROOT / "results/layout/_历史归档/迭代版本_20260912/自定义交叉_初稿_v4/四程10GHz_15mm_自定义交叉_待验证工作稿.gds"
 BLACKBOX = ROOT / "SiN_TFLN_V0.1_BlackBox/crossing/crossing_ln.gds"
 TOP = "EO4P_10G_15MM_BB_TAPER_DRAFT"
 

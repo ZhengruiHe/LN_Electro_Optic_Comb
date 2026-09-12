@@ -20,7 +20,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--candidate-dir", type=Path, required=True)
     a = p.parse_args()
-    base = Path("results/layout/合并YSJ_版图确认_20260909_v1")
+    base = Path("results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1")
     old = json.loads((base/"YSJ源版图几何.json").read_text(encoding="utf-8"))
     new = json.loads(Path("results/layout/双端GSG150_窗口修正_v18_11/版图预览几何.json").read_text(encoding="utf-8"))
     study = json.loads((a.candidate_dir/"15mm上方模块可行性.json").read_text(encoding="utf-8"))
@@ -54,7 +54,7 @@ def main():
             {"layer": [42, 0], "polygons": polygons(geometry(new, (42, 0)))}]
     view = preview_one_placement(old, data, dx, dy, a.candidate_dir/"15mm保留候选_左侧延时待布.png",
                                  "15mm保留候选：粉色/蓝色为我们的局部布局；左侧延时与输入输出尚未完成")
-    old_budget = json.loads(Path("results/layout/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json").read_text(encoding="utf-8"))
+    old_budget = json.loads(Path("results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json").read_text(encoding="utf-8"))
     delay = []
     for row in old_budget["loops"]:
         reclaimed = row["fixed_two_external_taper_delay_ps"]/2

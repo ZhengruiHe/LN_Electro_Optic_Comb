@@ -26,7 +26,7 @@ def build(active=100.,external=50.,periods=(3.,3.5,3.),spread_access=False):
         raise ValueError('当前极性序列要求整数、半整数、整数周期')
     old,_=inputs();ny=old['passive_rib']['ng_crystal_Y'];nz=old['passive_rib']['ng_crystal_Z']
     fixed=fixed_delays(active,external)
-    base=ROOT/'results/layout/合并YSJ_版图确认_20260909_v1'
+    base=ROOT/'results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1'
     study=json.loads((base/'15mm重新布局可行性_v9_四出口完整局部检查/15mm上方模块可行性.json').read_text(encoding='utf-8'))
     dx,dy=-11620.,1620.
     shrink=(200-active)+(100-external)

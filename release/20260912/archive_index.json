@@ -1,0 +1,2715 @@
+{
+  "directories": [
+    {
+      "source": "results/layout/MUX位置与窗口核对_20260910_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX位置与窗口核对_20260910_v1",
+      "files": [
+        {
+          "relative_path": "MUX位置与窗口台阶.png",
+          "size": 237494,
+          "sha256": "a41b669a50ed029ff72d5999f244e338000f750be05f2a9500f358947d631559"
+        },
+        {
+          "relative_path": "窗口台阶核对.json",
+          "size": 1302,
+          "sha256": "9f114ac0c045c548132416a61d7817587fd90dcb784e31f6f35125b32e384e0c"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/MUX位置与窗口核对_20260910_v2",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX位置与窗口核对_20260910_v2",
+      "files": [
+        {
+          "relative_path": "MUX位置与窗口台阶.png",
+          "size": 238270,
+          "sha256": "1bbebfbdcbb865d9342ca4478c27173eeef9a53df218f1e8cc2109ba42dcdc03"
+        },
+        {
+          "relative_path": "MUX核心直接图形.json",
+          "size": 302,
+          "sha256": "22f0d6e480e1b9a1b4e6bbaba2fa24ed7b9f59c245cb66216718c5bdb8125049"
+        },
+        {
+          "relative_path": "窗口台阶核对.json",
+          "size": 1345,
+          "sha256": "f563c7a82b97037e3fbcc4c54ae0fa720b1720349cca6795e654c705370cddbf"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/MUX位置与窗口核对_20260910_v3",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX位置与窗口核对_20260910_v3",
+      "files": [
+        {
+          "relative_path": "MUX位置与窗口台阶.png",
+          "size": 248663,
+          "sha256": "c56b0ef35517fd2dc30bb49b793a4c14de31016bcc4315d433f57fb8c24fe098"
+        },
+        {
+          "relative_path": "窗口台阶核对.json",
+          "size": 1371,
+          "sha256": "f779382f9f08908085307e7967caa310c99c0e53b950798487f760f139a99b97"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/MUX位置与窗口核对_20260910_v4",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX位置与窗口核对_20260910_v4",
+      "files": [
+        {
+          "relative_path": "MUX位置与窗口台阶.png",
+          "size": 236889,
+          "sha256": "f5b97c1c7f6544872dc4240033078684200c27850ce334bbcba3265c227db6b2"
+        },
+        {
+          "relative_path": "窗口台阶核对.json",
+          "size": 1394,
+          "sha256": "4169496047af196d0af3610041c8e75249093b060c9fe7f148e3dba2436a7c90"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/MUX包络四处对齐_工作稿_v7",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX包络四处对齐_工作稿_v7",
+      "files": []
+    },
+    {
+      "source": "results/layout/MUX包络四处对齐_工作稿_v7_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX包络四处对齐_工作稿_v7_01",
+      "files": [
+        {
+          "relative_path": "右侧上下两处包络对齐.png",
+          "size": 9546,
+          "sha256": "31d508dcfea2cc5c15fb2505562fc486d786214a453916cbb6c9b1dcc336d5c1"
+        },
+        {
+          "relative_path": "四处包络对齐检查.json",
+          "size": 5341,
+          "sha256": "8fa9827513b770bfbf7a270bb264304988216ed881f2bbc5d1c0ebaf8e3235fb"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_MUX包络四处对齐_待验证工作稿.gds",
+          "size": 236354,
+          "sha256": "a9c056a352db0baaa8fa30753ea045be3f04d00fdd186e62f0a60cd98fe67374"
+        },
+        {
+          "relative_path": "左侧上下两处包络对齐.png",
+          "size": 9651,
+          "sha256": "3b1d680ccf814f55613fee9fe9ac6ceea4a59f87e71cefeee4f2110eb4cc83e5"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/MUX外端公共窗口加宽_工作稿_v11",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX外端公共窗口加宽_工作稿_v11",
+      "files": [
+        {
+          "relative_path": "batch_stderr.txt",
+          "size": 1291,
+          "sha256": "569ca9393ce026b7a07edcf4f2cf5b395ec134b9497f4b98350442e387890b51"
+        },
+        {
+          "relative_path": "batch_stdout.txt",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "KLayout批处理_外端窗口加宽.py",
+          "size": 6350,
+          "sha256": "5d86d4ddd3673cad391e14323751d5f96c22e382e44f97cdff9f97f780c72ac3"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/MUX外端公共窗口加宽_工作稿_v11_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX外端公共窗口加宽_工作稿_v11_01",
+      "files": [
+        {
+          "relative_path": "KLayout批处理_外端窗口加宽.py",
+          "size": 6464,
+          "sha256": "0ae0b972d0dfd26bd244cfa35d1a541ea94e78ccb29b22a1c3a589cb5d7df128"
+        },
+        {
+          "relative_path": "MUX外端窗口加宽检查.json",
+          "size": 4243,
+          "sha256": "35eb878ac311c0f39a021bbb5b6fa1b1544a670f76434f74a9272b4f2a8a6126"
+        },
+        {
+          "relative_path": "右侧MUX外端公共窗口加宽.png",
+          "size": 16776,
+          "sha256": "bb1e9b7be258d381f185b33f9a319ea52d7a17b2051e6af91b7c1ba20e2b953b"
+        },
+        {
+          "relative_path": "名义功能DRC_复核.json",
+          "size": 7561,
+          "sha256": "9cd2cbfdaf5c175135c810cf269ad7c69d83a40ed19531b38458b0eae7e4cfbf"
+        },
+        {
+          "relative_path": "名义功能DRC_复核.rdb",
+          "size": 110194,
+          "sha256": "eb2a71fa14f05adfe6b2d5f6adb70fc6b631476e39c6ee750658cffb20e0b82e"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_MUX外端公共窗口加宽_待验证工作稿.gds",
+          "size": 230334,
+          "sha256": "c25ddedd28b97010684bde2a6e3da57caedbdc02fe4f32eeb02279db395e346d"
+        },
+        {
+          "relative_path": "左侧MUX外端公共窗口加宽.png",
+          "size": 14238,
+          "sha256": "eb4cbca98e4410d10debd6cf42d90fa9189e403984fdc737b61be136ef6b7a84"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/MUX重新规划平行接续_工作稿_v8",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX重新规划平行接续_工作稿_v8",
+      "files": []
+    },
+    {
+      "source": "results/layout/MUX重新规划平行接续_工作稿_v8_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX重新规划平行接续_工作稿_v8_01",
+      "files": []
+    },
+    {
+      "source": "results/layout/MUX重新规划平行接续_工作稿_v8_02",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/MUX重新规划平行接续_工作稿_v8_02",
+      "files": [
+        {
+          "relative_path": "MUX重新规划接续检查.json",
+          "size": 9835,
+          "sha256": "cb25d669e3da46d976d51cc5ce7df684e5c7b2d42e3a11f25b9703b7baeed400"
+        },
+        {
+          "relative_path": "右侧平行接续与S弯.png",
+          "size": 12072,
+          "sha256": "7f320066ac79374a1eaff60e54ce31f060a554f786fce19ec352299bc34302d8"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_MUX重新规划平行接续_待验证工作稿.gds",
+          "size": 245904,
+          "sha256": "c9254f273f841baf904efa64e7d6a98dbe0ac61502a2ceab680f5026218b623c"
+        },
+        {
+          "relative_path": "左侧平行接续与S弯.png",
+          "size": 12075,
+          "sha256": "9d966d01fa98a36305ad1f2a304671d82079e89992b083ec80d530fe10b87253"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v1",
+      "files": [
+        {
+          "relative_path": "任务失败说明.json",
+          "size": 282,
+          "sha256": "5072ce2f6e4b73745820d8aed2141fab5a23504db41a01279147217af50865eb"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v2",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v2",
+      "files": [
+        {
+          "relative_path": "M04版图几何检查.json",
+          "size": 125543,
+          "sha256": "ed59f3016a083f5d2d218923f734a90818059133d8a6a5c4029cd315c9fe7fea"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_M04_MUX_750um_功能候选.gds",
+          "size": 4828026,
+          "sha256": "b00c4235a3e89b75f080ead19164d5fb0eddb7d19f5c782a0e530f2b140bd59e"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v3",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v3",
+      "files": [
+        {
+          "relative_path": "M04_MUX_active接头.png",
+          "size": 10282,
+          "sha256": "b5851a23063b1b7c2d97157a0c7ecdfa2102f9a5891ec1157c6da1bdaf88704c"
+        },
+        {
+          "relative_path": "M04_MUX局部预览.png",
+          "size": 19145,
+          "sha256": "06b8a89f3d54dd5ea5852a6fae0c76a6258f0d4e24be90cb62ceac4e3ebbab5b"
+        },
+        {
+          "relative_path": "M04_MUX局部预览2.png",
+          "size": 8850,
+          "sha256": "4d3380bc15d8b1085265ee743180983f9afbb348913df347d05dfec9dc98eaac"
+        },
+        {
+          "relative_path": "M04_MUX接头回读.json",
+          "size": 6516,
+          "sha256": "7df7b865152fc45d8761004a04cc960296e020552bfe41fd2a863eff4b3a36de"
+        },
+        {
+          "relative_path": "M04_MUX清晰结构预览.png",
+          "size": 21982,
+          "sha256": "255a9062c06983850af0b5a2cedfc5271d4d97b85b57e60482bc7f62125fa450"
+        },
+        {
+          "relative_path": "M04_MUX芯层接头检查.json",
+          "size": 4391,
+          "sha256": "df0ea676b6dadf330763dc27171e133007b36bf8f7de492706b7392d9832dc41"
+        },
+        {
+          "relative_path": "M04_MUX芯层连接预览.png",
+          "size": 21312,
+          "sha256": "db274e2f96af5b09c36e988baba35d5902c811694bdc408783d3ed295bbd5ab0"
+        },
+        {
+          "relative_path": "M04_MUX输出端芯层连接预览.png",
+          "size": 20714,
+          "sha256": "c6b04efdb0bd326d64c39c77060a4b887ad7c08879ab5aacdac405c9500d1a07"
+        },
+        {
+          "relative_path": "M04_整体版图预览.png",
+          "size": 38339,
+          "sha256": "ddb9e73a62db95479e6722b07c04effdbbb3e876a1e1a11e89b470473c6baa24"
+        },
+        {
+          "relative_path": "M04版图几何检查.json",
+          "size": 122546,
+          "sha256": "fbcc90ad1694b7a832df64648fdd3d59fab7555836eed51b60912deb088c23c0"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_M04_MUX_750um_功能候选.gds",
+          "size": 4828026,
+          "sha256": "94fac3aebc671897648d2021b3381c70618a4c5a9f4c4d93da52703621797a31"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 974,
+          "sha256": "02c3985257eebf483e2545653b45be957bc24f14e7b797e133719a9b2d2f0c2f"
+        },
+        {
+          "relative_path": "实际GDS路由间距检查.json",
+          "size": 3424,
+          "sha256": "33da2259004cb958daaad5d9d8b03c2ec35c735993cca9e7e29a2e44f7f2dd20"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v5_50R终端",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v5_50R终端",
+      "files": []
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v5b_50R终端",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v5b_50R终端",
+      "files": [
+        {
+          "relative_path": "50R终端版图检查.json",
+          "size": 1516,
+          "sha256": "677045c91269196664ec31be8057485f89787300db3ace7a6ebb13ecd381227b"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_M04_MUX_750um_50R终端_功能候选.gds",
+          "size": 4825762,
+          "sha256": "10a04140936e82c9e14db91d02ecf5ac96588fdde9cbe6a964fccfced9d932c2"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v5c_50R终端",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v5c_50R终端",
+      "files": [
+        {
+          "relative_path": "50R终端局部.png",
+          "size": 19058,
+          "sha256": "0cff7698e1640a556a4d03397584f3a85dfb586eedf5446ceeb0ea132c407f94"
+        },
+        {
+          "relative_path": "50R终端版图检查.json",
+          "size": 1516,
+          "sha256": "a1e6bf0a6b5d1e6660b64967022379f7a5fa193cfb9ee86d24f3b5d1369e3e9c"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_M04_MUX_750um_50R终端_功能候选.gds",
+          "size": 4825762,
+          "sha256": "674664d28afbd0165df80c8fc93d3a4e01c85ced00ccf5db1a5c9b36e6f79c4b"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v5d_50R终端",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v5d_50R终端",
+      "files": []
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v5e_50R终端",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v5e_50R终端",
+      "files": [
+        {
+          "relative_path": "50R终端局部.png",
+          "size": 19058,
+          "sha256": "0cff7698e1640a556a4d03397584f3a85dfb586eedf5446ceeb0ea132c407f94"
+        },
+        {
+          "relative_path": "50R终端极近局部.png",
+          "size": 19883,
+          "sha256": "b8695e8c1c513b9e20a087a18851315affce94e1ad465f08ae3a37c2ee7e5a56"
+        },
+        {
+          "relative_path": "50R终端极近局部2.png",
+          "size": 42876,
+          "sha256": "f79f5c9dc284f42fe5163558de8f8c23e36cd3ca5e1be7469bdb0dc40fc103c5"
+        },
+        {
+          "relative_path": "50R终端版图检查.json",
+          "size": 1550,
+          "sha256": "d4026f8706e8d9e451e3c705de4dceb3080ad22bc5cc727720b968a9d07645a7"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_M04_MUX_750um_50R终端_功能候选.gds",
+          "size": 4825762,
+          "sha256": "59c49fca2ede53427ab36dea5e6a8b54096b0e5a00a981a47fa46dc17eb89fe7"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v5f_50R终端",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v5f_50R终端",
+      "files": [
+        {
+          "relative_path": "50R终端单元预览.png",
+          "size": 15032,
+          "sha256": "6cbd9f6fdd464b8dbb62cc03ef141c74dcd9f401058260cc0bef7fe9b0126872"
+        },
+        {
+          "relative_path": "50R终端局部.png",
+          "size": 19058,
+          "sha256": "0cff7698e1640a556a4d03397584f3a85dfb586eedf5446ceeb0ea132c407f94"
+        },
+        {
+          "relative_path": "50R终端版图检查.json",
+          "size": 1550,
+          "sha256": "1b95ec854c01d84806117d44f26575938de46e14d0db30e6dd63083c8ef1f100"
+        },
+        {
+          "relative_path": "50R终端金属结构.png",
+          "size": 26106,
+          "sha256": "39f36d0d07cf6d784daf76ac0913ae5773d855ee2d602f09e5166d59ae1fd837"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_M04_MUX_750um_50R终端_功能候选.gds",
+          "size": 4825762,
+          "sha256": "7bd120d68b344b9a9c7e33d428e1722ba27b5cd46871b45428214f7e4cef8820"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v5g_50R终端",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v5g_50R终端",
+      "files": [
+        {
+          "relative_path": "50R终端实际接入局部.png",
+          "size": 30865,
+          "sha256": "1cda60dc159025b2fd11760bcae6b8dd91bd0b7135674d70f04ab7b08cf2b7cb"
+        },
+        {
+          "relative_path": "50R终端局部.png",
+          "size": 19354,
+          "sha256": "def61e6ecebd2eddc71405de3b897b78537792f0b221ad5d9612c15be02b94ed"
+        },
+        {
+          "relative_path": "50R终端版图检查.json",
+          "size": 1550,
+          "sha256": "37983c803b8a546c3322fd295bd648b9c6c18389df5ade34ddab7ad7ac68b0da"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_M04_MUX_750um_50R终端_功能候选.gds",
+          "size": 4825762,
+          "sha256": "6e05e0c79e467acc2d7e2110dc2c81fdf5d328705b3cfa1d75e69c051ea34645"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v6_O型输入",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v6_O型输入",
+      "files": []
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_M04_MUX_750um_KLink_v6b_O型输入",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_M04_MUX_750um_KLink_v6b_O型输入",
+      "files": []
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v1",
+      "files": [
+        {
+          "relative_path": "构建参数.json",
+          "size": 4296345,
+          "sha256": "64e9260cc088868d2666604f3a8da0621d98cb01a7f6184a0d42f417a46ae1a9"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v10",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v10",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_同block_功能版图候选.gds",
+          "size": 4899038,
+          "sha256": "83b2b5eed18c72b8f6f96d4c21ffa53cf41618ed0551bc0bf33ee8e0f2f57270"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 6974,
+          "sha256": "1fb15aed8c690d36770fd385d1329103f5a56b35965161830cca90252e989ca8"
+        },
+        {
+          "relative_path": "右侧MUX与欧拉折返.png",
+          "size": 125876,
+          "sha256": "f0183c6570b13e24648ed59500ac719839f4d8184cd79041975493690c7e7588"
+        },
+        {
+          "relative_path": "合并回读_四程几何.json",
+          "size": 2289630,
+          "sha256": "2d3e7efd6620ad1d03531486dd834f88a7c1e53f0a94bea9e9385e5615ddc897"
+        },
+        {
+          "relative_path": "合并回读_完整检查.json",
+          "size": 9295,
+          "sha256": "57b4d2eb40f8cdaaf041c662b5df98c3e4628d6b4842e670fd1201e355cc6042"
+        },
+        {
+          "relative_path": "合并回读检查.json",
+          "size": 9099,
+          "sha256": "da2fb7b95bdf7ce790e6e1aafbae4355f29844b5c50d1833aa4589a8f776b4eb"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 6895,
+          "sha256": "405e81f2fd2a7d53e5390b363ecd87227ffd228e9f4875d29a53d23aa010a144"
+        },
+        {
+          "relative_path": "合并版图_全图.png",
+          "size": 154473,
+          "sha256": "23a37f37a0da1555e76ae03dea3bc9bca17d74e7afb29c9c5cd9e340b827d1a0"
+        },
+        {
+          "relative_path": "合并版时延预算.json",
+          "size": 2009,
+          "sha256": "2a3e08b9b063af7a9ef17067ac862b20e5153bacbbfaa8928a8d4957b806dcce"
+        },
+        {
+          "relative_path": "四程15mm_外接续100_功能版图检查稿.gds",
+          "size": 810676,
+          "sha256": "265199165d7927c5b7dfa6d558c46dfdde4fd3a7bbd7206888a987c08781d131"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2289466,
+          "sha256": "dfa174851980b977f4c97840d26eae7a852f507d7442f4547c7d5488606062c6"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 676,
+          "sha256": "e6e611d653854789d9302ba3ad0ca95542f27eec088f3cad88553c14a1a09e16"
+        },
+        {
+          "relative_path": "完整回读参数.json",
+          "size": 571,
+          "sha256": "673cdd4bb52a31814d3a6c42b3bde6112e8d6c68ba1cc6afc9b56cc7f08cda33"
+        },
+        {
+          "relative_path": "左侧延时与输入输出.png",
+          "size": 137030,
+          "sha256": "d981a45a354a202a4cb4a9df5496f6bdd915a4b639421af2798e6e2f80ff000f"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4297837,
+          "sha256": "f9df7d5560730aea78593cd7ab343141292e5d0e0364ca396061477fc7778a7f"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 398,
+          "sha256": "4568e488168f77b031995baf51fcf0e77b6144fe7b7f5c85581690af8a06b38c"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v2",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v2",
+      "files": [
+        {
+          "relative_path": "构建参数.json",
+          "size": 4296345,
+          "sha256": "6881c9ec67f48fbb3cb5fb1ba18a497f6c989fb7cc58ee770141610065fbc15c"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v3",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v3",
+      "files": [
+        {
+          "relative_path": "构建参数.json",
+          "size": 4296345,
+          "sha256": "38d5e6f6e01bee5bc5050324bfaea1224ecb5862f9b9567c59817ef1786e9d74"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v4",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v4",
+      "files": [
+        {
+          "relative_path": "构建参数.json",
+          "size": 4296345,
+          "sha256": "ad6234c5519ef28ceca2190e40816c971c42687b79119865f27ac1b9fe0b1554"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v5",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v5",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_同block_功能版图候选.gds",
+          "size": 5035190,
+          "sha256": "3ded51ef99585db271a5e7a1a49f0f19cc95de2371ee4fc958a986f13a7cc552"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 6313,
+          "sha256": "305e8eff159f6aeea47e30812f00b15e7fe87ab1a8f9d2e4fbe4ff92b5fb1e3c"
+        },
+        {
+          "relative_path": "合并回读检查.json",
+          "size": 16242,
+          "sha256": "c28518f1484e5e47ee35eb686c6ff3a9cc7ad2f3b4c822fb6c43e921614d9089"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 6894,
+          "sha256": "392ac5692b417f24210a019488a747227990d30e7a5e40175baa815391e81b4b"
+        },
+        {
+          "relative_path": "四程15mm_外接续100_功能版图检查稿.gds",
+          "size": 946828,
+          "sha256": "7d85a859ab7aa4803bf5b5b561487332d4080e4abff37ba8c7460960b2130f8f"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2706418,
+          "sha256": "c16d0fd0868b241ad95313800cd8345e170a9651746eb78521e6de1c91aad2b4"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 534,
+          "sha256": "bae3a9164f8ab0bd1f6bd4b4c9bb6efbd3300ef73d8f2f08b9bb5fab29c13c08"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4296345,
+          "sha256": "754ffc5078f1fcd4b3469681bbe7bc664321d3d35ddc29b1b33aa7105551fe73"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 398,
+          "sha256": "fec2caddf2ac14c2ca449c9e1e2d5e7d8b38ab7ecf1c33abd1a39d45e3a83d7b"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v6",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v6",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_同block_功能版图候选.gds",
+          "size": 5537342,
+          "sha256": "9aa54d3f381e8b077ed7fc62b396c2f6353a6cf3c899cf3f5032dc9e4f5ad234"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 7785,
+          "sha256": "c52a3abccf3a6fe4dd2e44eaf8af64a3788b6aa3c96b8b18ca707899e64e2785"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 6894,
+          "sha256": "91c1b7165ead7588084862a7f8ac22bd6c911c8629a4530488696317516aa799"
+        },
+        {
+          "relative_path": "四程15mm_外接续100_功能版图检查稿.gds",
+          "size": 1448980,
+          "sha256": "1752417da02491414352ab4750955eb5a3348db6247c585df6e26844a4693823"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2870028,
+          "sha256": "6ff136e05c98b55b998f876022f79b164f15f54e57421ab02cc2a9b41f504374"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4296345,
+          "sha256": "944111f5db0ce3930b7f5112b31f619b00355e593ae0357f7cd127ce9525764a"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 398,
+          "sha256": "1dcfe61b8cb9b5620e1e2ba3c029e85f2c85ec35a7e30b91d43737d933b25bbf"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v7",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v7",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 8195,
+          "sha256": "ec8d48a8a01f80cf9f2f090d9caf3cbb6c9f66e3b9952cb57b3d701182399ffa"
+        },
+        {
+          "relative_path": "四程15mm_外接续100_功能版图检查稿.gds",
+          "size": 950796,
+          "sha256": "6228444ca6c64ea73d7b2b7ee553e2f4c84bad16774eb8857a2cba48efd6ec40"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2691881,
+          "sha256": "b734796ee926909c2644a9276c0deba0f41752a78fb8f8e4ee223c7cb1faca4f"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4296345,
+          "sha256": "0247a4a019fbbb53d8f904f84b83fb739a1a1672c33522dfe64d5dcb092b1784"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 398,
+          "sha256": "0c902632994d86e6b6b57fb69d015b18954dd5eaa88b16b32044e736dc17657e"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v8",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v8",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 6929,
+          "sha256": "49f79a4e8e299735fcbe2b69829ceb9d82aa76141f6634cbd9af7d99751c1dd3"
+        },
+        {
+          "relative_path": "四程15mm_外接续100_功能版图检查稿.gds",
+          "size": 820716,
+          "sha256": "f3870804b0ced00f6b6aaa384d121a97e76d9eb00d1c0844aadb16b049db3013"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2322287,
+          "sha256": "1cae5822dd826ce32f5dc0d36b796daa3bb93c1c04cf6ef75127b834593406dd"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4297833,
+          "sha256": "1eeae2433efc27ae06fb86c7ea4b767e6135b7de2af59cb0ef1fce717f7dc82b"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 398,
+          "sha256": "c3932757bb067a77686b1bea6ce31b5ace2d7f9cfebe8aa3dacf7ca2d1fa4461"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_功能候选_v9",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v9",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 6995,
+          "sha256": "841ed3f0340a8d63ef165af0d8248023a456c27d10b9c2c5d3eec36421b3e085"
+        },
+        {
+          "relative_path": "四程15mm_外接续100_功能版图检查稿.gds",
+          "size": 820716,
+          "sha256": "4ef301eb41d5dc95b9de8b535173d6bcf3853a5fb614de8f6c13224fc9954292"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2322287,
+          "sha256": "1cae5822dd826ce32f5dc0d36b796daa3bb93c1c04cf6ef75127b834593406dd"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4297833,
+          "sha256": "399f5da1ae2be86f2ccd276d57912565b271a98d392e3a0bb1e51e7269a8165a"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 398,
+          "sha256": "72bdcc763fe7fe06ae5987ea9b5ad5c1e8873f5f6b9e0382b3e3f8a9d99d7092"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_01",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 7066,
+          "sha256": "ce6b181f8bd70bf3da0d3a69ea3f7a3d31b295b3176b2a5941bb23a3e8ac79d5"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790992,
+          "sha256": "964d8eaaaf5bc44d4108b05884f187bf017257eb023735cba954cc514676411a"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2231712,
+          "sha256": "485e22db92515b7aade78188dd75e26300e0817e9490f136655fff539eedf5b2"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4299857,
+          "sha256": "2b87293fd0c076f94c0e97afd2afa5b089203525be178633434750db745d697d"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "8fa0ad4493c81669787dd156425831b5b1efabe0c8b8d3983f77f659e6c1cadf"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_02",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_02",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 23614,
+          "sha256": "5f9a1b7610dd54d43f4f362355071475dba44ddeb75bf5fcf3da96641a0a9387"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790992,
+          "sha256": "927a254fb4c0616115fbe1dbc68876eab8f1eabf0827565459d7921b59f0b3c5"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2231712,
+          "sha256": "485e22db92515b7aade78188dd75e26300e0817e9490f136655fff539eedf5b2"
+        },
+        {
+          "relative_path": "局部窗口.png",
+          "size": 140189,
+          "sha256": "fab2c308fd0ecf65123dfb3221a7eb0df5ac251eae66b39c3ff7d2df35568731"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4299857,
+          "sha256": "35555de27e834d8afbaee1bfaca6e14f7b89102d4423532ea61467909084475d"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "ec783ffb009711490b790fecf3242cbaf441a1757cc595b9a2ada7a78ffe35a7"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_03",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_03",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 11633,
+          "sha256": "e818a7c865657313d1e49a9b4a16718ff867d752609b56ab67097a52636dc7d2"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790576,
+          "sha256": "f7652576aeb33d15270a2a0c159ab58148feb0e825aad1af7cc9fa7dd4f1acb3"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2230362,
+          "sha256": "9b4ee9380f4df6bd6b51b7e08c9757b1ded782619b1a92e5a97d830bfb8122de"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4299857,
+          "sha256": "770c435ec4f419f9f53a7dda726d43f240ad8d16a88495219223329b72720af4"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "4a95ece8ed8301c7d8f6b8d53316939977c756a251e4b01d42f8ca1e422ad739"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_04",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_04",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 11761,
+          "sha256": "8713568a3aeabd40511b7ee984fea9d247a39489af50f316b68f5fbf83eedcc4"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790552,
+          "sha256": "286bba5e1467b74c5d30e1b5afa52fb72ba4952e6f661b8e7750354f9ab349c4"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2230280,
+          "sha256": "c999fd09f472df37dc748a57cdffcd8031c1f9a04b64bcda8e9237aab8291dff"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4299857,
+          "sha256": "cc7521210dac6631c0cfb390c825a621ad274e9b1b6214bb3471f955dd80f064"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "dfea17ec1a2951f7bae6e321724be5ef11c4c8f21828f45edd621f4c913da5a1"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_05",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_05",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 11625,
+          "sha256": "47d6f63991316b49ca290d29c7ab3689437b8a2987fbaac8f3823fadfe855d88"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790560,
+          "sha256": "da1959ec38b178ecbc99971920d2df3717769c1111d4537a0fabb3025823d8ee"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2230301,
+          "sha256": "feb13540ed5c950dd14ecc687e6278d374505fca3170f548ce89431e540530c9"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4300034,
+          "sha256": "906d8a4374653f329df701682e4eadcfc460b02f55597f9eccc1ca7f6d8e1291"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "427618b733ceedc3b6aaaafd765ddb94d1c678609858fa35eb5b5c361776be2e"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_06",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_06",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_周期匹配_布线候选.gds",
+          "size": 4879298,
+          "sha256": "b78e38fa5e0223ba90937760d55d22d8ce0d41e6138a54226fa1d2358089f9c9"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 11655,
+          "sha256": "e775c1f242e049a1b6ac12ebe2700bd3bc28e0b0cbdbc630696509f67fc79d74"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 7019,
+          "sha256": "fb6e3e478d5c510f1d5c5c3603cd07a9071b747f6e3ef15c3b4fc04842ae3ef3"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790936,
+          "sha256": "f6e72b5be549a10cbcb6ecf758244f08a81f04a4e2283bbb42363afa7c5cfac2"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2231514,
+          "sha256": "b864bd66f7fb7fc10732fb9271f17346624b01e7decedc85b9ba2bdf16eae34e"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4300034,
+          "sha256": "9a8ee5491d8910392d89f451cb029d8c8b6fd93ec022b1d01b48f371277e94e4"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "5a882d876b1681e7d04e0246604440e337782b5b1defe591132bde1be47be9f5"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_07",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_07",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_周期匹配_布线候选.gds",
+          "size": 4879302,
+          "sha256": "e40ad6ba54ddadb9fd55c3c112872f0b60ddebbc49bb8b6b20acd226c04498a6"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 11655,
+          "sha256": "6945cb05087f6b9f54eb9bc0bf0c544265de58b98761a420ee79b77d47dab3b5"
+        },
+        {
+          "relative_path": "合并回读_四程几何.json",
+          "size": 2231578,
+          "sha256": "790d26d09d6f626d5aefa1e36c5ebd9e1ea6f3a76cbad9b6377d16ac1e00bbe8"
+        },
+        {
+          "relative_path": "合并回读_完整检查.json",
+          "size": 9547,
+          "sha256": "782d2c6f5caaa91f622182422c6d51e54b993618e7fc1d6b3db4db778869c096"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 7019,
+          "sha256": "0953bc081d2b01a8b0a468872c29a6299be801b4da64b6e5fd70b6774246ef29"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790940,
+          "sha256": "01ef254e03659f957184d23475009bf3635a903d3735a3b22b51dcfee3ade7a0"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2231514,
+          "sha256": "b864bd66f7fb7fc10732fb9271f17346624b01e7decedc85b9ba2bdf16eae34e"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 1140,
+          "sha256": "24700ac10b38702c4c0160f349465716c0055c10bfd5f90d497876a79d926b04"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4300067,
+          "sha256": "bd1d20087d09426d8171c96ff7d9d9bc54960b4100ebd705ab5209fd751fbf1e"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "e6962a7fc3d739210b4d9ab203ce5d5d503f0e8e35a1e3b007f28a4ec4c84866"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_周期匹配_v11_08",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_周期匹配_v11_08",
+      "files": [
+        {
+          "relative_path": "KLayout_当前新版总览.png",
+          "size": 83177,
+          "sha256": "3950d8580f6ff66c35dff9af9276e965255eab9e6533b2f66f633776f26fde7f"
+        },
+        {
+          "relative_path": "KLayout_清晰总览.png",
+          "size": 46134,
+          "sha256": "6bed8f3e9510b0c2c1afdaa3b8d1f26dc954437e73d11c5469f383892f3055c0"
+        },
+        {
+          "relative_path": "YSJ与四程15mm_周期匹配_布线候选.gds",
+          "size": 4879302,
+          "sha256": "7d24adb437ec38d1ef2ab6c742440ceec7d4146b03235654f51661dd4992f859"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 11655,
+          "sha256": "156f22859fa65d11c7d19da941f05d6633f661324ad83f07b116fc188827a3f0"
+        },
+        {
+          "relative_path": "右侧MUX与欧拉折返.png",
+          "size": 125438,
+          "sha256": "9576c6968e74a270bf138ca7fd440c05a4e067d6c0f112c78cd407b1fa0fe49b"
+        },
+        {
+          "relative_path": "合并回读_四程几何.json",
+          "size": 2231578,
+          "sha256": "790d26d09d6f626d5aefa1e36c5ebd9e1ea6f3a76cbad9b6377d16ac1e00bbe8"
+        },
+        {
+          "relative_path": "合并回读_完整检查.json",
+          "size": 9713,
+          "sha256": "35f3ed9bc84516702a8ffe59f0e4f600a105082e6a9058082df63d7a26d1f478"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 7019,
+          "sha256": "94f7f43d6280d37d80d4da1d06af4d98942f6ac152d89fe9a86e1007295eaa4a"
+        },
+        {
+          "relative_path": "合并版图_全图.png",
+          "size": 154650,
+          "sha256": "1b2f3a8551c1857b3ea746fd65e84d57d961e3079130f045fa97e15431efff84"
+        },
+        {
+          "relative_path": "合并版时延预算.json",
+          "size": 1953,
+          "sha256": "ac62b2b2b93362c9ac8e7bad7ac1aacb069379aca245fe6ef16f193ad384b525"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 790940,
+          "sha256": "26f0496a18f8016fe31b1911df9b28afa7e4d1338870ca8e4423033a41e2c26e"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2231514,
+          "sha256": "b864bd66f7fb7fc10732fb9271f17346624b01e7decedc85b9ba2bdf16eae34e"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 1140,
+          "sha256": "704ff1677175122fe545be278d152c29e4f8bee51f62d2a6c661beb31f76413c"
+        },
+        {
+          "relative_path": "左侧延时与输入输出.png",
+          "size": 133383,
+          "sha256": "5bca1bc0920c7c42cdbb677720023224e1d8f712da44b44bad348c06c9a6e875"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 4300067,
+          "sha256": "073dcbde48140c8d7e69f11f4b638fe85b88f9db5d70ab1c67861708074eb9da"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 400,
+          "sha256": "4e6afa949d1522b892524a8937a4e75beae809f6f0fe5db6119e4f67a3a9191d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_横向接入_v13_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_横向接入_v13_01",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 17651,
+          "sha256": "d076e795e67839e7976011425e7b5739aec260b6b9435a4d880a68dbd86e9432"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 820414,
+          "sha256": "a0529bebfd36165b743e69901134e2a12fa44c5f5dfd04fef7a7a3b06f3638c1"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2346678,
+          "sha256": "c507b2e13e2c4f4842c95868f89a421be5fd69a0e63b741003e6a5bcb7169109"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 6330616,
+          "sha256": "5254ae3ff4a5efb96fe12b27ad0b35501276ff919570611535354dfafc4cb862"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 388,
+          "sha256": "2583ab79728436bd7fea9e63952e4233387a17eeae23b2e8f617ba3178490de2"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_横向接入_v13_02",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_横向接入_v13_02",
+      "files": [
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 18286,
+          "sha256": "a41b87bb528e3dbf1b52a27351369ec9468db0717f1d743838f527e11fbb5669"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 805968,
+          "sha256": "2ebaa2b43168afd20d7126b40f31bd024c5160e50959c60c7c62e715d82ac3ed"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2318416,
+          "sha256": "e20fac34b0c94e680cb655e7fcc0b6b8ac2211e4410cfa09e2eac83fd85ab9fd"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 6040722,
+          "sha256": "a178c8ec9052d7e24758a0c053ba2a62c94d79f7392e5e79c0d62840601af77d"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 388,
+          "sha256": "d16ddae1a2a7a694fbb00408a9935ce748e55eacf80cc98e44aef9f31c3195e2"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_横向接入_v13_03",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_横向接入_v13_03",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_周期匹配_布线候选.gds",
+          "size": 4799442,
+          "sha256": "2cef006e01dce76d5d2f81dcf9aacfcf5409fca4a1c972f6b197bb0e29fa0582"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 13697,
+          "sha256": "6d41e2fd0760434166b382c6a50d9a3cfa614f7743c94d9ce2bc02866d41307b"
+        },
+        {
+          "relative_path": "右侧MUX与欧拉折返.png",
+          "size": 128135,
+          "sha256": "70b314e7070a68c1d540ba6a5cecfd0d277be18d762942460753086383aa8102"
+        },
+        {
+          "relative_path": "合并回读_四程几何.json",
+          "size": 2026495,
+          "sha256": "a4a599406352abac07f525c60e3bff86165f307536cc2e9f9d6fb220abea9ad5"
+        },
+        {
+          "relative_path": "合并回读_完整检查.json",
+          "size": 9706,
+          "sha256": "979960ced59650d6edaca6160feae845485c30b2a8244f9622272529123e642c"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 8402,
+          "sha256": "26bff9f0e2f735ffe1aa7b4b25c29ddad320d3f7f92ef34bcf991100c79eb8f0"
+        },
+        {
+          "relative_path": "合并版图_全图.png",
+          "size": 160846,
+          "sha256": "5e247572e21f867cb1b74b339fbb3c50da2c69529ac48e4058db606778f31fb3"
+        },
+        {
+          "relative_path": "合并版时延预算.json",
+          "size": 2070,
+          "sha256": "ed703d7eb81d50960a8812198f535796cda591505fb4939c67f4449b28efea26"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 711088,
+          "sha256": "29371213a4f1491770a5dafab521f50d068a89f3b406c9253ce6a89c625f72ea"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2026251,
+          "sha256": "7e63658b918b41492e2b217f1cc02bd8c0ad3daabdbd0cb8297dd87464aeaabb"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 1422,
+          "sha256": "78e4366b5625d0fd58c82ef3b191ed48042712630867a3af913fd5e140378035"
+        },
+        {
+          "relative_path": "实际GDS全局间距复核.json",
+          "size": 3424,
+          "sha256": "33da2259004cb958daaad5d9d8b03c2ec35c735993cca9e7e29a2e44f7f2dd20"
+        },
+        {
+          "relative_path": "实际GDS路由间距检查.json",
+          "size": 2177,
+          "sha256": "8a248ca8b9b4d7280a8b82fa026caf612bed889631c11ca6e0f96ded5a8d8fcc"
+        },
+        {
+          "relative_path": "左侧延时与输入输出.png",
+          "size": 138529,
+          "sha256": "d40b385229f7a4dff88919653d9264bfab2ba7ed3a6f9db70c3c00b62e451245"
+        },
+        {
+          "relative_path": "左侧横向接入细节.png",
+          "size": 167021,
+          "sha256": "831a758ead49a8fea78f076495c5e7e76fa461a99715613730977e215af4b259"
+        },
+        {
+          "relative_path": "旧v11路由间距对照.json",
+          "size": 8069,
+          "sha256": "64334dcd87aab98e4d17f509eced33ed25372760c07b5982987a4670b3226bbc"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 6041394,
+          "sha256": "db6d7a2c5a8379ef883b086111de1d9156ed95ced9264bc69e5879d5ee2b3ca9"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 388,
+          "sha256": "ed45d3a344f40821e7e901c1ce7c0140f4660a5650c59e3b08bb50cc7a0f9d2a"
+        },
+        {
+          "relative_path": "路由间距与端口近邻说明.json",
+          "size": 6312,
+          "sha256": "c1bf53cb16c317db70845e425b622da77a5664f05662de1546f5e842a18e5fda"
+        },
+        {
+          "relative_path": "路由间距检查.json",
+          "size": 5322,
+          "sha256": "c9b69111e1d893895a131edca7534c00ea4045bb064dd66d155310a4e16b1a33"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_横向接入_v13_12_PDK包层修正",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_横向接入_v13_12_PDK包层修正",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_周期匹配_布线候选.gds",
+          "size": 4801746,
+          "sha256": "c17e89c49f25a52ffb04fec3e7f0bf3a49cebc402b739428946ea7a773859e0c"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 14571,
+          "sha256": "aafad45d7adc2738899e04ab2621fe1ab59d8f1c737265576e1e269a04f97c76"
+        },
+        {
+          "relative_path": "右侧MUX与欧拉折返.png",
+          "size": 128135,
+          "sha256": "70b314e7070a68c1d540ba6a5cecfd0d277be18d762942460753086383aa8102"
+        },
+        {
+          "relative_path": "合并回读_四程几何.json",
+          "size": 2055420,
+          "sha256": "1b5a895d1e62c5c5623430f2d42fbca8a23e212b1ece46c3e0eaf2cf3db093ae"
+        },
+        {
+          "relative_path": "合并回读_完整检查.json",
+          "size": 10161,
+          "sha256": "8f3754dd15e1c74c9917346bda6b5a82bc9a08e6d5485e9264a63adf6ba22433"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 8661,
+          "sha256": "0b32069bda94cf4d4c9183af7806283839e994cd6e79bc623038373c88116d9b"
+        },
+        {
+          "relative_path": "合并版图_全图.png",
+          "size": 160846,
+          "sha256": "5e247572e21f867cb1b74b339fbb3c50da2c69529ac48e4058db606778f31fb3"
+        },
+        {
+          "relative_path": "合并版时延预算.json",
+          "size": 2070,
+          "sha256": "ed703d7eb81d50960a8812198f535796cda591505fb4939c67f4449b28efea26"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 713392,
+          "sha256": "6865e25ec5c4c300457cc34b01e3c18d5063aa59c9839c16d088e3834d6aa4ec"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2055176,
+          "sha256": "99ed16207561434c301e62217fd1fd3f642e12026e3ed2a8ab7f2869bcc5c436"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 1518,
+          "sha256": "3d5935cb6fc7d8f01b8e28095a9b7f112f0c8fa9fd5ec130930fc9afa1cdfd68"
+        },
+        {
+          "relative_path": "实际GDS路由间距检查.json",
+          "size": 3424,
+          "sha256": "33da2259004cb958daaad5d9d8b03c2ec35c735993cca9e7e29a2e44f7f2dd20"
+        },
+        {
+          "relative_path": "左侧延时与输入输出.png",
+          "size": 138529,
+          "sha256": "d40b385229f7a4dff88919653d9264bfab2ba7ed3a6f9db70c3c00b62e451245"
+        },
+        {
+          "relative_path": "左侧横向接入细节.png",
+          "size": 167021,
+          "sha256": "831a758ead49a8fea78f076495c5e7e76fa461a99715613730977e215af4b259"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 6041496,
+          "sha256": "0d9dac90ef48788da7434ac5d9fdfd1db2346eaa865ddd5cc4d8ab77661a423c"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 388,
+          "sha256": "54aee81398695307605a387ce2c5430879499e7b27935de232ceb73b8a7aea3d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/YSJ合并15mm_横向接入_v13_14_PDK固定包层",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_横向接入_v13_14_PDK固定包层",
+      "files": [
+        {
+          "relative_path": "YSJ与四程15mm_周期匹配_布线候选.gds",
+          "size": 4802466,
+          "sha256": "f101b4df6fd86ac2f406de3e75d6f6e1fbd90a4f22fa47e213465a23a969724a"
+        },
+        {
+          "relative_path": "原生连接检查.json",
+          "size": 14192,
+          "sha256": "e0c95c9085c095e1c4a20de37ef11797ac591bd05100c5fb366eb27dee00f471"
+        },
+        {
+          "relative_path": "右侧MUX与欧拉折返.png",
+          "size": 128135,
+          "sha256": "70b314e7070a68c1d540ba6a5cecfd0d277be18d762942460753086383aa8102"
+        },
+        {
+          "relative_path": "合并回读_四程几何.json",
+          "size": 2065271,
+          "sha256": "09bf796e697b16fb0dc39b9b5b11a2cbe939039fc542902439c4decf69380514"
+        },
+        {
+          "relative_path": "合并回读_完整检查.json",
+          "size": 9755,
+          "sha256": "41ddd330003b85a08911243f7c245a5bcff497c5328fd48ce9e81d63aed6b6ab"
+        },
+        {
+          "relative_path": "合并清单.json",
+          "size": 8661,
+          "sha256": "0eeb5d55ef279819139bc25dec4d53f71ebd89b216b0a25ee4b18ae21b2164ef"
+        },
+        {
+          "relative_path": "合并版图_全图.png",
+          "size": 160846,
+          "sha256": "5e247572e21f867cb1b74b339fbb3c50da2c69529ac48e4058db606778f31fb3"
+        },
+        {
+          "relative_path": "合并版时延预算.json",
+          "size": 2070,
+          "sha256": "ed703d7eb81d50960a8812198f535796cda591505fb4939c67f4449b28efea26"
+        },
+        {
+          "relative_path": "四程15mm_周期匹配_布线候选.gds",
+          "size": 714112,
+          "sha256": "f5964ad5f2ac62ef9af143c5cb759a7d003383235ca796a23ab243ae10224091"
+        },
+        {
+          "relative_path": "四程实际掩膜预览.json",
+          "size": 2065027,
+          "sha256": "bb686ef2106a7e3aca3ba0f6dfa15f3a2cf5798105e8b826518effe255204a26"
+        },
+        {
+          "relative_path": "回读参数.json",
+          "size": 1518,
+          "sha256": "eebb2545cebab8f547e58ef8a60276c50dfa266baccee15402dedc5ef8544c02"
+        },
+        {
+          "relative_path": "实际GDS路由间距检查.json",
+          "size": 3424,
+          "sha256": "33da2259004cb958daaad5d9d8b03c2ec35c735993cca9e7e29a2e44f7f2dd20"
+        },
+        {
+          "relative_path": "左侧延时与输入输出.png",
+          "size": 138529,
+          "sha256": "d40b385229f7a4dff88919653d9264bfab2ba7ed3a6f9db70c3c00b62e451245"
+        },
+        {
+          "relative_path": "左侧横向接入细节.png",
+          "size": 167021,
+          "sha256": "831a758ead49a8fea78f076495c5e7e76fa461a99715613730977e215af4b259"
+        },
+        {
+          "relative_path": "构建参数.json",
+          "size": 6041496,
+          "sha256": "c648cd1d6c92cab5bde1d5a0dad5113877ce9cff3c93db9fe301d772a5e236ef"
+        },
+        {
+          "relative_path": "父单元临时库.gds",
+          "size": 388,
+          "sha256": "be4edd60277d6ec7a50f1ef33361eb7229f343c3b9fb34bb367a6cb22770631f"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/五路联合布线_v5_初稿",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/五路联合布线_v5_初稿",
+      "files": [
+        {
+          "relative_path": "五路联合布线.json",
+          "size": 1286144,
+          "sha256": "7ffef1ed2c4de6652703450c15e3370b52c8becffa23cf1e5f91fa4f65715060"
+        },
+        {
+          "relative_path": "五路联合布线预览.png",
+          "size": 114513,
+          "sha256": "47c4c9b7d6a74a3618ae2ed32ef3e567a02dae8352b46566d95d578e949a9f9d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG120_工作稿_v17_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG120_工作稿_v17_01",
+      "files": [
+        {
+          "relative_path": "GSG连接与版图检查.json",
+          "size": 5225,
+          "sha256": "e7dd83fb3b6b7a2e1f0ef50dad08e84794b631dc5ac111370d4a235abecc99a8"
+        },
+        {
+          "relative_path": "GSG连接参数.json",
+          "size": 57085,
+          "sha256": "b64f89ae39b72e92ad49d3f412955388cac0a2f350c9bf1e61b3760be7376bdc"
+        },
+        {
+          "relative_path": "右端GSG_连接说明.png",
+          "size": 94029,
+          "sha256": "b0f2da0d35e13c0d4f50459acf09ee89b38d8ce6f44e0fbf2e4da367d27bb9a3"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_双端GSG120um_待验证工作稿.gds",
+          "size": 653422,
+          "sha256": "604fb141b04ae0be3c6b671e07971fcdc0a4e20769af51b00a96cf6241875dd1"
+        },
+        {
+          "relative_path": "左端GSG_连接说明.png",
+          "size": 118633,
+          "sha256": "02bedd0e5faaba950fd4a06c9079507fb3ade610aa9a80ba3f2eb777592df276"
+        },
+        {
+          "relative_path": "版图预览几何.json",
+          "size": 1616212,
+          "sha256": "c2949d34c565659b5f4bf397cd328aab71b14f38d36ef19deb5120367cb8a28c"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG120_窗口修正_v18_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG120_窗口修正_v18_01",
+      "files": [
+        {
+          "relative_path": "四程10GHz_15mm_GSG120um_分叉窗口修正_待验证工作稿.gds",
+          "size": 611602,
+          "sha256": "a1cc3a723c447aa63aa45101c984c1defda88f9cc1005f6e68af31241d7f8780"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6853,
+          "sha256": "572225d2416e40b9d2f408d86275b9e45f66ad0ca948c1b5355d9a4543ea9792"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG120_窗口修正_v18_02",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG120_窗口修正_v18_02",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 9132,
+          "sha256": "55e1c26c4e7ea6ab06e464f299969986d5228ba4208df9ef3098d54e888d140b"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_GSG120um_分叉窗口修正_待验证工作稿.gds",
+          "size": 611602,
+          "sha256": "32671ac3518b2cb73687d6ca09dc733bc515563f4ed26a1a21d7e0a6a158ac61"
+        },
+        {
+          "relative_path": "版图预览几何.json",
+          "size": 1520268,
+          "sha256": "0b3437c26373290c689b851698521b3456fa455fada71a7115e25e007f6013b3"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6853,
+          "sha256": "50e4d191f1e4d9f2a2f48b1e817e610b42de140f414efa1fbbdc321e5258984e"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_工作稿_v17_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_工作稿_v17_01",
+      "files": [
+        {
+          "relative_path": "GSG连接与版图检查.json",
+          "size": 5225,
+          "sha256": "8c8a58a3274a9fe46432cfd5b6be8610cf55c23bf88f8868651b912a69c72768"
+        },
+        {
+          "relative_path": "GSG连接参数.json",
+          "size": 57109,
+          "sha256": "b0326ae095de02c8296c0678be85a7d7992a25e6bc43372a63128a3976e14419"
+        },
+        {
+          "relative_path": "双端GSG_整体版图.png",
+          "size": 17640,
+          "sha256": "93d1cc8b59a2921eaa27068b93dd516350d97c4778607650efdd4adca869d2cf"
+        },
+        {
+          "relative_path": "右端GSG_实际GDS.png",
+          "size": 10840,
+          "sha256": "9042987d3e8c4f11e8b3f97f337382f73e7a54ba508af32c51a4c33fc4073cf2"
+        },
+        {
+          "relative_path": "右端GSG_连接说明.png",
+          "size": 96476,
+          "sha256": "32f99eef7ca6a3e2a0a828adf5d00b5e9e1beb6dcc610e45f324c628a6b9acf7"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_双端GSG150um_待验证工作稿.gds",
+          "size": 653422,
+          "sha256": "afebafe89e1959350c28909ab16916af99bc774f0e9dd3692253cab3dceb823c"
+        },
+        {
+          "relative_path": "左端GSG_实际GDS.png",
+          "size": 16434,
+          "sha256": "925c466e4c6ae772a33068ab39dc30ce24766a2fa523bedab7212ab4eadb07ef"
+        },
+        {
+          "relative_path": "左端GSG_连接说明.png",
+          "size": 121074,
+          "sha256": "3c11cd34a482d5696147c9ffc5b69ca9043f656058cf801de1e6e9c0cfc74967"
+        },
+        {
+          "relative_path": "版图预览几何.json",
+          "size": 1615952,
+          "sha256": "7a345c3aa83ea9b343c7ca7673185ff1546adeda4089cae3ea3d72d13a3135f3"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_01",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 7889,
+          "sha256": "1d9b4a8a7853e77335a18b7cbcb88a638fae705e60c75332bbdcf014f5a11507"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6849,
+          "sha256": "d80b0ce16b1311c5b761511b258fb2b6c4fd608f5b3e6a1d5a403382a6b640f4"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_02",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_02",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 9357,
+          "sha256": "dac97799fcd4687386c7032513adc1a0f89969094c36cb58c80fa377ca0f83b0"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6849,
+          "sha256": "0904cc02b08b22db298276bfc66ec2b2c2c0885a87543e8886c0d324db017557"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_03",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_03",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 55427,
+          "sha256": "d581287a1e6f449138b1fbbf929e3c275b118e5e4bc3f760525b420ef4e6ce5a"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6849,
+          "sha256": "7d93a1d477f71f88296052b8ef6ef08460108356aa3bb80c65240620c4f78e96"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_04",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_04",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 9357,
+          "sha256": "523d0b2d81f2f0fdb47126c429ec32b4d17425dcd890e895a4d3a864c71c20e1"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6849,
+          "sha256": "dc782fe0af126a14594583728629a23afaf19daba57f36165d6de207917cbc77"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_05",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_05",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 9372,
+          "sha256": "8859bb113b45dd9365ebefe076e279a42a1acac9907fc93c8e0a37d27ff00cca"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6849,
+          "sha256": "17ba3404d59144b5586e507f2c708ddaa40bc82f3a2e9e5af80818ab598d906c"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_06",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_06",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 8943,
+          "sha256": "26834bbdbf76636e4c307621186f3bdf49ca39c0e29abcc81575d1247f994782"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6849,
+          "sha256": "35e844a2993e90454250968912669456896c7ec8813a11fd2687a1370c96a97d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_07",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_07",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 8532,
+          "sha256": "6b4737d104ed161ef227501314ac1295c1db0add4b9164871a7e872abff86cd1"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6849,
+          "sha256": "02961659f48b03e5becdbc72f94e975b3880cdb08696e35470aca77111385f63"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_08",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_08",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 8058,
+          "sha256": "d0dac04569e003a53182957aec4ce574509d7ccba155b7df581ff82874e98ae5"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6853,
+          "sha256": "de4af48a6b7cbaaa7ad6b7f6a3646efa38ab1b0d77d8657e2fad9d89389e3010"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_09",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_09",
+      "files": [
+        {
+          "relative_path": "分叉窗口与GSG检查.json",
+          "size": 8055,
+          "sha256": "20b21b8596a859e530de8b72ed8dffe1cb1cd9ce8896340c1b5e3f8dcc86cfde"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_GSG150um_分叉窗口修正_待验证工作稿.gds",
+          "size": 610418,
+          "sha256": "26468eb3dafbd2bc547ef4012610b90add2e6ef696ed9795d478b8750ac380d6"
+        },
+        {
+          "relative_path": "版图预览几何.json",
+          "size": 1520008,
+          "sha256": "edfef0b31753f4c66a1fcb514a22477480767093bb6fdfbfa79c51c71e0953e5"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6853,
+          "sha256": "3a80c2386d163d57c98c7d5720aea2023db6e80119abae2650464e3c12081415"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/双端GSG150_窗口修正_v18_10",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/双端GSG150_窗口修正_v18_10",
+      "files": [
+        {
+          "relative_path": "四程10GHz_15mm_GSG150um_分叉窗口修正_待验证工作稿.gds",
+          "size": 611602,
+          "sha256": "f8abbd13806c645c747048ff4a3abc38801d1fddd47c7494186be9c3a9924438"
+        },
+        {
+          "relative_path": "窗口修正参数.json",
+          "size": 6853,
+          "sha256": "3dac904b0444dd552ecb1b1cb1269a3c8931710958195a57e706631a23a7c87e"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/合并YSJ_版图确认_20260909_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1",
+      "files": [
+        {
+          "relative_path": "15mm原时延复算_20260909\\欧拉回路_10GHz方向时延预算.csv",
+          "size": 1618,
+          "sha256": "38bfb5066c3f74d3f94536df6fb9f92d21fcc300d2e2a87a617ae1f5456d3fa8"
+        },
+        {
+          "relative_path": "15mm原时延复算_20260909\\欧拉回路_10GHz方向时延预算.json",
+          "size": 1047715,
+          "sha256": "dd6a96fa9ac1a055d5bb73dfcac9e85df4658b435cf1048e5d84dfcb8a4cb632"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v1\\15mm上方模块可行性.json",
+          "size": 212956,
+          "sha256": "ff01b899c00761e046a13e73ea0db1bc29b6ccf9726c6cf7b3f984344b06726a"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v2_上上下\\15mm上方模块可行性.json",
+          "size": 176279,
+          "sha256": "e73fc99ba46e84103c2b04d9b4b08e3efbfa92f503a233e4bd47f864fea9d911"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v3_上下下\\15mm上方模块可行性.json",
+          "size": 210323,
+          "sha256": "79280dfa8d5fed3bb2cac433aee49ef6af1935ef4ef74abf3a11d3b380333ee8"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v4_全向下\\15mm上方模块可行性.json",
+          "size": 248342,
+          "sha256": "a0a17f19073fb2e8be019ac53ac3a90aef8c903362eeb198b652a2d439b30007"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v5_出口压缩400\\15mm上方模块可行性.json",
+          "size": 363131,
+          "sha256": "5cdd411ea1606277c0ae294469648688797f20c1a362ff11771fedea0bf05c1a"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v6_出口压缩600\\15mm上方模块可行性.json",
+          "size": 423372,
+          "sha256": "148579ca2a3a51ec668457d421347c810a776d9ab677d4fd1b87cdc386c6b500"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v7_外端100_出口压缩400\\15mm上方模块可行性.json",
+          "size": 414234,
+          "sha256": "c2072194396e709b7718734a1e47afea06c7de6ff9556689c6429645334beca5"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v8_外端100_直接上翻\\15mm上方模块可行性.json",
+          "size": 272567,
+          "sha256": "a233ac1f0f6ad19726c3bcaca92f64e11ed929f8d552381e1245759825808e62"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v9_四出口完整局部检查\\15mm上方模块可行性.json",
+          "size": 362462,
+          "sha256": "9430b248d4d1c61ca7cf60da592cafe23ce35c975b4a0e879b8a04c389ffb6c3"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v9_四出口完整局部检查\\15mm保留候选_左侧延时待布.png",
+          "size": 121418,
+          "sha256": "9123cea32963bff7605ddd37ded56431cb5e73225bacdf80a53f8d2603f10171"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v9_四出口完整局部检查\\局部候选与时延保留检查.json",
+          "size": 3367,
+          "sha256": "918726eed71ec20cda6c59da6e1c4acc41219861a3f4c13f0403e7544569a433"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v9_四出口完整局部检查\\局部候选预览几何.json",
+          "size": 531336,
+          "sha256": "32bbd54ee5fe0bd440492cfd03716d0dedc622607f4b8a5c9b6c12a3b7005ab7"
+        },
+        {
+          "relative_path": "15mm重新布局可行性_v9_四出口完整局部检查\\左侧剩余时延估算.json",
+          "size": 520,
+          "sha256": "38e6ade097a19ea8593260fe08dbced7d9b5b5b74870e216858e9e8ff2c1b3e8"
+        },
+        {
+          "relative_path": "YSJ原结构与block边界.png",
+          "size": 133184,
+          "sha256": "ed8b7cd4d3fbe489a36ea0a92111c53d93cd0d70555796d130b557bcf82d02c6"
+        },
+        {
+          "relative_path": "YSJ源版图几何.json",
+          "size": 7372916,
+          "sha256": "62196444cbba72a1523be90c96634bbb75bd9be77513982a68051477664407d4"
+        },
+        {
+          "relative_path": "YSJ源版图盘点.json",
+          "size": 9533,
+          "sha256": "4686565950e2e20cd351d45769588349be31c5868251f1c4622ac3c4b2d7a201"
+        },
+        {
+          "relative_path": "同层平移检查_10um_v1\\上方电极位置候选_光路待重排.png",
+          "size": 115921,
+          "sha256": "70f4d314bea332ac88d505735266d5629f5ecbbbd9d4c43348ea174b1ba505ee"
+        },
+        {
+          "relative_path": "同层平移检查_10um_v1\\上方电极单独位置检查.json",
+          "size": 407,
+          "sha256": "d6b603c5640bda59662449e439427eb7a49f37a773351931093d84ae195d8d22"
+        },
+        {
+          "relative_path": "同层平移检查_10um_v1\\候选放置与同层冲突.png",
+          "size": 131376,
+          "sha256": "0f3ee1c38042401a487c082abee4876c2d8b3a9975144f9980bb4193f53053a7"
+        },
+        {
+          "relative_path": "同层平移检查_10um_v1\\原生几何约束证明.json",
+          "size": 4396,
+          "sha256": "3a44bb3d3311bb6b4bc058e694f696860bd38a9048aff334f4ecf7e5dab31dcd"
+        },
+        {
+          "relative_path": "同层平移检查_10um_v1\\同层放置检查.json",
+          "size": 85226,
+          "sha256": "f960ff1093d43f03c070da236135edebbe9ab714f7647d997cbaaa55f991497f"
+        },
+        {
+          "relative_path": "同层平移检查_10um_v1\\贴上边界放置检查.json",
+          "size": 513,
+          "sha256": "c4841d002c94421e3a86a9fa9670b84eead729fbcf3dea9f9402b04634620693"
+        },
+        {
+          "relative_path": "同层平移检查_10um_v1\\贴上边界放置检查.png",
+          "size": 135928,
+          "sha256": "1f4e1f551e12cd70f54dbbb6ee1d075bc726da00eec356f4c2ec4e836437ff8b"
+        },
+        {
+          "relative_path": "四程源版图盘点.json",
+          "size": 6686,
+          "sha256": "ad88f951acf87707e35c65cd5d8eb3f47ac6a4c5974bc87390d6e878b9550bb0"
+        },
+        {
+          "relative_path": "四程采用版只读复核.json",
+          "size": 1819,
+          "sha256": "a60d4bc151e4f83d043b9104136f83a5d8ffd7e44c4eb0e43ee1c2df74aec398"
+        },
+        {
+          "relative_path": "左侧回程试算_v1\\左侧延时路线试算.json",
+          "size": 972925,
+          "sha256": "7ac6f41bab85c253c1f7b2acf15187c6fab4c6eef7e266090feef6d4f2126468"
+        },
+        {
+          "relative_path": "左侧回程试算_v2\\左侧延时路线试算.json",
+          "size": 973147,
+          "sha256": "2a5a4a26b83837562a70ac27b6eb8f6330ba9f8cbef9c18d541503dd2e3732ba"
+        },
+        {
+          "relative_path": "左侧回程试算_v3\\左侧延时路线试算.json",
+          "size": 973250,
+          "sha256": "994fb37c9c775e9bb25665c50089c9b12303971baad1d9510a656484b706a3ef"
+        },
+        {
+          "relative_path": "左侧回程试算_v4_含输入输出\\左侧延时路线试算.json",
+          "size": 1474344,
+          "sha256": "c12702657aec972dfc877b3e03cca0d5370220d5f41dbbaa35eef3258bcf3d64"
+        },
+        {
+          "relative_path": "左侧回程试算_v5_加宽近邻间距\\左侧延时路线试算.json",
+          "size": 1474325,
+          "sha256": "ad82cfad963e4242fa88ce2b9e5eae4066600c41c63223bfddab0c9832497eeb"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/周期匹配布线_v6_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/周期匹配布线_v6_路线",
+      "files": [
+        {
+          "relative_path": "合并版时延预算.json",
+          "size": 1953,
+          "sha256": "ac62b2b2b93362c9ac8e7bad7ac1aacb069379aca245fe6ef16f193ad384b525"
+        },
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1473400,
+          "sha256": "08eca46a9b92ffe30a7d662eccd15fc70bb8d2400dceb6eb2ee458ea9436ef4c"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/周期匹配布线_v7_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/周期匹配布线_v7_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1473690,
+          "sha256": "b9fc33387b48444099a114b5bc741c06faad90d7e97a674515359de5626e4920"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/尾端线宽修正_工作稿_v6",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/尾端线宽修正_工作稿_v6",
+      "files": [
+        {
+          "relative_path": "四程10GHz_15mm_尾端线宽修正_待验证工作稿.gds",
+          "size": 229784,
+          "sha256": "8289ecb6aaeee0480c8ae0ec2b216cf45e609466d501966d94e3c8dc6f60fb59"
+        },
+        {
+          "relative_path": "尾端修正检查.json",
+          "size": 6952,
+          "sha256": "5b9f821c1c77bfb945a90111ae240e2568a97c719ec94389c9ba9f64fe7c0223"
+        },
+        {
+          "relative_path": "左上MUX尾端_实际GDS.png",
+          "size": 4452,
+          "sha256": "093e74c92b1ec34d06665c718856528c77685abe4ff9ba1bf21577fd694a87fe"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/拉开路由间距_v12_01_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/拉开路由间距_v12_01_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1538366,
+          "sha256": "aa13638312de0b4c33f825aa919f0b8355a6f2d99bfbe1faac135e06d4f6be5d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_01_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_01_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1818047,
+          "sha256": "618974cafebe9b5a3717facda5f1942bf0f7acfdba04d0beb3f8ba20a5c14e05"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_02_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_02_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1998322,
+          "sha256": "5708a8d836c7db78ac0687a302f969557a119825974d3925f058d75c76f7a2b6"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_03_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_03_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1956596,
+          "sha256": "19481c8dc8416b2c4f392721c8aa3f594500a7d81b5cdd2abe4abeef1f4e2236"
+        },
+        {
+          "relative_path": "路由间距检查.json",
+          "size": 6070,
+          "sha256": "88fe7813f029739b43ecca8226a72df4ff70f0f30678aeb898dfdc569d0da3d4"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_04_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_04_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1993147,
+          "sha256": "ee09201a0b7bc56c975347f590dc92760ff587f85b61a132594f0b7563dde1a7"
+        },
+        {
+          "relative_path": "路由间距检查.json",
+          "size": 5322,
+          "sha256": "c9b69111e1d893895a131edca7534c00ea4045bb064dd66d155310a4e16b1a33"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_05_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_05_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1906719,
+          "sha256": "1ed4c276b759aa08bd060264d6ae574dca29438f74d1c4b77d85d35d4038b89e"
+        },
+        {
+          "relative_path": "路由间距检查.json",
+          "size": 5322,
+          "sha256": "c9b69111e1d893895a131edca7534c00ea4045bb064dd66d155310a4e16b1a33"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_06_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_06_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1907969,
+          "sha256": "b75628749a873873495cbbec6dc7772b9c4681eeb760fe46426e23fbdd81a2e8"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_07_PDK包层修正_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_07_PDK包层修正_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1908010,
+          "sha256": "5d1c0d74cd0126f270539626708488b1748929d1ab913ab3739a67371fb7ca97"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_09_PDK包层修正_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_09_PDK包层修正_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1909012,
+          "sha256": "4e3030752a733d226fae304f82fd80bd264989011b4f2fd9cc1ff5e7e32e6139"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_11_PDK包层修正_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_11_PDK包层修正_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1908010,
+          "sha256": "5d1c0d74cd0126f270539626708488b1748929d1ab913ab3739a67371fb7ca97"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/横向接入_v13_19_PDK固定窗口_路线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/横向接入_v13_19_PDK固定窗口_路线",
+      "files": [
+        {
+          "relative_path": "左侧延时路线试算.json",
+          "size": 1908491,
+          "sha256": "c88ea502879584a73476734eb7b915f60602f509241b1d8f7e5bade622ee0268"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉回路时延预算_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v1",
+      "files": [
+        {
+          "relative_path": "欧拉回路_10GHz方向时延预算.csv",
+          "size": 1719,
+          "sha256": "b959506cc0893a9444e6b4e47fb8c606879ade050f753dd33c2785efda1e7122"
+        },
+        {
+          "relative_path": "欧拉回路_10GHz方向时延预算.json",
+          "size": 982318,
+          "sha256": "8f88670f391f2d708d221dd0b8dbbc316b83ea02286768cd43558d51dac5282d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉回路时延预算_v2",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v2",
+      "files": [
+        {
+          "relative_path": "欧拉回路_10GHz方向时延预算.csv",
+          "size": 1617,
+          "sha256": "6dfebad77a2b3dcc4c0576f67cddf23b934ead1e35b24e4b2c090e6e4012f2af"
+        },
+        {
+          "relative_path": "欧拉回路_10GHz方向时延预算.json",
+          "size": 1047673,
+          "sha256": "b4d5226a61e96b700372d29f5f7b33b03c513dfdb59a905dead5fbe0ebc8a4ca"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉回路时延预算_v3_无斜直线",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v3_无斜直线",
+      "files": [
+        {
+          "relative_path": "欧拉回路_10GHz方向时延预算.csv",
+          "size": 1618,
+          "sha256": "38bfb5066c3f74d3f94536df6fb9f92d21fcc300d2e2a87a617ae1f5456d3fa8"
+        },
+        {
+          "relative_path": "欧拉回路_10GHz方向时延预算.json",
+          "size": 1047715,
+          "sha256": "dd6a96fa9ac1a055d5bb73dfcac9e85df4658b435cf1048e5d84dfcb8a4cb632"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉弯_时延闭合_工作稿_v12_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_工作稿_v12_01",
+      "files": []
+    },
+    {
+      "source": "results/layout/欧拉弯_时延闭合_工作稿_v12_02",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_工作稿_v12_02",
+      "files": []
+    },
+    {
+      "source": "results/layout/欧拉弯_时延闭合_工作稿_v12_03",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_工作稿_v12_03",
+      "files": [
+        {
+          "relative_path": "名义功能DRC.json",
+          "size": 8992,
+          "sha256": "2fab5d4af82c78ce4c508160172913e779c66c487e162c8272b36b81d00e4cb2"
+        },
+        {
+          "relative_path": "名义功能DRC.rdb",
+          "size": 410262,
+          "sha256": "d9e727189d859eb5b7e014c0ae13d41c0bc74a1d80f0e2e2cb8c0d46f98c8526"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_欧拉弯_时延闭合_待验证工作稿.gds",
+          "size": 646104,
+          "sha256": "65f7c6f5ddbaad604a6a95e12eb32fcd18b2246c5d4fcb54db151b91a9a7acb1"
+        },
+        {
+          "relative_path": "欧拉右端折返_局部.png",
+          "size": 29053,
+          "sha256": "4ee9d5daaa744bec5c2fe9951588b699304266728ef1dde2b12ce725c6ba217c"
+        },
+        {
+          "relative_path": "欧拉弯四程版图_全图.png",
+          "size": 26181,
+          "sha256": "91ff3b980b7c11479816304e478ea7fef8c2e432b4c4fff579a3660cb0c7c76f"
+        },
+        {
+          "relative_path": "欧拉版图生成检查.json",
+          "size": 5834,
+          "sha256": "e27cd9da4fa9b7f70920490ced30ba9f2188de9ed75baa74e22dc25b787dc47f"
+        },
+        {
+          "relative_path": "欧拉路由多边形清单.json",
+          "size": 2439536,
+          "sha256": "fd76708d4629d8bf7a67efabbeb9f8302e4b79713965be9e661bebfe318b391f"
+        },
+        {
+          "relative_path": "欧拉输入与三级落回_局部.png",
+          "size": 32471,
+          "sha256": "cc02c30fe9633579d8202660b74531438a59b3482f25ce2571148761aa4297e0"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉弯_时延闭合_工作稿_v13_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_工作稿_v13_01",
+      "files": [
+        {
+          "relative_path": "名义功能DRC.json",
+          "size": 14866,
+          "sha256": "1fb27cc677ee1e4dc529385897e67b80a515737261b35cc1cbcfdd31de76c674"
+        },
+        {
+          "relative_path": "名义功能DRC.rdb",
+          "size": 523694,
+          "sha256": "0c9e03246c53a6d6e1e35f1063da09a57a0699be37a45f104d0257f6c322dd83"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_欧拉弯_时延闭合_待验证工作稿.gds",
+          "size": 641672,
+          "sha256": "7fa1a88f7e914310e22d08a37c49e1038ce1fc5d8e3b26546948a9efd99367ba"
+        },
+        {
+          "relative_path": "欧拉路由多边形清单.json",
+          "size": 2418257,
+          "sha256": "119a3a282bfb2ef37d2dce88cd56f5e23a0149ba473a2a3f05a808f07c53367c"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉弯_时延闭合_工作稿_v14_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_工作稿_v14_01",
+      "files": [
+        {
+          "relative_path": "名义功能DRC.json",
+          "size": 14867,
+          "sha256": "17fa19e13b9e47e78a8ba5dd7791ca2a47cd0e828a111907b85eda78017efc21"
+        },
+        {
+          "relative_path": "名义功能DRC.rdb",
+          "size": 505645,
+          "sha256": "0f4e43dea491aff546aaa12e2450f02d15cf814b60d0b7fb62e90a91b2b7826c"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_欧拉弯_时延闭合_待验证工作稿.gds",
+          "size": 647720,
+          "sha256": "29a02b335f0d64b09a8f311b82d00665042aff9ec69adf144a4b869c4d697a93"
+        },
+        {
+          "relative_path": "欧拉路由多边形清单.json",
+          "size": 2446010,
+          "sha256": "a112afe8196be2b2dc930db2c1cd2cd601f28543ea772c45a93bec02f2a1da78"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉弯_时延闭合_工作稿_v15_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_工作稿_v15_01",
+      "files": [
+        {
+          "relative_path": "名义功能DRC.json",
+          "size": 8167,
+          "sha256": "7914a250dc6320e6df62dac9595f5ae79db6737ce937cc4e818b50c944824ab7"
+        },
+        {
+          "relative_path": "名义功能DRC.rdb",
+          "size": 405343,
+          "sha256": "814ec2dfaf0a754e360702a9dac982eaf2d03dbbd5708268d3e7ba2a03cca04f"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_欧拉弯_时延闭合_待验证工作稿.gds",
+          "size": 646592,
+          "sha256": "b14c98c16897d436b0b220855858e844a722cba54e4aecc9884f9c2878cacf1c"
+        },
+        {
+          "relative_path": "欧拉右端折返_局部.png",
+          "size": 29264,
+          "sha256": "f9495b441d9a98f1369992c75a61a7f16e0bc32484a8d86ff16854e64cc855bd"
+        },
+        {
+          "relative_path": "欧拉弯四程版图_全图.png",
+          "size": 26216,
+          "sha256": "466da872e0443dee5e4c1d8d8f09b5fff1d81ec01d5c7035668d2c8c7fdfaa19"
+        },
+        {
+          "relative_path": "欧拉版图生成检查.json",
+          "size": 7340,
+          "sha256": "fae89a8accd93331be2f59289d378ae644b37a42a51a46603babbccd49618c61"
+        },
+        {
+          "relative_path": "欧拉路由多边形清单.json",
+          "size": 2439958,
+          "sha256": "e02866e8dae7c7e4bbe7aac61220021839ddf68d7332ea14745e4003849f8aa2"
+        },
+        {
+          "relative_path": "欧拉输入与三级落回_局部.png",
+          "size": 32833,
+          "sha256": "ac5647daedb87ea48101c6d2e217fe3870fa039fae0be29e6018142c507e916d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/欧拉弯_时延闭合_无斜直线_工作稿_v16_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_无斜直线_工作稿_v16_01",
+      "files": [
+        {
+          "relative_path": "全光路时延核算_v1\\全光路时延核算.json",
+          "size": 19046,
+          "sha256": "b5b82bbf4e02776fcd4b60d0fc2b1ad2b4534315d81ac5c8a2718cfa3dec6b9f"
+        },
+        {
+          "relative_path": "全光路时延核算_v1\\逐段时延.csv",
+          "size": 8114,
+          "sha256": "b6c963ce2fa41b2bd5aa2ce4197d5e89fd44b34884982afcaffdf1ce5e4d090b"
+        },
+        {
+          "relative_path": "名义功能DRC.json",
+          "size": 8055,
+          "sha256": "d97f3918db1e73c817bfceb95b5bd21e5740d182a5eb39b7d82e5ba19edd0052"
+        },
+        {
+          "relative_path": "名义功能DRC.rdb",
+          "size": 404709,
+          "sha256": "69fc227d85b2c50cde6838b7ce705a14da96acb935a4d92a33687fd67f750d16"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_欧拉弯_时延闭合_待验证工作稿.gds",
+          "size": 646544,
+          "sha256": "019d0cb66aad710cfa58f538547e58dc76d6e58ea0d12e93ea5670dde621430c"
+        },
+        {
+          "relative_path": "欧拉右端折返_局部.png",
+          "size": 29265,
+          "sha256": "a08a67db377a59ce5e2778022c7587755610130c7fa96ff9356574aa498f0d2b"
+        },
+        {
+          "relative_path": "欧拉弯四程版图_全图.png",
+          "size": 26216,
+          "sha256": "466da872e0443dee5e4c1d8d8f09b5fff1d81ec01d5c7035668d2c8c7fdfaa19"
+        },
+        {
+          "relative_path": "欧拉版图生成检查.json",
+          "size": 7423,
+          "sha256": "79523b684d750edba947e55928d171e33373a4c2ff9d99a0a1b7795bd4a2d977"
+        },
+        {
+          "relative_path": "欧拉路由多边形清单.json",
+          "size": 2439892,
+          "sha256": "6ebb440e94f35e91738aea115e352de2602dc5cc5107e52469cc737a6334dca1"
+        },
+        {
+          "relative_path": "欧拉输入与三级落回_局部.png",
+          "size": 32831,
+          "sha256": "a64efc7522550c9d6226cdbbe21c47e467e89f6ef2f4c00c462a280b6cf9397d"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/正交交叉候选_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/正交交叉候选_v1",
+      "files": [
+        {
+          "relative_path": "光路拓扑检查.json",
+          "size": 69489,
+          "sha256": "8e78e5b64eb56a5044417ca8d951ce31e72d24064a65dde238b8bab8c2649eb4"
+        },
+        {
+          "relative_path": "正交交叉_局部中心线.svg",
+          "size": 18210,
+          "sha256": "cf6684668168e0653cdc9b3b748f93045aa51a5fc4511787d739b6586de2fc73"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/直LN1脊连接规划_工作稿_v9",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/直LN1脊连接规划_工作稿_v9",
+      "files": []
+    },
+    {
+      "source": "results/layout/直LN1脊连接规划_工作稿_v9_01",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/直LN1脊连接规划_工作稿_v9_01",
+      "files": [
+        {
+          "relative_path": "右侧直脊连接.png",
+          "size": 11274,
+          "sha256": "26b03ef8ea7fdb31e2fb83ae2c14240b3119e22c4a38a52541d5f221b3c8e8df"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_直LN1脊连接规划_待验证工作稿.gds",
+          "size": 229940,
+          "sha256": "ea384438f4d35e39f0b8bcaa152939c22e61bc4be37f95e3353e7ca708855f78"
+        },
+        {
+          "relative_path": "左侧直脊连接.png",
+          "size": 11175,
+          "sha256": "04dafd8d48916745fcdec5b23cce063f254a78d661b8c13cc7fca61688249b16"
+        },
+        {
+          "relative_path": "直LN1脊全图.png",
+          "size": 14017,
+          "sha256": "518d2de0589e93ebc6f006831c2e952c8d9f7ee1588b8371b9cfccdb88ee2f7b"
+        },
+        {
+          "relative_path": "直脊连接规划检查.json",
+          "size": 7788,
+          "sha256": "be10abc9462dbcdb17366bfed0814a08b110f5a6646710e22c8589bfea0c6854"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/直脊平行公共窗口_工作稿_v10",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/直脊平行公共窗口_工作稿_v10",
+      "files": [
+        {
+          "relative_path": "右侧四个平行窗口接头.png",
+          "size": 12125,
+          "sha256": "3e6256250dd93178ea30246a5be7c7b00d6deb1cf0e00514be9c0fb0168780c8"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_直脊平行公共窗口_待验证工作稿.gds",
+          "size": 230082,
+          "sha256": "0579ff5a271953bded2735498cdb1f24a487c43489cb70ac30508d7455e93705"
+        },
+        {
+          "relative_path": "左侧四个平行窗口接头.png",
+          "size": 12148,
+          "sha256": "5b08baa5444c2e4a5507f9cc535cdbb3ad3d9accdf77ca37438581f30a20d997"
+        },
+        {
+          "relative_path": "平行公共窗口检查.json",
+          "size": 5896,
+          "sha256": "6e85e1c1607c81e945d2c73ea4d7c884ed63ea18a24af3db20fd0381879d3214"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/紧凑254ps_布线试排_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/紧凑254ps_布线试排_v1",
+      "files": [
+        {
+          "relative_path": "左侧布线冲突诊断.png",
+          "size": 80980,
+          "sha256": "6769d0fc68f604ed7811b7a879924b29c13209a6a4ff8ba61ffa6b54006924ba"
+        },
+        {
+          "relative_path": "紧凑回路试排.json",
+          "size": 1194274,
+          "sha256": "1d38d2ab71d65302b4d3c2d0d793ed5f11f953c85071e871ef44c83edcd582d6"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/紧凑254ps_布线试排_v2",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/紧凑254ps_布线试排_v2",
+      "files": [
+        {
+          "relative_path": "左侧布线冲突诊断.png",
+          "size": 80129,
+          "sha256": "2bf07c314e56e96a929d844fd28231fdd0c1672640b1624b73c20b1e321973c6"
+        },
+        {
+          "relative_path": "紧凑回路试排.json",
+          "size": 1193499,
+          "sha256": "cec5ea27317a686863dc19821ec93013d2ccf1211cac73e6421c214d4b6c3dcd"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/紧凑回路_上下分组试排_v3",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/紧凑回路_上下分组试排_v3",
+      "files": [
+        {
+          "relative_path": "左侧布线冲突诊断.png",
+          "size": 79311,
+          "sha256": "f69f9907919bd7e85c00959723a919c9e764b5c7c516c53afdab5d3ef508002f"
+        },
+        {
+          "relative_path": "紧凑回路试排.json",
+          "size": 1291943,
+          "sha256": "286cf61dc8abd812691d1675762b13119fd351f1c641afca404994d60ccf8e1b"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/紧凑回路_端口分组联合试排_v4",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/紧凑回路_端口分组联合试排_v4",
+      "files": [
+        {
+          "relative_path": "候选路线.json",
+          "size": 1202214,
+          "sha256": "e15b11e522ef572fca3563f460f2fbff77543884f6672a1b25b7d89b0db24079"
+        },
+        {
+          "relative_path": "左侧端口分组.png",
+          "size": 78486,
+          "sha256": "67963904cec20227f7ac988e503bcd75ab7c18681d6ddc9da3094968e32de1d4"
+        },
+        {
+          "relative_path": "端口分组试排汇总.json",
+          "size": 15666,
+          "sha256": "62dc96786910396a6fffc81cff5f68583b37ece4a108d8ae509af4f47d33516b"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/自定义交叉_初稿_v1",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/自定义交叉_初稿_v1",
+      "files": [
+        {
+          "relative_path": "名义DRC.json",
+          "size": 2149,
+          "sha256": "e785a0eab6ae89389d96f81048f02849b2ba2ea304c2cdabdc8fb025968c6d87"
+        },
+        {
+          "relative_path": "名义DRC.rdb",
+          "size": 5138,
+          "sha256": "f8a7f2638dc3a8b840ea3f120aaafa491a0f52ce702f26af15c4a7fe3519b3ff"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_核心工艺层_待验证工作稿.gds",
+          "size": 230524,
+          "sha256": "1876284d718b5ea63cb8692e6d12cfbab26955a4625a744f0d3237abdbdee661"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_自定义交叉_待验证工作稿.gds",
+          "size": 227732,
+          "sha256": "1a97b84c934e93950fdf4acae83e2d937c4a2f16033f402250d274386f9eaa11"
+        },
+        {
+          "relative_path": "版图检查.json",
+          "size": 7463,
+          "sha256": "ef67e21b5ceec21644db9c80a780be5596de9e50310c16caaeb00d1195558120"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/自定义交叉_初稿_v2",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/自定义交叉_初稿_v2",
+      "files": [
+        {
+          "relative_path": "名义DRC.json",
+          "size": 3488,
+          "sha256": "a577c6a589880d88d4851904cc00e82cab54c3a1d5999201755f419e37ab8a7d"
+        },
+        {
+          "relative_path": "名义DRC.rdb",
+          "size": 12871,
+          "sha256": "6c08dc356cb8e17abd528232d9cc411f0a4c20c731a61a29e460aa4ae9ceb815"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_核心工艺层_待验证工作稿.gds",
+          "size": 232164,
+          "sha256": "6c4e66c51cafa58ccbd8b62d328442da2601143e24f96f128e4c650237083c7b"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_自定义交叉_待验证工作稿.gds",
+          "size": 229372,
+          "sha256": "a01780bd59c083966542aad9256293ebb1b66b2121370366f65a019edd406871"
+        },
+        {
+          "relative_path": "版图检查.json",
+          "size": 7798,
+          "sha256": "19b4a4ee8a102e9172ee023c7d6f4d8b0fc1e3c3e3dfd1be996800baae21bdeb"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/自定义交叉_初稿_v3",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/自定义交叉_初稿_v3",
+      "files": [
+        {
+          "relative_path": "名义DRC.json",
+          "size": 1770,
+          "sha256": "7b61898e48513b0356ca5c867743bf90f228afe833264578694de802ba576c4c"
+        },
+        {
+          "relative_path": "名义DRC.rdb",
+          "size": 2980,
+          "sha256": "5decc854152e9ae5a3197c772dbd817a7b682cba9be35b752dce8e2f874628ec"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_核心工艺层_待验证工作稿.gds",
+          "size": 231036,
+          "sha256": "aeb8bb68b19e01a7bf042c7707fa8c19d6d67571f3763a84d6faf9c612361f40"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_自定义交叉_待验证工作稿.gds",
+          "size": 228244,
+          "sha256": "592fafad8cd2990d5c288029888132101c7a83f1d4423ee67c1a250dcdab1606"
+        },
+        {
+          "relative_path": "版图检查.json",
+          "size": 7804,
+          "sha256": "719b579afa2a933bf7c63422fd2798d4bf9a402d1a500fe744ec5b7a8ef47591"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/自定义交叉_初稿_v4",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/自定义交叉_初稿_v4",
+      "files": [
+        {
+          "relative_path": "名义DRC.json",
+          "size": 1637,
+          "sha256": "5bf39ad7e83dd53a014932179432fe4a46cbe8c61e4d24a1df48d1526f50a7ad"
+        },
+        {
+          "relative_path": "名义DRC.rdb",
+          "size": 2274,
+          "sha256": "595d66e349f2a6e1bc8abe4a9c8621ccb26866b1a67767c45ff52bb20f1c1f9e"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_核心工艺层_待验证工作稿.gds",
+          "size": 231036,
+          "sha256": "d13345a7a157849df264061da2dfb142f1a44e7507d0ea2eb964e0389734dba2"
+        },
+        {
+          "relative_path": "四程10GHz_15mm_自定义交叉_待验证工作稿.gds",
+          "size": 228244,
+          "sha256": "0ade7352635c9a0500eef0723f90619e111aa2fbc5622181664f1dcd58e00c32"
+        },
+        {
+          "relative_path": "左侧正交交叉与回路.png",
+          "size": 21198,
+          "sha256": "2029f7ae0259c524f839c0be9c12e176d3cc4ec9a1f3d267a45ba533d1ee05f6"
+        },
+        {
+          "relative_path": "手册严格规则复核.json",
+          "size": 8061,
+          "sha256": "e52550395f66d76c87b722138844dc83126274777e65b54bcd0014899abdb996"
+        },
+        {
+          "relative_path": "手册严格规则复核.rdb",
+          "size": 100194,
+          "sha256": "eac2a52fd5c74f2ea405a747a1cce082fa799da5449199bf3a0d8c8fee4a03fb"
+        },
+        {
+          "relative_path": "整体版图.png",
+          "size": 16336,
+          "sha256": "a3d4496335c1400a4edb623ac9e38ff403c2240e945a869a50699297bb8126ba"
+        },
+        {
+          "relative_path": "版图检查.json",
+          "size": 7804,
+          "sha256": "b09bd05a074163ef8df32592ddaf210ef60660cf432dfdfc671bdaa6002800d1"
+        },
+        {
+          "relative_path": "自定义交叉器_版图局部.png",
+          "size": 12253,
+          "sha256": "461543e65e6c09144bd7ba43b584e8411f4c17ef8d3f807a9563ffaedd6f2e93"
+        }
+      ]
+    },
+    {
+      "source": "results/layout/黑盒交叉_拉锥工作稿_v5",
+      "archive": "results/layout/_历史归档/迭代版本_20260912/黑盒交叉_拉锥工作稿_v5",
+      "files": [
+        {
+          "relative_path": "四程10GHz_15mm_PDK黑盒交叉_拉锥接续_待验证工作稿.gds",
+          "size": 229752,
+          "sha256": "3a166c750d60ca71979a957385cd3d457c43562c13896b3dcf07f13b39a8e905"
+        },
+        {
+          "relative_path": "拉锥实际GDS尺寸核对.png",
+          "size": 68165,
+          "sha256": "0efca2402790f07cface8d0d2db130c704e8ebd500b68bc43c2b5e5d3533750f"
+        },
+        {
+          "relative_path": "整体版图.png",
+          "size": 13712,
+          "sha256": "b8220f36dba62ab1e9ca6f6f6f19146ab5f6b8ec07700f6b84cd2aa8512b72a4"
+        },
+        {
+          "relative_path": "版图检查.json",
+          "size": 9439,
+          "sha256": "52aaba23f8042775532f79e479dd4432b85fa2c20ffe7360c9eca195bc51e240"
+        },
+        {
+          "relative_path": "电极PDK核查_01\\T形电极_PDK几何核查.json",
+          "size": 2670,
+          "sha256": "300a96c6759fcdaf11657d2e3aeb9a8bc92279cdf293427fbd2d054b8e70d9f5"
+        },
+        {
+          "relative_path": "电极PDK核查_01\\T形电极_实际GDS局部.png",
+          "size": 5363,
+          "sha256": "e21b4103b6c2dd77f576d2ec63fcbbbc51869866109991e994e41a4662aee06e"
+        },
+        {
+          "relative_path": "输入黑盒与交叉接续.png",
+          "size": 17254,
+          "sha256": "6b3c512624c02b537738788dc1c3a9f4737e84f1292c3a281952d6de33db3d0d"
+        },
+        {
+          "relative_path": "预览几何.json",
+          "size": 391383,
+          "sha256": "34a64351651148e95016e0d1d70cd4004e9d3bc1ad200da3e1837fa3cb7a4ac2"
+        },
+        {
+          "relative_path": "黑盒交叉与四端拉锥.png",
+          "size": 18731,
+          "sha256": "b06b3f384efc825023ce2b7b7e3c3b12c2192a08695ac6e4a1b00bb1eeb51a17"
+        }
+      ]
+    }
+  ],
+  "files_hash_verified": true,
+  "deleted_files": 0
+}

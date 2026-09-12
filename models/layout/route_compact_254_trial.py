@@ -24,7 +24,7 @@ from delay_budget import route_delay
 
 
 def inputs():
-    d = ROOT/'results/layout'
+    d = ROOT/'results/layout/_历史归档/迭代版本_20260912'
     old = json.loads((d/'欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json').read_text(encoding='utf-8'))
     merged = json.loads((d/'YSJ合并15mm_功能候选_v10/合并版时延预算.json').read_text(encoding='utf-8'))
     return old, merged

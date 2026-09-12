@@ -6,7 +6,7 @@
 
 ## 当前推荐文件
 
-`results/layout/YSJ合并15mm_功能候选_v10/YSJ与四程15mm_同block_功能版图候选.gds`
+`results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v10/YSJ与四程15mm_同block_功能版图候选.gds`
 
 - 顶层：`YSJ_EO4P_15MM_BLOCK_21800X3800_DRAFT`。
 - SHA256：`83b2b5eed18c72b8f6f96d4c21ffa53cf41618ed0551bc0bf33ee8e0f2f57270`。

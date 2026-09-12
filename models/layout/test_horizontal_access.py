@@ -17,7 +17,7 @@ class HorizontalRouteTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 build(periods=p)
 
-    @unittest.skipUnless((ROOT / 'results/layout/YSJ合并15mm_功能候选_v10/合并版时延预算.json').exists(),
+    @unittest.skipUnless((ROOT / 'results/layout/_历史归档/迭代版本_20260912/YSJ合并15mm_功能候选_v10/合并版时延预算.json').exists(),
                          '需要本地预算输入')
     def test_horizontal_geometry_and_independent_cycles(self):
         r = build()

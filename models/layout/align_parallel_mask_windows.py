@@ -9,7 +9,7 @@ from pathlib import Path
 from klink import KLinkClient
 
 ROOT=Path(__file__).resolve().parents[2]
-BASE=ROOT/'results/layout/直LN1脊连接规划_工作稿_v9_01/四程10GHz_15mm_直LN1脊连接规划_待验证工作稿.gds'
+BASE=ROOT/'results/layout/_历史归档/迭代版本_20260912/直LN1脊连接规划_工作稿_v9_01/四程10GHz_15mm_直LN1脊连接规划_待验证工作稿.gds'
 
 CODE=r'''
 import hashlib

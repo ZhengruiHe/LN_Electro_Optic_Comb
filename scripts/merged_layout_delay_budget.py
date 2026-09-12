@@ -67,7 +67,7 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     a=p.parse_args()
     data=calculate(json.loads(a.routes.read_text(encoding='utf-8')),
-        json.loads((ROOT/'results/layout/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json').read_text(encoding='utf-8')),
+        json.loads((ROOT/'results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json').read_text(encoding='utf-8')),
         json.loads((ROOT/'results/optical/模式复用器_70度_EME_群时延摘要.json').read_text(encoding='utf-8')))
     with a.output.open('x',encoding='utf-8') as f:json.dump(data,f,ensure_ascii=False,indent=2)
     print(json.dumps(data,ensure_ascii=False,indent=2))

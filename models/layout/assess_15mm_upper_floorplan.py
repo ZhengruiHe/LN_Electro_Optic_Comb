@@ -26,7 +26,7 @@ def main():
     p.add_argument("--external-taper-length-um", type=float, default=200.)
     a = p.parse_args()
     a.output_dir.mkdir(parents=True, exist_ok=False)
-    base = Path("results/layout/合并YSJ_版图确认_20260909_v1")
+    base = Path("results/layout/_历史归档/迭代版本_20260912/合并YSJ_版图确认_20260909_v1")
     old = json.loads((base/"YSJ源版图几何.json").read_text(encoding="utf-8"))
     new = json.loads(Path("results/layout/双端GSG150_窗口修正_v18_11/版图预览几何.json").read_text(encoding="utf-8"))
     core = geometry(new, (20, 0)).intersection(box(850, -43, 18150, 43))

@@ -9,7 +9,7 @@ import subprocess
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
-SOURCE=ROOT/'results/layout/欧拉弯_时延闭合_无斜直线_工作稿_v16_01/四程10GHz_15mm_欧拉弯_时延闭合_待验证工作稿.gds'
+SOURCE=ROOT/'results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_无斜直线_工作稿_v16_01/四程10GHz_15mm_欧拉弯_时延闭合_待验证工作稿.gds'
 KLAYOUT=Path('C:/Users/PC/AppData/Roaming/KLayout/klayout_app.exe')
 
 

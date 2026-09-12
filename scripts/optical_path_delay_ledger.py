@@ -15,8 +15,8 @@ from shapely.ops import substring
 from delay_budget import route_delay
 
 ROOT = Path(__file__).resolve().parents[1]
-LAYOUT_DIR = ROOT / 'results/layout/欧拉弯_时延闭合_无斜直线_工作稿_v16_01'
-BUDGET = ROOT / 'results/layout/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json'
+LAYOUT_DIR = ROOT / 'results/layout/_历史归档/迭代版本_20260912/欧拉弯_时延闭合_无斜直线_工作稿_v16_01'
+BUDGET = ROOT / 'results/layout/_历史归档/迭代版本_20260912/欧拉回路时延预算_v3_无斜直线/欧拉回路_10GHz方向时延预算.json'
 MUX = ROOT / 'results/optical/模式复用器_70度_EME_群时延摘要.json'
 
 

@@ -2,12 +2,12 @@
 
 ## 本轮结果与文件
 
-2026-09-08更新：最新推荐工作稿为`results/layout/双端GSG150_窗口修正_v18_11/四程10GHz_15mm_GSG150um_分叉窗口修正_待验证工作稿.gds`；120 µm备选为`results/layout/双端GSG120_窗口修正_v18_02/四程10GHz_15mm_GSG120um_分叉窗口修正_待验证工作稿.gds`。这两版消除了原8个新增分叉窗口标记；下述v17继续保留为GSG金属和射频模型的输入基线。
+2026-09-08更新：最新推荐工作稿为`results/layout/双端GSG150_窗口修正_v18_11/四程10GHz_15mm_GSG150um_分叉窗口修正_待验证工作稿.gds`；120 µm备选为`results/layout/_历史归档/迭代版本_20260912/双端GSG120_窗口修正_v18_02/四程10GHz_15mm_GSG120um_分叉窗口修正_待验证工作稿.gds`。这两版消除了原8个新增分叉窗口标记；下述v17继续保留为GSG金属和射频模型的输入基线。
 
 在v16上加入两端外接GSG接口，主工作稿为150 µm相邻针尖中心距，另提供120 µm备选。用户已确认两种针距可后续调整；本轮没有冻结探针型号。
 
-- 150 µm：`results/layout/双端GSG150_工作稿_v17_01/四程10GHz_15mm_双端GSG150um_待验证工作稿.gds`
-- 120 µm：`results/layout/双端GSG120_工作稿_v17_01/四程10GHz_15mm_双端GSG120um_待验证工作稿.gds`
+- 150 µm：`results/layout/_历史归档/迭代版本_20260912/双端GSG150_工作稿_v17_01/四程10GHz_15mm_双端GSG150um_待验证工作稿.gds`
+- 120 µm：`results/layout/_历史归档/迭代版本_20260912/双端GSG120_工作稿_v17_01/四程10GHz_15mm_双端GSG120um_待验证工作稿.gds`
 
 输入探针从左侧接入，输出探针从右侧接入。输出接口可用于接外部50 Ω负载，或接匹配测试仪器。GSG焊盘自身不是50 Ω终端，片上没有增加终端电阻。
 
@@ -77,7 +77,7 @@
 介质沿用原射频材料假设：两条1.33µm LN脊、7.2µm有限残余平台和SiN位置全宽SiO2填充；尚未包括MUX局部变化、远处回路、真实探针针头及接触阻抗。因此该工程用于接口初步筛查，不能等同于完整实际探针模型或最终50Ω匹配结论。
 
 ```powershell
-.\.venv\Scripts\python.exe -X utf8 models/rf/build_gsg_transition.py --layout-dir results/layout/双端GSG150_工作稿_v17_01 --output-dir results/hfss/gsg_launch/my_new_model
+.\.venv\Scripts\python.exe -X utf8 models/rf/build_gsg_transition.py --layout-dir results/layout/_历史归档/迭代版本_20260912/双端GSG150_工作稿_v17_01 --output-dir results/hfss/gsg_launch/my_new_model
 ```
 
 默认仅建模。`--solve`才请求求解，且脚本检测FDTD正在运行时不并行启动HFSS。AEDT2023 gRPC保存路径使用ASCII目录，中文说明与参数JSON仍保留。此前中文路径保存失败的尝试保留日志，不作为有效工程。

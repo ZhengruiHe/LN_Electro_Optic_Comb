@@ -109,7 +109,7 @@ def svg_preview(routes: dict, crossing: dict) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--baseline-report", type=Path, default=BASELINE)
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "results/layout/正交交叉候选_v1")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "results/layout/_历史归档/迭代版本_20260912/正交交叉候选_v1")
     args = parser.parse_args()
     baseline = json.loads(args.baseline_report.read_text(encoding="utf-8"))
     if baseline["loop_periods"] != [3.0, 3.5, 3.0] or baseline["electrode"]["active_length_um"] != 15000:
